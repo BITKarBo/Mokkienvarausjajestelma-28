@@ -55,7 +55,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(174, 205);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(181, 20);
             this.textBox1.TabIndex = 0;
             // 
             // Form1
@@ -75,6 +75,7 @@
         }
 
         #endregion
+
         private VNDataset vNDataset;
         private System.Windows.Forms.BindingSource asiakasBindingSource;
         private VNDatasetTableAdapters.asiakasTableAdapter asiakasTableAdapter;
