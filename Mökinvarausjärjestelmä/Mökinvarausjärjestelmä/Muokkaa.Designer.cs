@@ -81,6 +81,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblLasku = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Mökit.SuspendLayout();
             this.Mokit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -532,6 +533,7 @@
             // 
             // Laskut
             // 
+            this.Laskut.Controls.Add(this.groupBox1);
             this.Laskut.Controls.Add(this.button3);
             this.Laskut.Controls.Add(this.button4);
             this.Laskut.Controls.Add(this.button5);
@@ -666,6 +668,15 @@
             this.lblLasku.TabIndex = 0;
             this.lblLasku.Text = "Laskutus";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(34, 308);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(708, 234);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Laskut";
+            // 
             // Muokkaa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -743,5 +754,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
