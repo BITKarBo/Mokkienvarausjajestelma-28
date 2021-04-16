@@ -58,8 +58,20 @@
     <Compile Include="Kalenteri.Designer.cs">
       <DependentUpon>Kalenteri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Paavalikko.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paavalikko.Designer.cs">
+      <DependentUpon>Paavalikko.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Varaus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Varaus.Designer.cs">
+      <DependentUpon>Varaus.cs</DependentUpon>
+    </Compile>
     <Compile Include="VarausTiedot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kalenteri.resx">
       <DependentUpon>Kalenteri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paavalikko.resx">
+      <DependentUpon>Paavalikko.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
