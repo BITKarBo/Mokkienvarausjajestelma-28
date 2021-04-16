@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.Toimialueboksi = new System.Windows.Forms.ComboBox();
-            this.Toimialuetxtbox = new System.Windows.Forms.TextBox();
             this.uusivarausbtn = new System.Windows.Forms.Button();
             this.varauksetkalenteriinbtn = new System.Windows.Forms.Button();
             this.muokkaabtn = new System.Windows.Forms.Button();
@@ -47,15 +46,7 @@
             this.Toimialueboksi.Name = "Toimialueboksi";
             this.Toimialueboksi.Size = new System.Drawing.Size(193, 33);
             this.Toimialueboksi.TabIndex = 0;
-            // 
-            // Toimialuetxtbox
-            // 
-            this.Toimialuetxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Toimialuetxtbox.Location = new System.Drawing.Point(265, 71);
-            this.Toimialuetxtbox.Name = "Toimialuetxtbox";
-            this.Toimialuetxtbox.Size = new System.Drawing.Size(105, 31);
-            this.Toimialuetxtbox.TabIndex = 1;
-            this.Toimialuetxtbox.Text = "Toimialue";
+            this.Toimialueboksi.Text = "Toimialue";
             // 
             // uusivarausbtn
             // 
@@ -95,19 +86,16 @@
             this.Controls.Add(this.muokkaabtn);
             this.Controls.Add(this.varauksetkalenteriinbtn);
             this.Controls.Add(this.uusivarausbtn);
-            this.Controls.Add(this.Toimialuetxtbox);
             this.Controls.Add(this.Toimialueboksi);
             this.Name = "Paavalikko";
             this.Text = "Paavalikko";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.ComboBox Toimialueboksi;
-        private System.Windows.Forms.TextBox Toimialuetxtbox;
         private System.Windows.Forms.Button uusivarausbtn;
         private System.Windows.Forms.Button varauksetkalenteriinbtn;
         private System.Windows.Forms.Button muokkaabtn;
