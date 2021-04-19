@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.Toimialueboksi = new System.Windows.Forms.ComboBox();
-            this.uusivarausbtn = new System.Windows.Forms.Button();
-            this.varauksetkalenteriinbtn = new System.Windows.Forms.Button();
-            this.muokkaabtn = new System.Windows.Forms.Button();
+            this.btnUusiVaraus = new System.Windows.Forms.Button();
+            this.btnKalenteri = new System.Windows.Forms.Button();
+            this.btnMuokkaa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Toimialueboksi
@@ -48,44 +48,47 @@
             this.Toimialueboksi.TabIndex = 0;
             this.Toimialueboksi.Text = "Toimialue";
             // 
-            // uusivarausbtn
+            // btnUusiVaraus
             // 
-            this.uusivarausbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uusivarausbtn.Location = new System.Drawing.Point(266, 176);
-            this.uusivarausbtn.Name = "uusivarausbtn";
-            this.uusivarausbtn.Size = new System.Drawing.Size(193, 42);
-            this.uusivarausbtn.TabIndex = 2;
-            this.uusivarausbtn.Text = "Uusi varaus";
-            this.uusivarausbtn.UseVisualStyleBackColor = true;
+            this.btnUusiVaraus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUusiVaraus.Location = new System.Drawing.Point(265, 180);
+            this.btnUusiVaraus.Name = "btnUusiVaraus";
+            this.btnUusiVaraus.Size = new System.Drawing.Size(193, 42);
+            this.btnUusiVaraus.TabIndex = 2;
+            this.btnUusiVaraus.Text = "Uusi varaus";
+            this.btnUusiVaraus.UseVisualStyleBackColor = true;
+            this.btnUusiVaraus.Click += new System.EventHandler(this.btnUusiVaraus_Click);
             // 
-            // varauksetkalenteriinbtn
+            // btnKalenteri
             // 
-            this.varauksetkalenteriinbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.varauksetkalenteriinbtn.Location = new System.Drawing.Point(265, 242);
-            this.varauksetkalenteriinbtn.Name = "varauksetkalenteriinbtn";
-            this.varauksetkalenteriinbtn.Size = new System.Drawing.Size(194, 48);
-            this.varauksetkalenteriinbtn.TabIndex = 3;
-            this.varauksetkalenteriinbtn.Text = "Varaus kalenteri";
-            this.varauksetkalenteriinbtn.UseVisualStyleBackColor = true;
+            this.btnKalenteri.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKalenteri.Location = new System.Drawing.Point(265, 242);
+            this.btnKalenteri.Name = "btnKalenteri";
+            this.btnKalenteri.Size = new System.Drawing.Size(194, 48);
+            this.btnKalenteri.TabIndex = 3;
+            this.btnKalenteri.Text = "Varaus kalenteri";
+            this.btnKalenteri.UseVisualStyleBackColor = true;
+            this.btnKalenteri.Click += new System.EventHandler(this.btnKalenteri_Click);
             // 
-            // muokkaabtn
+            // btnMuokkaa
             // 
-            this.muokkaabtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.muokkaabtn.Location = new System.Drawing.Point(265, 318);
-            this.muokkaabtn.Name = "muokkaabtn";
-            this.muokkaabtn.Size = new System.Drawing.Size(194, 55);
-            this.muokkaabtn.TabIndex = 4;
-            this.muokkaabtn.Text = "Muokkaa / Lisää";
-            this.muokkaabtn.UseVisualStyleBackColor = true;
+            this.btnMuokkaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMuokkaa.Location = new System.Drawing.Point(264, 322);
+            this.btnMuokkaa.Name = "btnMuokkaa";
+            this.btnMuokkaa.Size = new System.Drawing.Size(194, 55);
+            this.btnMuokkaa.TabIndex = 4;
+            this.btnMuokkaa.Text = "Muokkaa / Lisää";
+            this.btnMuokkaa.UseVisualStyleBackColor = true;
+            this.btnMuokkaa.Click += new System.EventHandler(this.btnMuokkaa_Click);
             // 
             // Paavalikko
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 761);
-            this.Controls.Add(this.muokkaabtn);
-            this.Controls.Add(this.varauksetkalenteriinbtn);
-            this.Controls.Add(this.uusivarausbtn);
+            this.Controls.Add(this.btnMuokkaa);
+            this.Controls.Add(this.btnKalenteri);
+            this.Controls.Add(this.btnUusiVaraus);
             this.Controls.Add(this.Toimialueboksi);
             this.Name = "Paavalikko";
             this.Text = "Paavalikko";
@@ -96,8 +99,8 @@
         #endregion
 
         private System.Windows.Forms.ComboBox Toimialueboksi;
-        private System.Windows.Forms.Button uusivarausbtn;
-        private System.Windows.Forms.Button varauksetkalenteriinbtn;
-        private System.Windows.Forms.Button muokkaabtn;
+        private System.Windows.Forms.Button btnUusiVaraus;
+        private System.Windows.Forms.Button btnKalenteri;
+        private System.Windows.Forms.Button btnMuokkaa;
     }
 }

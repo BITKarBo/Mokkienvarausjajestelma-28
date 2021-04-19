@@ -16,5 +16,23 @@ namespace Mökinvarausjärjestelmä
         {
             InitializeComponent();
         }
+
+        private void btnUusiVaraus_Click(object sender, EventArgs e)
+        {
+            var Varaus = new Varaus();
+            Varaus.Show();
+        }
+
+        private void btnKalenteri_Click(object sender, EventArgs e)
+        {
+            var Kalenteri = new Kalenteri();
+            Kalenteri.Show();
+        }
+
+        private void btnMuokkaa_Click(object sender, EventArgs e)
+        {
+            var Muokkaa = new Muokkaa();
+            Muokkaa.Show();
+        }
     }
 }
