@@ -29,14 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Mökit = new System.Windows.Forms.TabControl();
             this.Mokit = new System.Windows.Forms.TabPage();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.tbMokinHinta = new System.Windows.Forms.TextBox();
             this.lblMokinHinta = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -52,9 +55,27 @@
             this.lblOsoite = new System.Windows.Forms.Label();
             this.lblMokinNimi = new System.Windows.Forms.Label();
             this.Palvelut = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbAlv = new System.Windows.Forms.TextBox();
+            this.tbHinta = new System.Windows.Forms.TextBox();
+            this.tbKuvaus = new System.Windows.Forms.TextBox();
+            this.tbTyyppi = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgwPalvelut = new System.Windows.Forms.DataGridView();
+            this.palveluidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toimintaalueidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tyyppiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kuvausDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hintaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.palveluBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vNDataset = new Mökinvarausjärjestelmä.VNDataset();
+            this.tbNimi = new System.Windows.Forms.TextBox();
+            this.tbToimintaAlue_id = new System.Windows.Forms.TextBox();
+            this.tbPalvelu_id = new System.Windows.Forms.TextBox();
             this.lblPalvelunKuvaus = new System.Windows.Forms.Label();
             this.lblPalvelunHinta = new System.Windows.Forms.Label();
             this.lblPalvelunNimi = new System.Windows.Forms.Label();
@@ -74,6 +95,12 @@
             this.lblAsiakkaanOsoite = new System.Windows.Forms.Label();
             this.lblAsiakkaanNimi = new System.Windows.Forms.Label();
             this.Laskut = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.laskuidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varausidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.summaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -86,38 +113,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblLasku = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vNDataset = new Mökinvarausjärjestelmä.VNDataset();
-            this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.laskuTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.laskuTableAdapter();
-            this.laskuidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.varausidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.summaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.palveluBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.palveluTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.palveluTableAdapter();
-            this.palveluidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toimintaalueidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tyyppiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kuvausDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hintaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.vNDatasetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourcePalvelu = new System.Windows.Forms.BindingSource(this.components);
             this.Mökit.SuspendLayout();
             this.Mokit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.Palvelut.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwPalvelut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).BeginInit();
             this.Asiakkaat.SuspendLayout();
             this.Laskut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vNDatasetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePalvelu)).BeginInit();
             this.SuspendLayout();
             // 
             // Mökit
@@ -160,6 +172,32 @@
             this.Mokit.TabIndex = 0;
             this.Mokit.Text = "Mökit";
             this.Mokit.UseVisualStyleBackColor = true;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox10.Location = new System.Drawing.Point(360, 42);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(311, 24);
+            this.textBox10.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.Location = new System.Drawing.Point(52, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 18);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Mökkitunnus";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox9.Location = new System.Drawing.Point(360, 295);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(310, 24);
+            this.textBox9.TabIndex = 17;
             // 
             // tbMokinHinta
             // 
@@ -301,10 +339,18 @@
             // 
             // Palvelut
             // 
-            this.Palvelut.Controls.Add(this.dataGridView2);
-            this.Palvelut.Controls.Add(this.textBox3);
-            this.Palvelut.Controls.Add(this.textBox2);
-            this.Palvelut.Controls.Add(this.textBox1);
+            this.Palvelut.Controls.Add(this.tbAlv);
+            this.Palvelut.Controls.Add(this.tbHinta);
+            this.Palvelut.Controls.Add(this.tbKuvaus);
+            this.Palvelut.Controls.Add(this.tbTyyppi);
+            this.Palvelut.Controls.Add(this.label10);
+            this.Palvelut.Controls.Add(this.label9);
+            this.Palvelut.Controls.Add(this.label8);
+            this.Palvelut.Controls.Add(this.label7);
+            this.Palvelut.Controls.Add(this.dgwPalvelut);
+            this.Palvelut.Controls.Add(this.tbNimi);
+            this.Palvelut.Controls.Add(this.tbToimintaAlue_id);
+            this.Palvelut.Controls.Add(this.tbPalvelu_id);
             this.Palvelut.Controls.Add(this.lblPalvelunKuvaus);
             this.Palvelut.Controls.Add(this.lblPalvelunHinta);
             this.Palvelut.Controls.Add(this.lblPalvelunNimi);
@@ -318,60 +364,226 @@
             this.Palvelut.Text = "Palvelut";
             this.Palvelut.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // tbAlv
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox3.Location = new System.Drawing.Point(316, 186);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(452, 24);
-            this.textBox3.TabIndex = 22;
+            this.tbAlv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbAlv.Location = new System.Drawing.Point(316, 205);
+            this.tbAlv.Name = "tbAlv";
+            this.tbAlv.Size = new System.Drawing.Size(100, 24);
+            this.tbAlv.TabIndex = 31;
             // 
-            // textBox2
+            // tbHinta
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox2.Location = new System.Drawing.Point(316, 131);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 24);
-            this.textBox2.TabIndex = 21;
+            this.tbHinta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbHinta.Location = new System.Drawing.Point(316, 175);
+            this.tbHinta.Name = "tbHinta";
+            this.tbHinta.Size = new System.Drawing.Size(100, 24);
+            this.tbHinta.TabIndex = 30;
             // 
-            // textBox1
+            // tbKuvaus
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox1.Location = new System.Drawing.Point(316, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(452, 24);
-            this.textBox1.TabIndex = 20;
-            this.textBox1.Text = "esim. Loppusiivous";
+            this.tbKuvaus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbKuvaus.Location = new System.Drawing.Point(316, 145);
+            this.tbKuvaus.Name = "tbKuvaus";
+            this.tbKuvaus.Size = new System.Drawing.Size(452, 24);
+            this.tbKuvaus.TabIndex = 29;
+            // 
+            // tbTyyppi
+            // 
+            this.tbTyyppi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbTyyppi.Location = new System.Drawing.Point(316, 115);
+            this.tbTyyppi.Name = "tbTyyppi";
+            this.tbTyyppi.Size = new System.Drawing.Size(249, 24);
+            this.tbTyyppi.TabIndex = 28;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label10.Location = new System.Drawing.Point(19, 211);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 18);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "ALV";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label9.Location = new System.Drawing.Point(19, 181);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 18);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Hinta";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label8.Location = new System.Drawing.Point(19, 151);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 18);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Kuvaus";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label7.Location = new System.Drawing.Point(19, 121);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 18);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Tyyppi";
+            // 
+            // dgwPalvelut
+            // 
+            this.dgwPalvelut.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwPalvelut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgwPalvelut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwPalvelut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.palveluidDataGridViewTextBoxColumn,
+            this.toimintaalueidDataGridViewTextBoxColumn,
+            this.nimiDataGridViewTextBoxColumn,
+            this.tyyppiDataGridViewTextBoxColumn,
+            this.kuvausDataGridViewTextBoxColumn,
+            this.hintaDataGridViewTextBoxColumn,
+            this.alvDataGridViewTextBoxColumn1});
+            this.dgwPalvelut.DataSource = this.palveluBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwPalvelut.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgwPalvelut.Location = new System.Drawing.Point(22, 251);
+            this.dgwPalvelut.Name = "dgwPalvelut";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwPalvelut.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgwPalvelut.Size = new System.Drawing.Size(746, 381);
+            this.dgwPalvelut.TabIndex = 23;
+            // 
+            // palveluidDataGridViewTextBoxColumn
+            // 
+            this.palveluidDataGridViewTextBoxColumn.DataPropertyName = "palvelu_id";
+            this.palveluidDataGridViewTextBoxColumn.HeaderText = "Palvelutunnus";
+            this.palveluidDataGridViewTextBoxColumn.Name = "palveluidDataGridViewTextBoxColumn";
+            // 
+            // toimintaalueidDataGridViewTextBoxColumn
+            // 
+            this.toimintaalueidDataGridViewTextBoxColumn.DataPropertyName = "toimintaalue_id";
+            this.toimintaalueidDataGridViewTextBoxColumn.HeaderText = "Toiminta-alue";
+            this.toimintaalueidDataGridViewTextBoxColumn.Name = "toimintaalueidDataGridViewTextBoxColumn";
+            // 
+            // nimiDataGridViewTextBoxColumn
+            // 
+            this.nimiDataGridViewTextBoxColumn.DataPropertyName = "nimi";
+            this.nimiDataGridViewTextBoxColumn.HeaderText = "nimi";
+            this.nimiDataGridViewTextBoxColumn.Name = "nimiDataGridViewTextBoxColumn";
+            // 
+            // tyyppiDataGridViewTextBoxColumn
+            // 
+            this.tyyppiDataGridViewTextBoxColumn.DataPropertyName = "tyyppi";
+            this.tyyppiDataGridViewTextBoxColumn.HeaderText = "tyyppi";
+            this.tyyppiDataGridViewTextBoxColumn.Name = "tyyppiDataGridViewTextBoxColumn";
+            // 
+            // kuvausDataGridViewTextBoxColumn
+            // 
+            this.kuvausDataGridViewTextBoxColumn.DataPropertyName = "kuvaus";
+            this.kuvausDataGridViewTextBoxColumn.HeaderText = "kuvaus";
+            this.kuvausDataGridViewTextBoxColumn.Name = "kuvausDataGridViewTextBoxColumn";
+            // 
+            // hintaDataGridViewTextBoxColumn
+            // 
+            this.hintaDataGridViewTextBoxColumn.DataPropertyName = "hinta";
+            this.hintaDataGridViewTextBoxColumn.HeaderText = "hinta";
+            this.hintaDataGridViewTextBoxColumn.Name = "hintaDataGridViewTextBoxColumn";
+            // 
+            // alvDataGridViewTextBoxColumn1
+            // 
+            this.alvDataGridViewTextBoxColumn1.DataPropertyName = "alv";
+            this.alvDataGridViewTextBoxColumn1.HeaderText = "alv";
+            this.alvDataGridViewTextBoxColumn1.Name = "alvDataGridViewTextBoxColumn1";
+            // 
+            // palveluBindingSource
+            // 
+            this.palveluBindingSource.DataMember = "palvelu";
+            this.palveluBindingSource.DataSource = this.vNDataset;
+            // 
+            // vNDataset
+            // 
+            this.vNDataset.DataSetName = "VNDataset";
+            this.vNDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbNimi
+            // 
+            this.tbNimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbNimi.Location = new System.Drawing.Point(316, 85);
+            this.tbNimi.Name = "tbNimi";
+            this.tbNimi.Size = new System.Drawing.Size(249, 24);
+            this.tbNimi.TabIndex = 22;
+            // 
+            // tbToimintaAlue_id
+            // 
+            this.tbToimintaAlue_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbToimintaAlue_id.Location = new System.Drawing.Point(316, 55);
+            this.tbToimintaAlue_id.Name = "tbToimintaAlue_id";
+            this.tbToimintaAlue_id.Size = new System.Drawing.Size(100, 24);
+            this.tbToimintaAlue_id.TabIndex = 21;
+            this.tbToimintaAlue_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tbPalvelu_id
+            // 
+            this.tbPalvelu_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbPalvelu_id.Location = new System.Drawing.Point(316, 25);
+            this.tbPalvelu_id.Name = "tbPalvelu_id";
+            this.tbPalvelu_id.Size = new System.Drawing.Size(249, 24);
+            this.tbPalvelu_id.TabIndex = 20;
             // 
             // lblPalvelunKuvaus
             // 
             this.lblPalvelunKuvaus.AutoSize = true;
             this.lblPalvelunKuvaus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblPalvelunKuvaus.Location = new System.Drawing.Point(55, 181);
+            this.lblPalvelunKuvaus.Location = new System.Drawing.Point(19, 91);
             this.lblPalvelunKuvaus.Name = "lblPalvelunKuvaus";
-            this.lblPalvelunKuvaus.Size = new System.Drawing.Size(57, 18);
+            this.lblPalvelunKuvaus.Size = new System.Drawing.Size(94, 18);
             this.lblPalvelunKuvaus.TabIndex = 19;
-            this.lblPalvelunKuvaus.Text = "Kuvaus";
+            this.lblPalvelunKuvaus.Text = "Palvelun nimi";
             // 
             // lblPalvelunHinta
             // 
             this.lblPalvelunHinta.AutoSize = true;
             this.lblPalvelunHinta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblPalvelunHinta.Location = new System.Drawing.Point(55, 136);
+            this.lblPalvelunHinta.Location = new System.Drawing.Point(19, 61);
             this.lblPalvelunHinta.Name = "lblPalvelunHinta";
-            this.lblPalvelunHinta.Size = new System.Drawing.Size(42, 18);
+            this.lblPalvelunHinta.Size = new System.Drawing.Size(97, 18);
             this.lblPalvelunHinta.TabIndex = 18;
-            this.lblPalvelunHinta.Text = "Hinta";
+            this.lblPalvelunHinta.Text = "Toiminta-alue";
             // 
             // lblPalvelunNimi
             // 
             this.lblPalvelunNimi.AutoSize = true;
             this.lblPalvelunNimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblPalvelunNimi.Location = new System.Drawing.Point(55, 88);
+            this.lblPalvelunNimi.Location = new System.Drawing.Point(19, 31);
             this.lblPalvelunNimi.Name = "lblPalvelunNimi";
-            this.lblPalvelunNimi.Size = new System.Drawing.Size(94, 18);
+            this.lblPalvelunNimi.Size = new System.Drawing.Size(99, 18);
             this.lblPalvelunNimi.TabIndex = 17;
-            this.lblPalvelunNimi.Text = "Palvelun nimi";
+            this.lblPalvelunNimi.Text = "Palvelutunnus";
             // 
             // btnPoistaPalvelu
             // 
@@ -394,6 +606,7 @@
             this.btnLisaaPalvelu.TabIndex = 14;
             this.btnLisaaPalvelu.Text = "Lisää palvelu";
             this.btnLisaaPalvelu.UseVisualStyleBackColor = false;
+            this.btnLisaaPalvelu.Click += new System.EventHandler(this.btnLisaaPalvelu_Click);
             // 
             // Asiakkaat
             // 
@@ -551,6 +764,74 @@
             this.Laskut.Text = "Laskut";
             this.Laskut.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.laskuidDataGridViewTextBoxColumn,
+            this.varausidDataGridViewTextBoxColumn,
+            this.summaDataGridViewTextBoxColumn,
+            this.alvDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.laskuBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.Location = new System.Drawing.Point(35, 315);
+            this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.Size = new System.Drawing.Size(705, 245);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // laskuidDataGridViewTextBoxColumn
+            // 
+            this.laskuidDataGridViewTextBoxColumn.DataPropertyName = "lasku_id";
+            this.laskuidDataGridViewTextBoxColumn.HeaderText = "lasku_id";
+            this.laskuidDataGridViewTextBoxColumn.Name = "laskuidDataGridViewTextBoxColumn";
+            // 
+            // varausidDataGridViewTextBoxColumn
+            // 
+            this.varausidDataGridViewTextBoxColumn.DataPropertyName = "varaus_id";
+            this.varausidDataGridViewTextBoxColumn.HeaderText = "varaus_id";
+            this.varausidDataGridViewTextBoxColumn.Name = "varausidDataGridViewTextBoxColumn";
+            // 
+            // summaDataGridViewTextBoxColumn
+            // 
+            this.summaDataGridViewTextBoxColumn.DataPropertyName = "summa";
+            this.summaDataGridViewTextBoxColumn.HeaderText = "summa";
+            this.summaDataGridViewTextBoxColumn.Name = "summaDataGridViewTextBoxColumn";
+            // 
+            // alvDataGridViewTextBoxColumn
+            // 
+            this.alvDataGridViewTextBoxColumn.DataPropertyName = "alv";
+            this.alvDataGridViewTextBoxColumn.HeaderText = "alv";
+            this.alvDataGridViewTextBoxColumn.Name = "alvDataGridViewTextBoxColumn";
+            // 
+            // laskuBindingSource
+            // 
+            this.laskuBindingSource.DataMember = "lasku";
+            this.laskuBindingSource.DataSource = this.vNDataset;
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
@@ -666,201 +947,18 @@
             this.lblLasku.TabIndex = 0;
             this.lblLasku.Text = "Laskutus";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.laskuidDataGridViewTextBoxColumn,
-            this.varausidDataGridViewTextBoxColumn,
-            this.summaDataGridViewTextBoxColumn,
-            this.alvDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.laskuBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 315);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Size = new System.Drawing.Size(705, 245);
-            this.dataGridView1.TabIndex = 17;
-            // 
-            // vNDataset
-            // 
-            this.vNDataset.DataSetName = "VNDataset";
-            this.vNDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // laskuBindingSource
-            // 
-            this.laskuBindingSource.DataMember = "lasku";
-            this.laskuBindingSource.DataSource = this.vNDataset;
-            // 
             // laskuTableAdapter
             // 
             this.laskuTableAdapter.ClearBeforeFill = true;
-            // 
-            // laskuidDataGridViewTextBoxColumn
-            // 
-            this.laskuidDataGridViewTextBoxColumn.DataPropertyName = "lasku_id";
-            this.laskuidDataGridViewTextBoxColumn.HeaderText = "lasku_id";
-            this.laskuidDataGridViewTextBoxColumn.Name = "laskuidDataGridViewTextBoxColumn";
-            // 
-            // varausidDataGridViewTextBoxColumn
-            // 
-            this.varausidDataGridViewTextBoxColumn.DataPropertyName = "varaus_id";
-            this.varausidDataGridViewTextBoxColumn.HeaderText = "varaus_id";
-            this.varausidDataGridViewTextBoxColumn.Name = "varausidDataGridViewTextBoxColumn";
-            // 
-            // summaDataGridViewTextBoxColumn
-            // 
-            this.summaDataGridViewTextBoxColumn.DataPropertyName = "summa";
-            this.summaDataGridViewTextBoxColumn.HeaderText = "summa";
-            this.summaDataGridViewTextBoxColumn.Name = "summaDataGridViewTextBoxColumn";
-            // 
-            // alvDataGridViewTextBoxColumn
-            // 
-            this.alvDataGridViewTextBoxColumn.DataPropertyName = "alv";
-            this.alvDataGridViewTextBoxColumn.HeaderText = "alv";
-            this.alvDataGridViewTextBoxColumn.Name = "alvDataGridViewTextBoxColumn";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.palveluidDataGridViewTextBoxColumn,
-            this.toimintaalueidDataGridViewTextBoxColumn,
-            this.nimiDataGridViewTextBoxColumn,
-            this.tyyppiDataGridViewTextBoxColumn,
-            this.kuvausDataGridViewTextBoxColumn,
-            this.hintaDataGridViewTextBoxColumn,
-            this.alvDataGridViewTextBoxColumn1});
-            this.dataGridView2.DataSource = this.palveluBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView2.Location = new System.Drawing.Point(24, 256);
-            this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView2.Size = new System.Drawing.Size(744, 376);
-            this.dataGridView2.TabIndex = 23;
-            // 
-            // palveluBindingSource
-            // 
-            this.palveluBindingSource.DataMember = "palvelu";
-            this.palveluBindingSource.DataSource = this.vNDataset;
             // 
             // palveluTableAdapter
             // 
             this.palveluTableAdapter.ClearBeforeFill = true;
             // 
-            // palveluidDataGridViewTextBoxColumn
+            // vNDatasetBindingSource
             // 
-            this.palveluidDataGridViewTextBoxColumn.DataPropertyName = "palvelu_id";
-            this.palveluidDataGridViewTextBoxColumn.HeaderText = "palvelu_id";
-            this.palveluidDataGridViewTextBoxColumn.Name = "palveluidDataGridViewTextBoxColumn";
-            // 
-            // toimintaalueidDataGridViewTextBoxColumn
-            // 
-            this.toimintaalueidDataGridViewTextBoxColumn.DataPropertyName = "toimintaalue_id";
-            this.toimintaalueidDataGridViewTextBoxColumn.HeaderText = "toimintaalue_id";
-            this.toimintaalueidDataGridViewTextBoxColumn.Name = "toimintaalueidDataGridViewTextBoxColumn";
-            // 
-            // nimiDataGridViewTextBoxColumn
-            // 
-            this.nimiDataGridViewTextBoxColumn.DataPropertyName = "nimi";
-            this.nimiDataGridViewTextBoxColumn.HeaderText = "nimi";
-            this.nimiDataGridViewTextBoxColumn.Name = "nimiDataGridViewTextBoxColumn";
-            // 
-            // tyyppiDataGridViewTextBoxColumn
-            // 
-            this.tyyppiDataGridViewTextBoxColumn.DataPropertyName = "tyyppi";
-            this.tyyppiDataGridViewTextBoxColumn.HeaderText = "tyyppi";
-            this.tyyppiDataGridViewTextBoxColumn.Name = "tyyppiDataGridViewTextBoxColumn";
-            // 
-            // kuvausDataGridViewTextBoxColumn
-            // 
-            this.kuvausDataGridViewTextBoxColumn.DataPropertyName = "kuvaus";
-            this.kuvausDataGridViewTextBoxColumn.HeaderText = "kuvaus";
-            this.kuvausDataGridViewTextBoxColumn.Name = "kuvausDataGridViewTextBoxColumn";
-            // 
-            // hintaDataGridViewTextBoxColumn
-            // 
-            this.hintaDataGridViewTextBoxColumn.DataPropertyName = "hinta";
-            this.hintaDataGridViewTextBoxColumn.HeaderText = "hinta";
-            this.hintaDataGridViewTextBoxColumn.Name = "hintaDataGridViewTextBoxColumn";
-            // 
-            // alvDataGridViewTextBoxColumn1
-            // 
-            this.alvDataGridViewTextBoxColumn1.DataPropertyName = "alv";
-            this.alvDataGridViewTextBoxColumn1.HeaderText = "alv";
-            this.alvDataGridViewTextBoxColumn1.Name = "alvDataGridViewTextBoxColumn1";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox9.Location = new System.Drawing.Point(360, 295);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(310, 24);
-            this.textBox9.TabIndex = 17;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label2.Location = new System.Drawing.Point(52, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 18);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Mökkitunnus";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox10.Location = new System.Drawing.Point(360, 42);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(311, 24);
-            this.textBox10.TabIndex = 19;
+            this.vNDatasetBindingSource.DataSource = this.vNDataset;
+            this.vNDatasetBindingSource.Position = 0;
             // 
             // Muokkaa
             // 
@@ -877,15 +975,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.Palvelut.ResumeLayout(false);
             this.Palvelut.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwPalvelut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).EndInit();
             this.Asiakkaat.ResumeLayout(false);
             this.Asiakkaat.PerformLayout();
             this.Laskut.ResumeLayout(false);
             this.Laskut.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vNDatasetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePalvelu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -911,9 +1011,9 @@
         private System.Windows.Forms.Label lblMokinHinta;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbNimi;
+        private System.Windows.Forms.TextBox tbToimintaAlue_id;
+        private System.Windows.Forms.TextBox tbPalvelu_id;
         private System.Windows.Forms.Label lblPalvelunKuvaus;
         private System.Windows.Forms.Label lblPalvelunHinta;
         private System.Windows.Forms.Label lblPalvelunNimi;
@@ -947,13 +1047,24 @@
         private VNDataset vNDataset;
         private System.Windows.Forms.BindingSource laskuBindingSource;
         private VNDatasetTableAdapters.laskuTableAdapter laskuTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgwPalvelut;
         private System.Windows.Forms.DataGridViewTextBoxColumn laskuidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn varausidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn summaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn alvDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource palveluBindingSource;
         private VNDatasetTableAdapters.palveluTableAdapter palveluTableAdapter;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbAlv;
+        private System.Windows.Forms.TextBox tbHinta;
+        private System.Windows.Forms.TextBox tbKuvaus;
+        private System.Windows.Forms.TextBox tbTyyppi;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn palveluidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn toimintaalueidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nimiDataGridViewTextBoxColumn;
@@ -961,8 +1072,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kuvausDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hintaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn alvDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.BindingSource vNDatasetBindingSource;
+        private System.Windows.Forms.BindingSource bindingSourcePalvelu;
     }
 }

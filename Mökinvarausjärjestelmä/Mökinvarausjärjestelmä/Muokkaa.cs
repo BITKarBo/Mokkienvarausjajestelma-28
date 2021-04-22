@@ -25,5 +25,16 @@ namespace Mökinvarausjärjestelmä
             this.laskuTableAdapter.Fill(this.vNDataset.lasku);
 
         }
+
+       
+        private void btnLisaaPalvelu_Click(object sender, EventArgs e)
+        {
+            Validate();
+            palveluBindingSource.EndEdit();
+            palveluTableAdapter.Update(this.vNDataset);
+            palveluTableAdapter.Insert(long.Parse(tbPalvelu_id.Text), long.Parse(tbToimintaAlue_id.Text), tbNimi.Text, int.Parse(tbTyyppi.Text), tbKuvaus.Text, double.Parse(tbHinta.Text), double.Parse(tbAlv.Text));
+            
+
+        }
     }
 }
