@@ -19,6 +19,8 @@ namespace Mökinvarausjärjestelmä
 
         private void Varaus_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vNDataset.asiakas' table. You can move, or remove it, as needed.
+            this.asiakasTableAdapter.Fill(this.vNDataset.asiakas);
 
             // TODO: This line of code loads data into the 'vNDataset.mokki' table. You can move, or remove it, as needed.
             this.mokkiTableAdapter.Fill(this.vNDataset.mokki);

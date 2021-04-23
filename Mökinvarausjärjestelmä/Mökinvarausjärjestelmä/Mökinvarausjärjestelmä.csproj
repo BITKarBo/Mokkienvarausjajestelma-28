@@ -101,6 +101,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Varaus.resx">
+      <DependentUpon>Varaus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VarausTiedot.resx">
       <DependentUpon>VarausTiedot.cs</DependentUpon>
     </EmbeddedResource>
