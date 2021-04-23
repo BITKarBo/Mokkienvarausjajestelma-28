@@ -47,6 +47,7 @@
             this.Toimialueboksi.Size = new System.Drawing.Size(193, 28);
             this.Toimialueboksi.TabIndex = 0;
             this.Toimialueboksi.Text = "Toimialue";
+            this.Toimialueboksi.SelectedIndexChanged += new System.EventHandler(this.Toimialueboksi_SelectedIndexChanged);
             // 
             // btnUusiVaraus
             // 

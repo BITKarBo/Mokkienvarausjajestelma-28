@@ -34,5 +34,10 @@ namespace Mökinvarausjärjestelmä
             var Muokkaa = new Muokkaa();
             Muokkaa.Show();
         }
+
+        private void Toimialueboksi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
