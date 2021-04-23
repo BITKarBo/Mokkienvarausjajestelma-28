@@ -36,7 +36,7 @@
             // 
             // Toimialueboksi
             // 
-            this.Toimialueboksi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Toimialueboksi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Toimialueboksi.FormattingEnabled = true;
             this.Toimialueboksi.Items.AddRange(new object[] {
             "Ruka",
@@ -44,13 +44,13 @@
             "Tahko"});
             this.Toimialueboksi.Location = new System.Drawing.Point(266, 108);
             this.Toimialueboksi.Name = "Toimialueboksi";
-            this.Toimialueboksi.Size = new System.Drawing.Size(193, 33);
+            this.Toimialueboksi.Size = new System.Drawing.Size(193, 28);
             this.Toimialueboksi.TabIndex = 0;
             this.Toimialueboksi.Text = "Toimialue";
             // 
             // btnUusiVaraus
             // 
-            this.btnUusiVaraus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUusiVaraus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnUusiVaraus.Location = new System.Drawing.Point(265, 180);
             this.btnUusiVaraus.Name = "btnUusiVaraus";
             this.btnUusiVaraus.Size = new System.Drawing.Size(193, 42);
@@ -61,7 +61,7 @@
             // 
             // btnKalenteri
             // 
-            this.btnKalenteri.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKalenteri.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnKalenteri.Location = new System.Drawing.Point(265, 242);
             this.btnKalenteri.Name = "btnKalenteri";
             this.btnKalenteri.Size = new System.Drawing.Size(194, 48);
@@ -72,7 +72,7 @@
             // 
             // btnMuokkaa
             // 
-            this.btnMuokkaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMuokkaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnMuokkaa.Location = new System.Drawing.Point(264, 322);
             this.btnMuokkaa.Name = "btnMuokkaa";
             this.btnMuokkaa.Size = new System.Drawing.Size(194, 55);
