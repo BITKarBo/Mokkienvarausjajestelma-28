@@ -27,7 +27,13 @@ namespace Mökinvarausjärjestelmä
             // TODO: This line of code loads data into the 'vNDataset.toimintaalue' table. You can move, or remove it, as needed.
             this.toimintaalueTableAdapter.Fill(this.vNDataset.toimintaalue);
 
+            
 
+        }
+
+        private void cbToimintaalue_Leave(object sender, EventArgs e)
+        {
+            this.mokkiBindingSource.Filter = string.Format("toimintaalue_id = {0}", cbToimintaalue.SelectedValue.ToString());
         }
     }
 }
