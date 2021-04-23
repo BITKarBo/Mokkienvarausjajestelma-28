@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Lasku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lasku.Designer.cs">
+      <DependentUpon>Lasku.cs</DependentUpon>
+    </Compile>
     <Compile Include="Muokkaa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +73,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raportointi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raportointi.Designer.cs">
+      <DependentUpon>Raportointi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Varaus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +96,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VNDataset.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Lasku.resx">
+      <DependentUpon>Lasku.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Muokkaa.resx">
       <DependentUpon>Muokkaa.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +117,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Raportointi.resx">
+      <DependentUpon>Raportointi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Varaus.resx">
       <DependentUpon>Varaus.cs</DependentUpon>
     </EmbeddedResource>

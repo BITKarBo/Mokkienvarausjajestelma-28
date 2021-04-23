@@ -102,10 +102,10 @@
             // 
             this.lblLoppu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLoppu.AutoSize = true;
-            this.lblLoppu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoppu.Location = new System.Drawing.Point(366, 10);
+            this.lblLoppu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoppu.Location = new System.Drawing.Point(384, 13);
             this.lblLoppu.Name = "lblLoppu";
-            this.lblLoppu.Size = new System.Drawing.Size(141, 25);
+            this.lblLoppu.Size = new System.Drawing.Size(105, 20);
             this.lblLoppu.TabIndex = 2;
             this.lblLoppu.Text = "Lopetus PVM";
             // 
@@ -113,10 +113,10 @@
             // 
             this.lblAlku.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAlku.AutoSize = true;
-            this.lblAlku.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlku.Location = new System.Drawing.Point(81, 10);
+            this.lblAlku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlku.Location = new System.Drawing.Point(98, 13);
             this.lblAlku.Name = "lblAlku";
-            this.lblAlku.Size = new System.Drawing.Size(129, 25);
+            this.lblAlku.Size = new System.Drawing.Size(95, 20);
             this.lblAlku.TabIndex = 1;
             this.lblAlku.Text = "Aloitus PVM";
             // 
@@ -132,7 +132,7 @@
             // btnHae
             // 
             this.btnHae.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnHae.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHae.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHae.Location = new System.Drawing.Point(602, 53);
             this.btnHae.Name = "btnHae";
             this.btnHae.Size = new System.Drawing.Size(132, 82);
@@ -154,10 +154,10 @@
             // 
             this.lblMokkiVaraukset.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMokkiVaraukset.AutoSize = true;
-            this.lblMokkiVaraukset.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMokkiVaraukset.Location = new System.Drawing.Point(3, 157);
+            this.lblMokkiVaraukset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMokkiVaraukset.Location = new System.Drawing.Point(3, 160);
             this.lblMokkiVaraukset.Name = "lblMokkiVaraukset";
-            this.lblMokkiVaraukset.Size = new System.Drawing.Size(109, 25);
+            this.lblMokkiVaraukset.Size = new System.Drawing.Size(82, 20);
             this.lblMokkiVaraukset.TabIndex = 0;
             this.lblMokkiVaraukset.Text = "Varaukset";
             // 
