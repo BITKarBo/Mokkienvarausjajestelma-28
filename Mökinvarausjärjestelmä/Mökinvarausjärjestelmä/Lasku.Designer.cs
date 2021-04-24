@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cbPaperiLasku = new System.Windows.Forms.CheckBox();
-            this.cbSahkoposti = new System.Windows.Forms.CheckBox();
             this.btnLaheta = new System.Windows.Forms.Button();
+            this.cbSahkoposti = new System.Windows.Forms.CheckBox();
+            this.cbPaperiLasku = new System.Windows.Forms.CheckBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -48,15 +50,10 @@
             this.panel1.Size = new System.Drawing.Size(784, 761);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(12, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 547);
-            this.panel2.TabIndex = 0;
-            // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.btnLaheta);
             this.panel3.Controls.Add(this.cbSahkoposti);
             this.panel3.Controls.Add(this.cbPaperiLasku);
@@ -65,16 +62,15 @@
             this.panel3.Size = new System.Drawing.Size(760, 184);
             this.panel3.TabIndex = 1;
             // 
-            // cbPaperiLasku
+            // btnLaheta
             // 
-            this.cbPaperiLasku.AutoSize = true;
-            this.cbPaperiLasku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPaperiLasku.Location = new System.Drawing.Point(18, 61);
-            this.cbPaperiLasku.Name = "cbPaperiLasku";
-            this.cbPaperiLasku.Size = new System.Drawing.Size(120, 24);
-            this.cbPaperiLasku.TabIndex = 0;
-            this.cbPaperiLasku.Text = "Paperi Lasku";
-            this.cbPaperiLasku.UseVisualStyleBackColor = true;
+            this.btnLaheta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaheta.Location = new System.Drawing.Point(603, 61);
+            this.btnLaheta.Name = "btnLaheta";
+            this.btnLaheta.Size = new System.Drawing.Size(141, 73);
+            this.btnLaheta.TabIndex = 2;
+            this.btnLaheta.Text = "Lähetä";
+            this.btnLaheta.UseVisualStyleBackColor = true;
             // 
             // cbSahkoposti
             // 
@@ -87,15 +83,39 @@
             this.cbSahkoposti.Text = "Sähköposti Lasku";
             this.cbSahkoposti.UseVisualStyleBackColor = true;
             // 
-            // btnLaheta
+            // cbPaperiLasku
             // 
-            this.btnLaheta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLaheta.Location = new System.Drawing.Point(603, 61);
-            this.btnLaheta.Name = "btnLaheta";
-            this.btnLaheta.Size = new System.Drawing.Size(141, 73);
-            this.btnLaheta.TabIndex = 2;
-            this.btnLaheta.Text = "Lähetä";
-            this.btnLaheta.UseVisualStyleBackColor = true;
+            this.cbPaperiLasku.AutoSize = true;
+            this.cbPaperiLasku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPaperiLasku.Location = new System.Drawing.Point(18, 61);
+            this.cbPaperiLasku.Name = "cbPaperiLasku";
+            this.cbPaperiLasku.Size = new System.Drawing.Size(120, 24);
+            this.cbPaperiLasku.TabIndex = 0;
+            this.cbPaperiLasku.Text = "Paperi Lasku";
+            this.cbPaperiLasku.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(760, 547);
+            this.panel2.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(232, 113);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(287, 20);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "Sähköposti";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(232, 64);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(287, 20);
+            this.textBox2.TabIndex = 4;
+            this.textBox2.Text = "Osoite";
             // 
             // Lasku
             // 
@@ -122,5 +142,7 @@
         private System.Windows.Forms.CheckBox cbSahkoposti;
         private System.Windows.Forms.CheckBox cbPaperiLasku;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

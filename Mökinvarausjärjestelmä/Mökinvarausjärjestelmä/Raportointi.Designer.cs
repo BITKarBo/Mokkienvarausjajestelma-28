@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tcontrolRaportit = new System.Windows.Forms.TabControl();
             this.PageMajoitukset = new System.Windows.Forms.TabPage();
+            this.chartMajoitukset = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.PagePalvelut = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblAlku = new System.Windows.Forms.Label();
-            this.lblLoppu = new System.Windows.Forms.Label();
-            this.dateTimePickerAloitus = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerLopetus = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblLoppu = new System.Windows.Forms.Label();
+            this.lblAlku = new System.Windows.Forms.Label();
+            this.dateTimePickerAloitus = new System.Windows.Forms.DateTimePicker();
             this.ToimialueSelect = new System.Windows.Forms.ComboBox();
-            this.chartMajoitukset = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tcontrolRaportit.SuspendLayout();
             this.PageMajoitukset.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMajoitukset)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,14 +63,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 761);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.tableLayoutPanel1);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 130);
-            this.panel2.TabIndex = 0;
             // 
             // panel3
             // 
@@ -103,6 +95,23 @@
             this.PageMajoitukset.Text = "Majoitukset";
             this.PageMajoitukset.UseVisualStyleBackColor = true;
             // 
+            // chartMajoitukset
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartMajoitukset.ChartAreas.Add(chartArea1);
+            this.chartMajoitukset.Cursor = System.Windows.Forms.Cursors.Default;
+            legend1.Name = "Legend1";
+            this.chartMajoitukset.Legends.Add(legend1);
+            this.chartMajoitukset.Location = new System.Drawing.Point(170, 149);
+            this.chartMajoitukset.Name = "chartMajoitukset";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartMajoitukset.Series.Add(series1);
+            this.chartMajoitukset.Size = new System.Drawing.Size(300, 300);
+            this.chartMajoitukset.TabIndex = 0;
+            this.chartMajoitukset.Text = "Majoitukset";
+            // 
             // PagePalvelut
             // 
             this.PagePalvelut.Location = new System.Drawing.Point(4, 29);
@@ -112,6 +121,14 @@
             this.PagePalvelut.TabIndex = 1;
             this.PagePalvelut.Text = "Palvelut";
             this.PagePalvelut.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tableLayoutPanel1);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(760, 130);
+            this.panel2.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -135,37 +152,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(760, 130);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // lblAlku
-            // 
-            this.lblAlku.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAlku.AutoSize = true;
-            this.lblAlku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlku.Location = new System.Drawing.Point(28, 11);
-            this.lblAlku.Name = "lblAlku";
-            this.lblAlku.Size = new System.Drawing.Size(40, 20);
-            this.lblAlku.TabIndex = 2;
-            this.lblAlku.Text = "Alku";
-            // 
-            // lblLoppu
-            // 
-            this.lblLoppu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblLoppu.AutoSize = true;
-            this.lblLoppu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoppu.Location = new System.Drawing.Point(21, 60);
-            this.lblLoppu.Name = "lblLoppu";
-            this.lblLoppu.Size = new System.Drawing.Size(54, 20);
-            this.lblLoppu.TabIndex = 3;
-            this.lblLoppu.Text = "Loppu";
-            // 
-            // dateTimePickerAloitus
-            // 
-            this.dateTimePickerAloitus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerAloitus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerAloitus.Location = new System.Drawing.Point(100, 8);
-            this.dateTimePickerAloitus.Name = "dateTimePickerAloitus";
-            this.dateTimePickerAloitus.Size = new System.Drawing.Size(276, 26);
-            this.dateTimePickerAloitus.TabIndex = 5;
-            // 
             // dateTimePickerLopetus
             // 
             this.dateTimePickerLopetus.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -186,6 +172,37 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Toimialue";
             // 
+            // lblLoppu
+            // 
+            this.lblLoppu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLoppu.AutoSize = true;
+            this.lblLoppu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoppu.Location = new System.Drawing.Point(21, 60);
+            this.lblLoppu.Name = "lblLoppu";
+            this.lblLoppu.Size = new System.Drawing.Size(54, 20);
+            this.lblLoppu.TabIndex = 3;
+            this.lblLoppu.Text = "Loppu";
+            // 
+            // lblAlku
+            // 
+            this.lblAlku.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAlku.AutoSize = true;
+            this.lblAlku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlku.Location = new System.Drawing.Point(28, 11);
+            this.lblAlku.Name = "lblAlku";
+            this.lblAlku.Size = new System.Drawing.Size(40, 20);
+            this.lblAlku.TabIndex = 2;
+            this.lblAlku.Text = "Alku";
+            // 
+            // dateTimePickerAloitus
+            // 
+            this.dateTimePickerAloitus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerAloitus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerAloitus.Location = new System.Drawing.Point(100, 8);
+            this.dateTimePickerAloitus.Name = "dateTimePickerAloitus";
+            this.dateTimePickerAloitus.Size = new System.Drawing.Size(276, 26);
+            this.dateTimePickerAloitus.TabIndex = 5;
+            // 
             // ToimialueSelect
             // 
             this.ToimialueSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -201,23 +218,6 @@
             this.ToimialueSelect.TabIndex = 9;
             this.ToimialueSelect.Text = "Toimialue";
             // 
-            // chartMajoitukset
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chartMajoitukset.ChartAreas.Add(chartArea2);
-            this.chartMajoitukset.Cursor = System.Windows.Forms.Cursors.Default;
-            legend2.Name = "Legend1";
-            this.chartMajoitukset.Legends.Add(legend2);
-            this.chartMajoitukset.Location = new System.Drawing.Point(170, 149);
-            this.chartMajoitukset.Name = "chartMajoitukset";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartMajoitukset.Series.Add(series2);
-            this.chartMajoitukset.Size = new System.Drawing.Size(300, 300);
-            this.chartMajoitukset.TabIndex = 0;
-            this.chartMajoitukset.Text = "Majoitukset";
-            // 
             // Raportointi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,13 +229,13 @@
             this.Name = "Raportointi";
             this.Text = "Raportointi";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tcontrolRaportit.ResumeLayout(false);
             this.PageMajoitukset.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartMajoitukset)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMajoitukset)).EndInit();
             this.ResumeLayout(false);
 
         }
