@@ -79,6 +79,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.asiakasTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.asiakasTableAdapter();
+            this.btnHaeMokit = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.varausTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.varausTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).BeginInit();
@@ -87,6 +90,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbToimintaalue
@@ -250,6 +254,7 @@
             // 
             // dtpAlkupvm
             // 
+            this.dtpAlkupvm.CustomFormat = "dd/mm/yyyy";
             this.dtpAlkupvm.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpAlkupvm.Location = new System.Drawing.Point(236, 41);
             this.dtpAlkupvm.Name = "dtpAlkupvm";
@@ -515,6 +520,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnHaeMokit);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.cbToimintaalue);
             this.groupBox3.Controls.Add(this.lblToimialue);
@@ -534,6 +540,25 @@
             // asiakasTableAdapter
             // 
             this.asiakasTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnHaeMokit
+            // 
+            this.btnHaeMokit.Location = new System.Drawing.Point(523, 41);
+            this.btnHaeMokit.Name = "btnHaeMokit";
+            this.btnHaeMokit.Size = new System.Drawing.Size(75, 23);
+            this.btnHaeMokit.TabIndex = 15;
+            this.btnHaeMokit.Text = "Hae";
+            this.btnHaeMokit.UseVisualStyleBackColor = true;
+            this.btnHaeMokit.Click += new System.EventHandler(this.btnHaeMokit_Click);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "varaus";
+            this.bindingSource1.DataSource = this.vNDataset;
+            // 
+            // varausTableAdapter
+            // 
+            this.varausTableAdapter.ClearBeforeFill = true;
             // 
             // Varaus
             // 
@@ -559,6 +584,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,5 +642,8 @@
         private System.Windows.Forms.BindingSource asiakasBindingSource;
         private VNDatasetTableAdapters.asiakasTableAdapter asiakasTableAdapter;
         private System.Windows.Forms.Button btnHaeAsiakas;
+        private System.Windows.Forms.Button btnHaeMokit;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private VNDatasetTableAdapters.varausTableAdapter varausTableAdapter;
     }
 }
