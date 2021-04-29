@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tcontrolRaportit = new System.Windows.Forms.TabControl();
@@ -45,6 +47,9 @@
             this.lblAlku = new System.Windows.Forms.Label();
             this.dateTimePickerAloitus = new System.Windows.Forms.DateTimePicker();
             this.ToimialueSelect = new System.Windows.Forms.ComboBox();
+            this.vNDataset = new Mökinvarausjärjestelmä.VNDataset();
+            this.varausBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.varausTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.varausTableAdapter();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tcontrolRaportit.SuspendLayout();
@@ -52,6 +57,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartMajoitukset)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,8 +108,9 @@
             this.chartMajoitukset.ChartAreas.Add(chartArea1);
             this.chartMajoitukset.Cursor = System.Windows.Forms.Cursors.Default;
             legend1.Name = "Legend1";
+            legend1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chartMajoitukset.Legends.Add(legend1);
-            this.chartMajoitukset.Location = new System.Drawing.Point(170, 149);
+            this.chartMajoitukset.Location = new System.Drawing.Point(6, 6);
             this.chartMajoitukset.Name = "chartMajoitukset";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -111,6 +119,10 @@
             this.chartMajoitukset.Size = new System.Drawing.Size(300, 300);
             this.chartMajoitukset.TabIndex = 0;
             this.chartMajoitukset.Text = "Majoitukset";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "TitleMajoitus";
+            title1.Text = "Raportti Majoituksista";
+            this.chartMajoitukset.Titles.Add(title1);
             // 
             // PagePalvelut
             // 
@@ -218,6 +230,20 @@
             this.ToimialueSelect.TabIndex = 9;
             this.ToimialueSelect.Text = "Toimialue";
             // 
+            // vNDataset
+            // 
+            this.vNDataset.DataSetName = "VNDataset";
+            this.vNDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // varausBindingSource
+            // 
+            this.varausBindingSource.DataMember = "varaus";
+            this.varausBindingSource.DataSource = this.vNDataset;
+            // 
+            // varausTableAdapter
+            // 
+            this.varausTableAdapter.ClearBeforeFill = true;
+            // 
             // Raportointi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,6 +254,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 800);
             this.Name = "Raportointi";
             this.Text = "Raportointi";
+            this.Load += new System.EventHandler(this.Raportointi_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tcontrolRaportit.ResumeLayout(false);
@@ -236,6 +263,8 @@
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,5 +285,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ToimialueSelect;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartMajoitukset;
+        private VNDataset vNDataset;
+        private System.Windows.Forms.BindingSource varausBindingSource;
+        private VNDatasetTableAdapters.varausTableAdapter varausTableAdapter;
     }
 }
