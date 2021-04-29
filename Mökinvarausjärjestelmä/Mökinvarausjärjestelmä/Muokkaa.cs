@@ -19,6 +19,10 @@ namespace Mökinvarausjärjestelmä
 
         private void Muokkaa_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vNDataset.posti' table. You can move, or remove it, as needed.
+            this.postiTableAdapter.Fill(this.vNDataset.posti);
+            // TODO: This line of code loads data into the 'vNDataset.toimintaalue' table. You can move, or remove it, as needed.
+            this.toimintaalueTableAdapter.Fill(this.vNDataset.toimintaalue);
             // TODO: This line of code loads data into the 'vNDataset.mokki' table. You can move, or remove it, as needed.
             this.mokkiTableAdapter.Fill(this.vNDataset.mokki);
             // TODO: This line of code loads data into the 'vNDataset.palvelu' table. You can move, or remove it, as needed.
@@ -28,27 +32,46 @@ namespace Mökinvarausjärjestelmä
 
         }
 
-       
+
         private void btnLisaaPalvelu_Click(object sender, EventArgs e) //lisää palvelun tietokantaan palvelut välilehdessä, kun välilehden tekstikenttiin on lisätty pyydetyt tiedot
         {
             Validate();
             palveluBindingSource.EndEdit();
             palveluTableAdapter.Update(this.vNDataset);
             palveluTableAdapter.Insert(long.Parse(tbPalvelu_id.Text), long.Parse(tbToimintaAlue_id.Text), tbNimi.Text, int.Parse(tbTyyppi.Text), tbKuvaus.Text, double.Parse(tbHinta.Text), double.Parse(tbAlv.Text));
-         
+
 
         }
 
-        
+
         private void btnPoistaPalvelu_Click(object sender, EventArgs e) //Poistaa valitun rivin Palvelut välilehden DataGridWievistä 
         {
             int rowIndex = dgwPalvelut.CurrentCell.RowIndex;
             dgwPalvelut.Rows.RemoveAt(rowIndex);
         }
 
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnToimintaAlueLisaa_Click(object sender, EventArgs e)
         {
-
+            Validate();
+            toimintaalueBindingSource.EndEdit();
+            toimintaalueTableAdapter.Update(this.vNDataset);
+            toimintaalueTableAdapter.Insert(tbToimintaAlueNimi.Text);
         }
+
+        private void btnToimintaAluePoista_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dgwToimintaAlue.CurrentCell.RowIndex;
+            dgwToimintaAlue.Rows.RemoveAt(rowIndex);
+        }
+
+        private void btnLisaaMokki_Click(object sender, EventArgs e)
+        {
+            Validate();
+            mokkiBindingSource.EndEdit();
+            mokkiTableAdapter.Update(this.vNDataset);
+            mokkiTableAdapter.Insert(long.Parse(cbToimintaAlue.SelectedValue.ToString()),tbMokinPostiNumero.Text, tbMokinNimi.Text, tbMokinOsoite.Text, tbMokinKuvaus.Text, int.Parse(tbMokinSangyt.Text), tbMokinVarustelu.Text);
+        }
+
+
     }
 }
