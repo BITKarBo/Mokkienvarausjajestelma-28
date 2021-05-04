@@ -48,7 +48,7 @@
             this.tbVarausNro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbAsiakas_id = new System.Windows.Forms.ComboBox();
             this.asiakasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtpAlkupvm = new System.Windows.Forms.DateTimePicker();
             this.dtpLoppupvm = new System.Windows.Forms.DateTimePicker();
@@ -64,7 +64,7 @@
             this.btnHae = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnHaeAsiakas = new System.Windows.Forms.Button();
+            this.btnLisaaAsiakas = new System.Windows.Forms.Button();
             this.tbSahkoposti = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tbPuhelin = new System.Windows.Forms.TextBox();
@@ -82,6 +82,9 @@
             this.btnHaeMokit = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.varausTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.varausTableAdapter();
+            this.palveluTableAdapter1 = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.palveluTableAdapter();
+            this.palveluBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.varausBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).BeginInit();
@@ -91,6 +94,8 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cbToimintaalue
@@ -104,7 +109,6 @@
             this.cbToimintaalue.Size = new System.Drawing.Size(121, 21);
             this.cbToimintaalue.TabIndex = 0;
             this.cbToimintaalue.ValueMember = "toimintaalue_id";
-            this.cbToimintaalue.Leave += new System.EventHandler(this.cbToimintaalue_Leave);
             // 
             // toimintaalueBindingSource
             // 
@@ -236,16 +240,16 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Asiakasnro";
             // 
-            // comboBox1
+            // cbAsiakas_id
             // 
-            this.comboBox1.DataSource = this.asiakasBindingSource;
-            this.comboBox1.DisplayMember = "asiakas_id";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.ValueMember = "asiakas_id";
+            this.cbAsiakas_id.DataSource = this.asiakasBindingSource;
+            this.cbAsiakas_id.DisplayMember = "asiakas_id";
+            this.cbAsiakas_id.FormattingEnabled = true;
+            this.cbAsiakas_id.Location = new System.Drawing.Point(10, 40);
+            this.cbAsiakas_id.Name = "cbAsiakas_id";
+            this.cbAsiakas_id.Size = new System.Drawing.Size(121, 21);
+            this.cbAsiakas_id.TabIndex = 7;
+            this.cbAsiakas_id.ValueMember = "asiakas_id";
             // 
             // asiakasBindingSource
             // 
@@ -360,6 +364,7 @@
             this.btnHae.TabIndex = 20;
             this.btnHae.Text = "Hae";
             this.btnHae.UseVisualStyleBackColor = true;
+            this.btnHae.Click += new System.EventHandler(this.btnHae_Click);
             // 
             // groupBox1
             // 
@@ -379,7 +384,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnHaeAsiakas);
+            this.groupBox2.Controls.Add(this.btnLisaaAsiakas);
             this.groupBox2.Controls.Add(this.tbSahkoposti);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.tbPuhelin);
@@ -393,7 +398,7 @@
             this.groupBox2.Controls.Add(this.tbEtunimi);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cbAsiakas_id);
             this.groupBox2.Location = new System.Drawing.Point(12, 99);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(760, 171);
@@ -401,14 +406,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Asiakastiedot";
             // 
-            // btnHaeAsiakas
+            // btnLisaaAsiakas
             // 
-            this.btnHaeAsiakas.Location = new System.Drawing.Point(10, 67);
-            this.btnHaeAsiakas.Name = "btnHaeAsiakas";
-            this.btnHaeAsiakas.Size = new System.Drawing.Size(121, 23);
-            this.btnHaeAsiakas.TabIndex = 20;
-            this.btnHaeAsiakas.Text = "Hae";
-            this.btnHaeAsiakas.UseVisualStyleBackColor = true;
+            this.btnLisaaAsiakas.Location = new System.Drawing.Point(10, 67);
+            this.btnLisaaAsiakas.Name = "btnLisaaAsiakas";
+            this.btnLisaaAsiakas.Size = new System.Drawing.Size(121, 23);
+            this.btnLisaaAsiakas.TabIndex = 20;
+            this.btnLisaaAsiakas.Text = "Lisää uusi";
+            this.btnLisaaAsiakas.UseVisualStyleBackColor = true;
+            this.btnLisaaAsiakas.Click += new System.EventHandler(this.btnLisaaAsiakas_Click);
             // 
             // tbSahkoposti
             // 
@@ -560,6 +566,20 @@
             // 
             this.varausTableAdapter.ClearBeforeFill = true;
             // 
+            // palveluTableAdapter1
+            // 
+            this.palveluTableAdapter1.ClearBeforeFill = true;
+            // 
+            // palveluBindingSource
+            // 
+            this.palveluBindingSource.DataMember = "palvelu";
+            this.palveluBindingSource.DataSource = this.vNDataset;
+            // 
+            // varausBindingSource
+            // 
+            this.varausBindingSource.DataMember = "varaus";
+            this.varausBindingSource.DataSource = this.vNDataset;
+            // 
             // Varaus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,6 +605,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,7 +626,7 @@
         private System.Windows.Forms.TextBox tbVarausNro;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbAsiakas_id;
         private System.Windows.Forms.DateTimePicker dtpAlkupvm;
         private System.Windows.Forms.DateTimePicker dtpLoppupvm;
         private System.Windows.Forms.Label label3;
@@ -641,9 +663,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kuvaus;
         private System.Windows.Forms.BindingSource asiakasBindingSource;
         private VNDatasetTableAdapters.asiakasTableAdapter asiakasTableAdapter;
-        private System.Windows.Forms.Button btnHaeAsiakas;
+        private System.Windows.Forms.Button btnLisaaAsiakas;
         private System.Windows.Forms.Button btnHaeMokit;
         private System.Windows.Forms.BindingSource bindingSource1;
         private VNDatasetTableAdapters.varausTableAdapter varausTableAdapter;
+        private VNDatasetTableAdapters.palveluTableAdapter palveluTableAdapter1;
+        private System.Windows.Forms.BindingSource palveluBindingSource;
+        private System.Windows.Forms.BindingSource varausBindingSource;
     }
 }
