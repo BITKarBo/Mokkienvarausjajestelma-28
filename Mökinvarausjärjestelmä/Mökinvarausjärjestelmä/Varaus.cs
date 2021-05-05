@@ -11,16 +11,24 @@ using System.Windows.Forms;
 using System.Data.Odbc;
 
 // TODO1: varauksien palvelut haku.
-// TODO2: Uuden varauksen lisäys tietokantaan.
 // TODO3: Tekstikenttien validoinnit.
+// TODO4: !! olemassa olevassa varauksessa ei voi etsiä uutta mökkiä !!
 
 namespace Mökinvarausjärjestelmä
 {
     public partial class Varaus : Form
     {
+        OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies");
         public Varaus()
         {
             InitializeComponent();
+        }
+
+        public Varaus(string varausnum)
+        {
+            InitializeComponent();
+            tbVarausNro.Text = varausnum;
+            btnHaeMokit_Click(varausnum, EventArgs.Empty);
         }
 
         private void Varaus_Load(object sender, EventArgs e)
@@ -39,7 +47,7 @@ namespace Mökinvarausjärjestelmä
             
             //Lisätään palvelut clbPalvelu listaan. (Ei toimi halutulla tavalla vielä) 
             string sqlcommand = "SELECT * FROM palvelu";
-            OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies");
+            //OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies");
             OdbcDataAdapter adapter = new OdbcDataAdapter(sqlcommand, connection);
             DataTable dtPalvelu = new DataTable();
             try
@@ -65,7 +73,6 @@ namespace Mökinvarausjärjestelmä
         {
             // Hake vapaana olevat mökit toimialueittain ja halutusta aikavälistä ja näytää ne datagridviewissä
             string sqlcommand = string.Format("SELECT * FROM mokki WHERE toimintaalue_id = {0} AND mokki_id NOT IN (SELECT mokki_mokki_id FROM varaus WHERE varattu_alkupvm BETWEEN '{1:yyyy-MM-dd}' AND '{2:yyyy-MM-dd}' AND varattu_loppupvm BETWEEN '{1:yyyy-MM-dd}' AND '{2:yyyy-MM-dd}');", cbToimintaalue.SelectedValue, dtpAlkupvm.Value, dtpLoppupvm.Value);
-            OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies");
             OdbcDataAdapter adapter = new OdbcDataAdapter(sqlcommand, connection);
             DataTable dt = new DataTable();
             try
@@ -93,8 +100,7 @@ namespace Mökinvarausjärjestelmä
 
         private void btnHae_Click(object sender, EventArgs e)
         {   // haetaan varauksen mökin tiedot
-            string sqlcommand = string.Format("SELECT * FROM mokki WHERE mokki_id IN (SELECT mokki_mokki_id FROM varaus WHERE varaus.varaus_id = {0})", tbVarausNro.Text);
-            OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies");
+            string sqlcommand = string.Format("SELECT * FROM mokki WHERE mokki_id IN (SELECT mokki_mokki_id FROM varaus WHERE varaus.varaus_id = {0})", tbVarausNro.Text);          
             OdbcDataAdapter adapter = new OdbcDataAdapter(sqlcommand, connection);
             DataTable dt = new DataTable();
             try
@@ -114,12 +120,12 @@ namespace Mökinvarausjärjestelmä
             cbToimintaalue.SelectedValue = dgvMokki.FirstDisplayedCell.Value.ToString();
 
             // Haetaan varauksen päivämäärät ja asiakas tiedot.
-            string queryStr = string.Format("SELECT varattu_pvm, vahvistus_pvm, varattu_alkupvm, varattu_loppupvm, asiakas_id FROM varaus WHERE varaus_id = {0}", tbVarausNro.Text);
-            using (OdbcConnection con = new OdbcConnection("Dsn=Village Newbies"))
+            sqlcommand = string.Format("SELECT varattu_pvm, vahvistus_pvm, varattu_alkupvm, varattu_loppupvm, asiakas_id FROM varaus WHERE varaus_id = {0}", tbVarausNro.Text);
+            using (connection)
             {
-                OdbcCommand command = new OdbcCommand(queryStr, con);
+                OdbcCommand command = new OdbcCommand(sqlcommand, connection);
 
-                con.Open();
+                connection.Open();
 
                 OdbcDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -129,10 +135,34 @@ namespace Mökinvarausjärjestelmä
                     dtpAlkupvm.Value = reader.GetDateTime(2);
                     dtpLoppupvm.Value = reader.GetDateTime(3);
                     cbAsiakas_id.Text = reader.GetString(4);
-                    
+
                 }
                 reader.Close();
             }
         }
+
+        private void btnTallenna_Click(object sender, EventArgs e)
+        {
+            if (tbVarausNro.Text == "")
+            { // lisää uuden varauksen.
+                Validate();
+                varausBindingSource.EndEdit();
+                varausTableAdapter.Update(this.vNDataset);
+                varausTableAdapter.Insert(int.Parse(cbAsiakas_id.Text), int.Parse(dgvMokki.SelectedRows[0].Cells[1].Value.ToString()), DateTime.Parse(dtpVarauspvm.Text), DateTime.Parse(dtpVahvistus.Text), DateTime.Parse(dtpAlkupvm.Text), DateTime.Parse(dtpLoppupvm.Text));
+            }
+            else
+            { //päivittää olemassa olevan varauksen.
+                string sqlcommand = string.Format("UPDATE varaus SET asiakas_id = {0}, mokki_mokki_id = {1}, varattu_pvm = '{2:yyyy-MM-dd}', vahvistus_pvm = '{3:yyyy-MM-dd}', varattu_alkupvm = '{4:yyyy-MM-dd}', varattu_loppupvm = '{5:yyyy-MM-dd}' WHERE varaus_id = {6};",
+                    int.Parse(cbAsiakas_id.Text), int.Parse(dgvMokki.SelectedRows[0].Cells[1].Value.ToString()), DateTime.Parse(dtpVarauspvm.Text), DateTime.Parse(dtpVahvistus.Text), DateTime.Parse(dtpAlkupvm.Text), DateTime.Parse(dtpLoppupvm.Text), int.Parse(tbVarausNro.Text));
+                OdbcCommand command = new OdbcCommand(sqlcommand);
+                using (OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies"))
+                {
+                    command.Connection = connection;
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

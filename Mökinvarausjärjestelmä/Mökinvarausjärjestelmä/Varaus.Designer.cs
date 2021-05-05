@@ -149,6 +149,7 @@
             this.dgvMokki.DataSource = this.mokkiBindingSource;
             this.dgvMokki.Location = new System.Drawing.Point(11, 69);
             this.dgvMokki.Name = "dgvMokki";
+            this.dgvMokki.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMokki.Size = new System.Drawing.Size(644, 150);
             this.dgvMokki.TabIndex = 2;
             // 
@@ -212,6 +213,7 @@
             this.btnTallenna.TabIndex = 3;
             this.btnTallenna.Text = "Tallenna";
             this.btnTallenna.UseVisualStyleBackColor = true;
+            this.btnTallenna.Click += new System.EventHandler(this.btnTallenna_Click);
             // 
             // tbVarausNro
             // 
