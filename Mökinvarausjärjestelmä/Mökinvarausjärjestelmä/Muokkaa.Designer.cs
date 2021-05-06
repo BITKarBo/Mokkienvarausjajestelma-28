@@ -124,7 +124,7 @@
             this.lblSposti = new System.Windows.Forms.Label();
             this.tbAsiakkaanPuhNum = new System.Windows.Forms.TextBox();
             this.tbAsiakkaanOsoite = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbAsiakkaatnimi = new System.Windows.Forms.TextBox();
             this.lblPuhNum = new System.Windows.Forms.Label();
             this.lblAsiakkaanOsoite = new System.Windows.Forms.Label();
             this.lblAsiakkaanNimi = new System.Windows.Forms.Label();
@@ -135,13 +135,13 @@
             this.summaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnPoistaLasku = new System.Windows.Forms.Button();
+            this.btnHaeLasku = new System.Windows.Forms.Button();
+            this.btnLuoLasku = new System.Windows.Forms.Button();
+            this.tbMokkinmr = new System.Windows.Forms.TextBox();
+            this.tbViitenmr = new System.Windows.Forms.TextBox();
+            this.tbLaskuSumma = new System.Windows.Forms.TextBox();
+            this.tbAsiakasnmr = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -918,7 +918,7 @@
             this.Asiakkaat.Controls.Add(this.lblSposti);
             this.Asiakkaat.Controls.Add(this.tbAsiakkaanPuhNum);
             this.Asiakkaat.Controls.Add(this.tbAsiakkaanOsoite);
-            this.Asiakkaat.Controls.Add(this.textBox6);
+            this.Asiakkaat.Controls.Add(this.tbAsiakkaatnimi);
             this.Asiakkaat.Controls.Add(this.lblPuhNum);
             this.Asiakkaat.Controls.Add(this.lblAsiakkaanOsoite);
             this.Asiakkaat.Controls.Add(this.lblAsiakkaanNimi);
@@ -1036,13 +1036,13 @@
             this.tbAsiakkaanOsoite.Size = new System.Drawing.Size(452, 24);
             this.tbAsiakkaanOsoite.TabIndex = 27;
             // 
-            // textBox6
+            // tbAsiakkaatnimi
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox6.Location = new System.Drawing.Point(293, 52);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(452, 24);
-            this.textBox6.TabIndex = 26;
+            this.tbAsiakkaatnimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbAsiakkaatnimi.Location = new System.Drawing.Point(293, 52);
+            this.tbAsiakkaatnimi.Name = "tbAsiakkaatnimi";
+            this.tbAsiakkaatnimi.Size = new System.Drawing.Size(452, 24);
+            this.tbAsiakkaatnimi.TabIndex = 26;
             // 
             // lblPuhNum
             // 
@@ -1077,13 +1077,13 @@
             // Laskut
             // 
             this.Laskut.Controls.Add(this.dataGridView1);
-            this.Laskut.Controls.Add(this.button3);
-            this.Laskut.Controls.Add(this.button4);
-            this.Laskut.Controls.Add(this.button5);
-            this.Laskut.Controls.Add(this.textBox8);
-            this.Laskut.Controls.Add(this.textBox7);
-            this.Laskut.Controls.Add(this.textBox5);
-            this.Laskut.Controls.Add(this.textBox4);
+            this.Laskut.Controls.Add(this.btnPoistaLasku);
+            this.Laskut.Controls.Add(this.btnHaeLasku);
+            this.Laskut.Controls.Add(this.btnLuoLasku);
+            this.Laskut.Controls.Add(this.tbMokkinmr);
+            this.Laskut.Controls.Add(this.tbViitenmr);
+            this.Laskut.Controls.Add(this.tbLaskuSumma);
+            this.Laskut.Controls.Add(this.tbAsiakasnmr);
             this.Laskut.Controls.Add(this.label6);
             this.Laskut.Controls.Add(this.label5);
             this.Laskut.Controls.Add(this.label4);
@@ -1164,70 +1164,70 @@
             this.laskuBindingSource.DataMember = "lasku";
             this.laskuBindingSource.DataSource = this.vNDataset;
             // 
-            // button3
+            // btnPoistaLasku
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button3.Location = new System.Drawing.Point(509, 566);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(231, 77);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Poista lasku";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnPoistaLasku.BackColor = System.Drawing.Color.Transparent;
+            this.btnPoistaLasku.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnPoistaLasku.Location = new System.Drawing.Point(509, 566);
+            this.btnPoistaLasku.Name = "btnPoistaLasku";
+            this.btnPoistaLasku.Size = new System.Drawing.Size(231, 77);
+            this.btnPoistaLasku.TabIndex = 16;
+            this.btnPoistaLasku.Text = "Poista lasku";
+            this.btnPoistaLasku.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnHaeLasku
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button4.Location = new System.Drawing.Point(35, 566);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(231, 77);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Hae lasku";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnHaeLasku.BackColor = System.Drawing.Color.Transparent;
+            this.btnHaeLasku.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnHaeLasku.Location = new System.Drawing.Point(35, 566);
+            this.btnHaeLasku.Name = "btnHaeLasku";
+            this.btnHaeLasku.Size = new System.Drawing.Size(231, 77);
+            this.btnHaeLasku.TabIndex = 15;
+            this.btnHaeLasku.Text = "Hae lasku";
+            this.btnHaeLasku.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnLuoLasku
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button5.Location = new System.Drawing.Point(272, 566);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(231, 77);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Luo lasku";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnLuoLasku.BackColor = System.Drawing.Color.Transparent;
+            this.btnLuoLasku.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnLuoLasku.Location = new System.Drawing.Point(272, 566);
+            this.btnLuoLasku.Name = "btnLuoLasku";
+            this.btnLuoLasku.Size = new System.Drawing.Size(231, 77);
+            this.btnLuoLasku.TabIndex = 14;
+            this.btnLuoLasku.Text = "Luo lasku";
+            this.btnLuoLasku.UseVisualStyleBackColor = false;
             // 
-            // textBox8
+            // tbMokkinmr
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox8.Location = new System.Drawing.Point(317, 177);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 24);
-            this.textBox8.TabIndex = 8;
+            this.tbMokkinmr.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbMokkinmr.Location = new System.Drawing.Point(317, 177);
+            this.tbMokkinmr.Name = "tbMokkinmr";
+            this.tbMokkinmr.Size = new System.Drawing.Size(100, 24);
+            this.tbMokkinmr.TabIndex = 8;
             // 
-            // textBox7
+            // tbViitenmr
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox7.Location = new System.Drawing.Point(317, 225);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(219, 24);
-            this.textBox7.TabIndex = 7;
+            this.tbViitenmr.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbViitenmr.Location = new System.Drawing.Point(317, 225);
+            this.tbViitenmr.Name = "tbViitenmr";
+            this.tbViitenmr.Size = new System.Drawing.Size(219, 24);
+            this.tbViitenmr.TabIndex = 7;
             // 
-            // textBox5
+            // tbLaskuSumma
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox5.Location = new System.Drawing.Point(317, 277);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 24);
-            this.textBox5.TabIndex = 6;
+            this.tbLaskuSumma.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbLaskuSumma.Location = new System.Drawing.Point(317, 277);
+            this.tbLaskuSumma.Name = "tbLaskuSumma";
+            this.tbLaskuSumma.Size = new System.Drawing.Size(100, 24);
+            this.tbLaskuSumma.TabIndex = 6;
             // 
-            // textBox4
+            // tbAsiakasnmr
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox4.Location = new System.Drawing.Point(317, 132);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 24);
-            this.textBox4.TabIndex = 5;
+            this.tbAsiakasnmr.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbAsiakasnmr.Location = new System.Drawing.Point(317, 132);
+            this.tbAsiakasnmr.Name = "tbAsiakasnmr";
+            this.tbAsiakasnmr.Size = new System.Drawing.Size(100, 24);
+            this.tbAsiakasnmr.TabIndex = 5;
             // 
             // label6
             // 
@@ -1383,7 +1383,7 @@
         private System.Windows.Forms.Label lblSposti;
         private System.Windows.Forms.TextBox tbAsiakkaanPuhNum;
         private System.Windows.Forms.TextBox tbAsiakkaanOsoite;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbAsiakkaatnimi;
         private System.Windows.Forms.Label lblPuhNum;
         private System.Windows.Forms.Label lblAsiakkaanOsoite;
         private System.Windows.Forms.Label lblAsiakkaanNimi;
@@ -1392,13 +1392,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblLasku;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox tbMokkinmr;
+        private System.Windows.Forms.TextBox tbViitenmr;
+        private System.Windows.Forms.TextBox tbLaskuSumma;
+        private System.Windows.Forms.TextBox tbAsiakasnmr;
+        private System.Windows.Forms.Button btnPoistaLasku;
+        private System.Windows.Forms.Button btnHaeLasku;
+        private System.Windows.Forms.Button btnLuoLasku;
         private System.Windows.Forms.DataGridView dataGridView1;
         private VNDataset vNDataset;
         private System.Windows.Forms.BindingSource laskuBindingSource;
