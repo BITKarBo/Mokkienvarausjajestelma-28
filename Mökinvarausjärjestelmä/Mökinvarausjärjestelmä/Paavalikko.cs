@@ -39,5 +39,18 @@ namespace Mökinvarausjärjestelmä
         {
 
         }
+
+        private void btnRaportti_Click(object sender, EventArgs e)
+        {
+            Raportointi raportti = new Raportointi();
+            raportti.Show();
+        }
+
+        private void Paavalikko_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'vNDataset.toimintaalue' table. You can move, or remove it, as needed.
+            this.toimintaalueTableAdapter.Fill(this.vNDataset.toimintaalue);
+
+        }
     }
 }
