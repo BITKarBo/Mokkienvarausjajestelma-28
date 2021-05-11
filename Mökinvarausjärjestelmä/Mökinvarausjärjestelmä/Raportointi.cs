@@ -50,6 +50,15 @@ namespace Mökinvarausjärjestelmä
 
             chartPalvelut.DataSource = gds.Getdataset(sqlcommand1).Tables[0];
             chartPalvelut.DataBind();
+
+
+            string sqlcommandvaraukset = string.Format("SELECT COUNT(varaus.varaus_id) AS `maarat` FROM varaus WHERE varaus.mokki_mokki_id IN(SELECT mokki.mokki_id FROM mokki WHERE mokki.toimintaalue_id = 1) AND varaus.varattu_pvm BETWEEN '2000-1-1' AND '2100-01-1' GROUP BY varaus.varattu_pvm;");
+            string varauksetlbl = "Varausten Määrä: " + gds.Getdataset(sqlcommandvaraukset).Tables[0].Rows[1]["maarat"].ToString();
+            lblvaraukset.Text = varauksetlbl;
+
+            string sqlcommandpalvelut = string.Format("SELECT SUM(varauksen_palvelut.lkm) AS `lkm` FROM varaus, varauksen_palvelut WHERE varaus.mokki_mokki_id IN(SELECT mokki.mokki_id FROM mokki WHERE mokki.toimintaalue_id = {0}) AND varaus.varattu_pvm BETWEEN '{1:yyyy/MM/dd}' AND '{2:yyyy/MM/dd}' GROUP BY varaus.varattu_pvm;", cbToimintaalue.SelectedValue, dateTimePickerAloitus.Value, dateTimePickerLopetus.Value);
+            string palvelutlbl = "Palveluiden Määrä: " + gds.Getdataset(sqlcommandpalvelut).Tables[0].Rows[0]["lkm"].ToString();
+            lblPalveluidenmaara.Text = palvelutlbl;
         }
 
         private void btnupdate_Click(object sender, EventArgs e)
@@ -63,6 +72,18 @@ namespace Mökinvarausjärjestelmä
 
                 chartMajoitukset.DataSource = gds.Getdataset(sqlcommand).Tables[0];
                 chartMajoitukset.DataBind();
+                try
+                {
+
+                    string sqlcommandvaraukset = string.Format("SELECT COUNT(varaus.varaus_id) AS `maarat` FROM varaus WHERE varaus.mokki_mokki_id IN(SELECT mokki.mokki_id FROM mokki WHERE mokki.toimintaalue_id = {0}) AND varaus.varattu_pvm BETWEEN '{1:yyyy/MM/dd}' AND '{2:yyyy/MM/dd}' GROUP BY varaus.varattu_pvm;", cbToimintaalue.SelectedValue, dateTimePickerAloitus.Value, dateTimePickerLopetus.Value);
+                    string varauksetlbl = "Varausten Määrä: " + gds.Getdataset(sqlcommandvaraukset).Tables[0].Rows[1]["maarat"].ToString();
+                    lblvaraukset.Text = varauksetlbl;
+                }
+                catch (Exception ex)
+                {
+                    lblvaraukset.Text = "Varausten Määrä: 0";
+                    Console.Write(ex.Message);
+                }
 
             }
             else
@@ -74,7 +95,18 @@ namespace Mökinvarausjärjestelmä
 
                 chartPalvelut.DataSource = gds.Getdataset(sqlcommand1).Tables[0];
                 chartPalvelut.DataBind();
+                try
+                {
 
+                    string sqlcommandpalvelut = string.Format("SELECT SUM(varauksen_palvelut.lkm) AS `lkm` FROM varaus, varauksen_palvelut WHERE varaus.mokki_mokki_id IN(SELECT mokki.mokki_id FROM mokki WHERE mokki.toimintaalue_id = {0}) AND varaus.varattu_pvm BETWEEN '{1:yyyy/MM/dd}' AND '{2:yyyy/MM/dd}' GROUP BY varaus.varattu_pvm;", cbToimintaalue.SelectedValue, dateTimePickerAloitus.Value, dateTimePickerLopetus.Value);
+                    string palvelutlbl = "Palveluiden Määrä: " + gds.Getdataset(sqlcommandpalvelut).Tables[0].Rows[0]["lkm"].ToString();
+                    lblPalveluidenmaara.Text = palvelutlbl;
+                }
+                catch (Exception ex)
+                {
+                    lblPalveluidenmaara.Text = "Palveluiden Määrä: 0";
+                    Console.Write(ex.Message);
+                }
             }
         }
 

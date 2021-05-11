@@ -37,10 +37,18 @@ namespace Mökinvarausjärjestelmä
 
         private void btnLisaaPalvelu_Click(object sender, EventArgs e) //lisää palvelun tietokantaan palvelut välilehdessä, kun välilehden tekstikenttiin on lisätty pyydetyt tiedot
         {
-            Validate();
-            palveluBindingSource.EndEdit();
-            palveluTableAdapter.Update(this.vNDataset);
-            palveluTableAdapter.Insert(long.Parse(tbPalvelu_id.Text), long.Parse(tbToimintaAlue_id.Text), tbNimi.Text, int.Parse(tbTyyppi.Text), tbKuvaus.Text, double.Parse(tbHinta.Text), double.Parse(tbAlv.Text));
+            try
+            {
+                Validate();
+                palveluBindingSource.EndEdit();
+                palveluTableAdapter.Update(this.vNDataset);
+                palveluTableAdapter.Insert(long.Parse(tbPalvelu_id.Text), long.Parse(tbToimintaAlue_id.Text), tbNimi.Text, int.Parse(tbTyyppi.Text), tbKuvaus.Text, double.Parse(tbHinta.Text), double.Parse(tbAlv.Text));
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Mökki puuttuu tietokannasta, johon koitit palvelun lisätä");              
+            }
+
 
 
         }
@@ -54,10 +62,18 @@ namespace Mökinvarausjärjestelmä
 
         private void btnToimintaAlueLisaa_Click(object sender, EventArgs e)
         {
-            Validate();
-            toimintaalueBindingSource.EndEdit();
-            toimintaalueTableAdapter.Update(this.vNDataset);
-            toimintaalueTableAdapter.Insert(tbToimintaAlueNimi.Text);
+            try
+            {
+                Validate();
+                toimintaalueBindingSource.EndEdit();
+                toimintaalueTableAdapter.Update(this.vNDataset);
+                toimintaalueTableAdapter.Insert(tbToimintaAlueNimi.Text);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Tapahtui virhe");
+            }
+
         }
 
         private void btnToimintaAluePoista_Click(object sender, EventArgs e)
@@ -68,12 +84,57 @@ namespace Mökinvarausjärjestelmä
 
         private void btnLisaaMokki_Click(object sender, EventArgs e)
         {
-            Validate();
-            mokkiBindingSource.EndEdit();
-            mokkiTableAdapter.Update(this.vNDataset);
-            mokkiTableAdapter.Insert(long.Parse(cbToimintaAlue.SelectedValue.ToString()),tbMokinPostiNumero.Text, tbMokinNimi.Text, tbMokinOsoite.Text, tbMokinKuvaus.Text, int.Parse(tbMokinSangyt.Text), tbMokinVarustelu.Text);
+            try
+            {
+                Validate();
+                mokkiBindingSource.EndEdit();
+                mokkiTableAdapter.Update(this.vNDataset);
+                mokkiTableAdapter.Insert(long.Parse(cbToimintaAlue.SelectedValue.ToString()), tbMokinPostiNumero.Text, tbMokinNimi.Text, tbMokinOsoite.Text, tbMokinKuvaus.Text, int.Parse(tbMokinSangyt.Text), tbMokinVarustelu.Text);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Mökkiä ei voitu lisätä, koska mökin toiminta-alue puuttuu tietokannasta");
+              
+            }
+           
         }
 
+        private void btnLisaaAsiakas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Validate();
+                asiakasBindingSource.EndEdit();
+                asiakasTableAdapter.Update(this.vNDataset);
+                asiakasTableAdapter.Insert(tbAsiakkaanPostinumero.Text, tbAsiakkaanEtunimi.Text, tbAsiakkaanSukunimi.Text, tbAsiakkaanOsoite.Text, tbAsiakkaanSposti.Text, tbAsiakkaanPuhNum.Text);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Jottai ei toivottua tapahtui");
+               
+            }
+        }
 
+        private void btnLuoLasku_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Validate();
+                laskuBindingSource.EndEdit();
+                laskuTableAdapter.Update(this.vNDataset);
+                laskuTableAdapter.Insert(int.Parse(tbLaskunNumero.Text), long.Parse(tbVarausTunnus.Text), double.Parse(tbLaskuSumma.Text), double.Parse(tbLaskuAlv.Text));
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Jottai ei toivottua tapahtui");
+                
+            }
+        }
+
+        private void btnPoistaLasku_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dgwLaskut.CurrentCell.RowIndex;
+            dgwLaskut.Rows.RemoveAt(rowIndex);
+        }
     }
 }
