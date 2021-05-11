@@ -114,5 +114,27 @@ namespace Mökinvarausjärjestelmä
                
             }
         }
+
+        private void btnLuoLasku_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Validate();
+                laskuBindingSource.EndEdit();
+                laskuTableAdapter.Update(this.vNDataset);
+                laskuTableAdapter.Insert(int.Parse(tbLaskunNumero.Text), long.Parse(tbVarausTunnus.Text), double.Parse(tbLaskuSumma.Text), double.Parse(tbLaskuAlv.Text));
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Jottai ei toivottua tapahtui");
+                
+            }
+        }
+
+        private void btnPoistaLasku_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dgwLaskut.CurrentCell.RowIndex;
+            dgwLaskut.Rows.RemoveAt(rowIndex);
+        }
     }
 }

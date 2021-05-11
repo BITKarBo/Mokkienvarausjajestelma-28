@@ -139,7 +139,9 @@
             this.lblAsiakkaanOsoite = new System.Windows.Forms.Label();
             this.lblAsiakkaanNimi = new System.Windows.Forms.Label();
             this.Laskut = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbLaskunNumero = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dgwLaskut = new System.Windows.Forms.DataGridView();
             this.laskuidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.varausidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.summaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -148,14 +150,10 @@
             this.btnPoistaLasku = new System.Windows.Forms.Button();
             this.btnHaeLasku = new System.Windows.Forms.Button();
             this.btnLuoLasku = new System.Windows.Forms.Button();
-            this.tbMokkinmr = new System.Windows.Forms.TextBox();
-            this.tbViitenmr = new System.Windows.Forms.TextBox();
             this.tbLaskuSumma = new System.Windows.Forms.TextBox();
-            this.tbAsiakasnmr = new System.Windows.Forms.TextBox();
+            this.tbVarausTunnus = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblLasku = new System.Windows.Forms.Label();
             this.laskuTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.laskuTableAdapter();
             this.palveluTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.palveluTableAdapter();
@@ -166,6 +164,8 @@
             this.postiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postiTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.postiTableAdapter();
             this.asiakasTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.asiakasTableAdapter();
+            this.tbLaskuAlv = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.Mökit.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwToimintaAlue)).BeginInit();
@@ -182,7 +182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             this.Laskut.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwLaskut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePalvelu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataset1)).BeginInit();
@@ -1166,18 +1166,18 @@
             // 
             // Laskut
             // 
-            this.Laskut.Controls.Add(this.dataGridView1);
+            this.Laskut.Controls.Add(this.tbLaskuAlv);
+            this.Laskut.Controls.Add(this.label3);
+            this.Laskut.Controls.Add(this.tbLaskunNumero);
+            this.Laskut.Controls.Add(this.label16);
+            this.Laskut.Controls.Add(this.dgwLaskut);
             this.Laskut.Controls.Add(this.btnPoistaLasku);
             this.Laskut.Controls.Add(this.btnHaeLasku);
             this.Laskut.Controls.Add(this.btnLuoLasku);
-            this.Laskut.Controls.Add(this.tbMokkinmr);
-            this.Laskut.Controls.Add(this.tbViitenmr);
             this.Laskut.Controls.Add(this.tbLaskuSumma);
-            this.Laskut.Controls.Add(this.tbAsiakasnmr);
+            this.Laskut.Controls.Add(this.tbVarausTunnus);
             this.Laskut.Controls.Add(this.label6);
             this.Laskut.Controls.Add(this.label5);
-            this.Laskut.Controls.Add(this.label4);
-            this.Laskut.Controls.Add(this.label3);
             this.Laskut.Controls.Add(this.lblLasku);
             this.Laskut.Location = new System.Drawing.Point(4, 22);
             this.Laskut.Name = "Laskut";
@@ -1186,9 +1186,27 @@
             this.Laskut.Text = "Laskut";
             this.Laskut.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // tbLaskunNumero
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
+            this.tbLaskunNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbLaskunNumero.Location = new System.Drawing.Point(317, 91);
+            this.tbLaskunNumero.Name = "tbLaskunNumero";
+            this.tbLaskunNumero.Size = new System.Drawing.Size(100, 24);
+            this.tbLaskunNumero.TabIndex = 19;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label16.Location = new System.Drawing.Point(36, 88);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(101, 20);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Laskutunnus";
+            // 
+            // dgwLaskut
+            // 
+            this.dgwLaskut.AutoGenerateColumns = false;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1196,14 +1214,14 @@
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgwLaskut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgwLaskut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwLaskut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.laskuidDataGridViewTextBoxColumn,
             this.varausidDataGridViewTextBoxColumn,
             this.summaDataGridViewTextBoxColumn,
             this.alvDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.laskuBindingSource;
+            this.dgwLaskut.DataSource = this.laskuBindingSource;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1211,9 +1229,9 @@
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 315);
-            this.dataGridView1.Name = "dataGridView1";
+            this.dgwLaskut.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dgwLaskut.Location = new System.Drawing.Point(35, 315);
+            this.dgwLaskut.Name = "dgwLaskut";
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1221,9 +1239,9 @@
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.dataGridView1.Size = new System.Drawing.Size(705, 245);
-            this.dataGridView1.TabIndex = 17;
+            this.dgwLaskut.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgwLaskut.Size = new System.Drawing.Size(705, 245);
+            this.dgwLaskut.TabIndex = 17;
             // 
             // laskuidDataGridViewTextBoxColumn
             // 
@@ -1264,6 +1282,7 @@
             this.btnPoistaLasku.TabIndex = 16;
             this.btnPoistaLasku.Text = "Poista lasku";
             this.btnPoistaLasku.UseVisualStyleBackColor = false;
+            this.btnPoistaLasku.Click += new System.EventHandler(this.btnPoistaLasku_Click);
             // 
             // btnHaeLasku
             // 
@@ -1286,38 +1305,23 @@
             this.btnLuoLasku.TabIndex = 14;
             this.btnLuoLasku.Text = "Luo lasku";
             this.btnLuoLasku.UseVisualStyleBackColor = false;
-            // 
-            // tbMokkinmr
-            // 
-            this.tbMokkinmr.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tbMokkinmr.Location = new System.Drawing.Point(317, 177);
-            this.tbMokkinmr.Name = "tbMokkinmr";
-            this.tbMokkinmr.Size = new System.Drawing.Size(100, 24);
-            this.tbMokkinmr.TabIndex = 8;
-            // 
-            // tbViitenmr
-            // 
-            this.tbViitenmr.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tbViitenmr.Location = new System.Drawing.Point(317, 225);
-            this.tbViitenmr.Name = "tbViitenmr";
-            this.tbViitenmr.Size = new System.Drawing.Size(219, 24);
-            this.tbViitenmr.TabIndex = 7;
+            this.btnLuoLasku.Click += new System.EventHandler(this.btnLuoLasku_Click);
             // 
             // tbLaskuSumma
             // 
             this.tbLaskuSumma.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tbLaskuSumma.Location = new System.Drawing.Point(317, 277);
+            this.tbLaskuSumma.Location = new System.Drawing.Point(317, 172);
             this.tbLaskuSumma.Name = "tbLaskuSumma";
             this.tbLaskuSumma.Size = new System.Drawing.Size(100, 24);
             this.tbLaskuSumma.TabIndex = 6;
             // 
-            // tbAsiakasnmr
+            // tbVarausTunnus
             // 
-            this.tbAsiakasnmr.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tbAsiakasnmr.Location = new System.Drawing.Point(317, 132);
-            this.tbAsiakasnmr.Name = "tbAsiakasnmr";
-            this.tbAsiakasnmr.Size = new System.Drawing.Size(100, 24);
-            this.tbAsiakasnmr.TabIndex = 5;
+            this.tbVarausTunnus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbVarausTunnus.Location = new System.Drawing.Point(317, 132);
+            this.tbVarausTunnus.Name = "tbVarausTunnus";
+            this.tbVarausTunnus.Size = new System.Drawing.Size(100, 24);
+            this.tbVarausTunnus.TabIndex = 5;
             // 
             // label6
             // 
@@ -1325,39 +1329,19 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label6.Location = new System.Drawing.Point(36, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 20);
+            this.label6.Size = new System.Drawing.Size(109, 20);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Asiakasnumero";
+            this.label6.Text = "Varaustunnus";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label5.Location = new System.Drawing.Point(36, 272);
+            this.label5.Location = new System.Drawing.Point(36, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 3;
             this.label5.Text = "Summa";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label4.Location = new System.Drawing.Point(36, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Mökkinumero";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label3.Location = new System.Drawing.Point(36, 225);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Viitenumero";
             // 
             // lblLasku
             // 
@@ -1403,6 +1387,24 @@
             // 
             this.asiakasTableAdapter.ClearBeforeFill = true;
             // 
+            // tbLaskuAlv
+            // 
+            this.tbLaskuAlv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbLaskuAlv.Location = new System.Drawing.Point(317, 211);
+            this.tbLaskuAlv.Name = "tbLaskuAlv";
+            this.tbLaskuAlv.Size = new System.Drawing.Size(100, 24);
+            this.tbLaskuAlv.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.Location = new System.Drawing.Point(36, 206);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 20);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Alv";
+            // 
             // Muokkaa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1433,7 +1435,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
             this.Laskut.ResumeLayout(false);
             this.Laskut.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwLaskut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePalvelu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataset1)).EndInit();
@@ -1482,17 +1484,13 @@
         private System.Windows.Forms.Label lblAsiakkaanNimi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblLasku;
-        private System.Windows.Forms.TextBox tbMokkinmr;
-        private System.Windows.Forms.TextBox tbViitenmr;
         private System.Windows.Forms.TextBox tbLaskuSumma;
-        private System.Windows.Forms.TextBox tbAsiakasnmr;
+        private System.Windows.Forms.TextBox tbVarausTunnus;
         private System.Windows.Forms.Button btnPoistaLasku;
         private System.Windows.Forms.Button btnHaeLasku;
         private System.Windows.Forms.Button btnLuoLasku;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgwLaskut;
         private VNDataset vNDataset;
         private System.Windows.Forms.BindingSource laskuBindingSource;
         private VNDatasetTableAdapters.laskuTableAdapter laskuTableAdapter;
@@ -1566,5 +1564,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox tbAsiakkaanSukunimi;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox tbLaskunNumero;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox tbLaskuAlv;
+        private System.Windows.Forms.Label label3;
     }
 }
