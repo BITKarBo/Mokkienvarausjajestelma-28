@@ -24,19 +24,14 @@ namespace Mökinvarausjärjestelmä
 
         private void Kalenteri_Load(object sender, EventArgs e)
         {
+            SQLdataset sds = new SQLdataset();
             // TODO: This line of code loads data into the 'vNDataset.varaus' table. You can move, or remove it, as needed.
             string sqlcommand = "SELECT `varaus_id` AS 'VarausID', asiakas.etunimi AS 'Etunimi', asiakas.sukunimi AS 'Sukunimi', `varattu_alkupvm` AS 'Alkaa', `varattu_loppupvm` AS 'Päättyy' FROM varaus, asiakas WHERE varaus.asiakas_id = asiakas.asiakas_id";
-            OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies");
-            OdbcDataAdapter adapter = new OdbcDataAdapter(sqlcommand, connection);
-            DataTable dt = new DataTable();
+            
             try
             {
-                connection.Open();
-                adapter.Fill(dt);
-                varausBindingSource = new BindingSource();
-                varausBindingSource.DataSource = dt;
+                varausBindingSource.DataSource = sds.Getdatatable(sqlcommand);
                 dataGridViewVaraukset.DataSource = varausBindingSource;
-                connection.Close();
                 
             }
             catch (Exception exx)
