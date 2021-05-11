@@ -75,8 +75,6 @@
             this.varusteluDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbMokinVarustelu = new System.Windows.Forms.TextBox();
-            this.tbMokinHinta = new System.Windows.Forms.TextBox();
-            this.lblMokinHinta = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tbMokinNimi = new System.Windows.Forms.TextBox();
@@ -139,6 +137,8 @@
             this.lblAsiakkaanOsoite = new System.Windows.Forms.Label();
             this.lblAsiakkaanNimi = new System.Windows.Forms.Label();
             this.Laskut = new System.Windows.Forms.TabPage();
+            this.tbLaskuAlv = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tbLaskunNumero = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dgwLaskut = new System.Windows.Forms.DataGridView();
@@ -164,8 +164,6 @@
             this.postiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postiTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.postiTableAdapter();
             this.asiakasTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.asiakasTableAdapter();
-            this.tbLaskuAlv = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.Mökit.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwToimintaAlue)).BeginInit();
@@ -334,8 +332,6 @@
             this.Mokit.Controls.Add(this.label11);
             this.Mokit.Controls.Add(this.dgwMokit);
             this.Mokit.Controls.Add(this.tbMokinVarustelu);
-            this.Mokit.Controls.Add(this.tbMokinHinta);
-            this.Mokit.Controls.Add(this.lblMokinHinta);
             this.Mokit.Controls.Add(this.button2);
             this.Mokit.Controls.Add(this.button1);
             this.Mokit.Controls.Add(this.tbMokinNimi);
@@ -447,7 +443,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgwMokit.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgwMokit.Location = new System.Drawing.Point(46, 339);
+            this.dgwMokit.Location = new System.Drawing.Point(46, 314);
             this.dgwMokit.Name = "dgwMokit";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -520,24 +516,6 @@
             this.tbMokinVarustelu.Name = "tbMokinVarustelu";
             this.tbMokinVarustelu.Size = new System.Drawing.Size(310, 24);
             this.tbMokinVarustelu.TabIndex = 17;
-            // 
-            // tbMokinHinta
-            // 
-            this.tbMokinHinta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tbMokinHinta.Location = new System.Drawing.Point(360, 558);
-            this.tbMokinHinta.Name = "tbMokinHinta";
-            this.tbMokinHinta.Size = new System.Drawing.Size(310, 24);
-            this.tbMokinHinta.TabIndex = 15;
-            // 
-            // lblMokinHinta
-            // 
-            this.lblMokinHinta.AutoSize = true;
-            this.lblMokinHinta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblMokinHinta.Location = new System.Drawing.Point(77, 563);
-            this.lblMokinHinta.Name = "lblMokinHinta";
-            this.lblMokinHinta.Size = new System.Drawing.Size(66, 18);
-            this.lblMokinHinta.TabIndex = 14;
-            this.lblMokinHinta.Text = "Hinta/vrk";
             // 
             // button2
             // 
@@ -1186,6 +1164,24 @@
             this.Laskut.Text = "Laskut";
             this.Laskut.UseVisualStyleBackColor = true;
             // 
+            // tbLaskuAlv
+            // 
+            this.tbLaskuAlv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbLaskuAlv.Location = new System.Drawing.Point(317, 211);
+            this.tbLaskuAlv.Name = "tbLaskuAlv";
+            this.tbLaskuAlv.Size = new System.Drawing.Size(100, 24);
+            this.tbLaskuAlv.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.Location = new System.Drawing.Point(36, 206);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 20);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Alv";
+            // 
             // tbLaskunNumero
             // 
             this.tbLaskunNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1387,24 +1383,6 @@
             // 
             this.asiakasTableAdapter.ClearBeforeFill = true;
             // 
-            // tbLaskuAlv
-            // 
-            this.tbLaskuAlv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tbLaskuAlv.Location = new System.Drawing.Point(317, 211);
-            this.tbLaskuAlv.Name = "tbLaskuAlv";
-            this.tbLaskuAlv.Size = new System.Drawing.Size(100, 24);
-            this.tbLaskuAlv.TabIndex = 21;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label3.Location = new System.Drawing.Point(36, 206);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 20);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Alv";
-            // 
             // Muokkaa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1460,8 +1438,6 @@
         private System.Windows.Forms.TextBox tbMokinNimi;
         private System.Windows.Forms.TextBox tbMokinOsoite;
         private System.Windows.Forms.ComboBox cbToimintaAlue;
-        private System.Windows.Forms.TextBox tbMokinHinta;
-        private System.Windows.Forms.Label lblMokinHinta;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox tbNimi;
