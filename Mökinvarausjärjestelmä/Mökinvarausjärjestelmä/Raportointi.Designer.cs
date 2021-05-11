@@ -29,16 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tcontrolRaportit = new System.Windows.Forms.TabControl();
             this.PageMajoitukset = new System.Windows.Forms.TabPage();
             this.chartMajoitukset = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.PagePalvelut = new System.Windows.Forms.TabPage();
+            this.chartPalvelut = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dateTimePickerLopetus = new System.Windows.Forms.DateTimePicker();
@@ -46,19 +51,35 @@
             this.lblLoppu = new System.Windows.Forms.Label();
             this.lblAlku = new System.Windows.Forms.Label();
             this.dateTimePickerAloitus = new System.Windows.Forms.DateTimePicker();
-            this.ToimialueSelect = new System.Windows.Forms.ComboBox();
+            this.cbToimintaalue = new System.Windows.Forms.ComboBox();
+            this.toimintaalueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vNDataset = new Mökinvarausjärjestelmä.VNDataset();
+            this.btnupdate = new System.Windows.Forms.Button();
             this.varausBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.varausTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.varausTableAdapter();
+            this.toimintaalueTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.toimintaalueTableAdapter();
+            this.varausBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnPiirakka = new System.Windows.Forms.Button();
+            this.btn3D = new System.Windows.Forms.Button();
+            this.btnPylväs = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tcontrolRaportit.SuspendLayout();
             this.PageMajoitukset.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMajoitukset)).BeginInit();
+            this.PagePalvelut.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPalvelut)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,6 +114,10 @@
             // 
             // PageMajoitukset
             // 
+            this.PageMajoitukset.Controls.Add(this.label2);
+            this.PageMajoitukset.Controls.Add(this.button1);
+            this.PageMajoitukset.Controls.Add(this.button2);
+            this.PageMajoitukset.Controls.Add(this.button3);
             this.PageMajoitukset.Controls.Add(this.chartMajoitukset);
             this.PageMajoitukset.Location = new System.Drawing.Point(4, 29);
             this.PageMajoitukset.Name = "PageMajoitukset";
@@ -104,28 +129,33 @@
             // 
             // chartMajoitukset
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartMajoitukset.ChartAreas.Add(chartArea1);
+            chartArea11.Name = "ChartArea1";
+            this.chartMajoitukset.ChartAreas.Add(chartArea11);
             this.chartMajoitukset.Cursor = System.Windows.Forms.Cursors.Default;
-            legend1.Name = "Legend1";
-            legend1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chartMajoitukset.Legends.Add(legend1);
+            legend11.Name = "Legend1";
+            legend11.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chartMajoitukset.Legends.Add(legend11);
             this.chartMajoitukset.Location = new System.Drawing.Point(6, 6);
             this.chartMajoitukset.Name = "chartMajoitukset";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartMajoitukset.Series.Add(series1);
-            this.chartMajoitukset.Size = new System.Drawing.Size(300, 300);
+            series11.ChartArea = "ChartArea1";
+            series11.Legend = "Legend1";
+            series11.Name = "Majoitukset";
+            this.chartMajoitukset.Series.Add(series11);
+            this.chartMajoitukset.Size = new System.Drawing.Size(366, 556);
             this.chartMajoitukset.TabIndex = 0;
             this.chartMajoitukset.Text = "Majoitukset";
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "TitleMajoitus";
-            title1.Text = "Raportti Majoituksista";
-            this.chartMajoitukset.Titles.Add(title1);
+            title11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title11.Name = "TitleMajoitus";
+            title11.Text = "Raportti Majoituksista";
+            this.chartMajoitukset.Titles.Add(title11);
             // 
             // PagePalvelut
             // 
+            this.PagePalvelut.Controls.Add(this.label3);
+            this.PagePalvelut.Controls.Add(this.btnPylväs);
+            this.PagePalvelut.Controls.Add(this.btn3D);
+            this.PagePalvelut.Controls.Add(this.btnPiirakka);
+            this.PagePalvelut.Controls.Add(this.chartPalvelut);
             this.PagePalvelut.Location = new System.Drawing.Point(4, 29);
             this.PagePalvelut.Name = "PagePalvelut";
             this.PagePalvelut.Padding = new System.Windows.Forms.Padding(3);
@@ -133,6 +163,28 @@
             this.PagePalvelut.TabIndex = 1;
             this.PagePalvelut.Text = "Palvelut";
             this.PagePalvelut.UseVisualStyleBackColor = true;
+            // 
+            // chartPalvelut
+            // 
+            chartArea12.Name = "ChartArea1";
+            this.chartPalvelut.ChartAreas.Add(chartArea12);
+            this.chartPalvelut.Cursor = System.Windows.Forms.Cursors.Default;
+            legend12.Name = "Legend1";
+            legend12.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chartPalvelut.Legends.Add(legend12);
+            this.chartPalvelut.Location = new System.Drawing.Point(6, 6);
+            this.chartPalvelut.Name = "chartPalvelut";
+            series12.ChartArea = "ChartArea1";
+            series12.Legend = "Legend1";
+            series12.Name = "Palvelut";
+            this.chartPalvelut.Series.Add(series12);
+            this.chartPalvelut.Size = new System.Drawing.Size(366, 556);
+            this.chartPalvelut.TabIndex = 1;
+            this.chartPalvelut.Text = "Palvelut";
+            title12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title12.Name = "TitlePalvelut";
+            title12.Text = "Raportti Palveluista";
+            this.chartPalvelut.Titles.Add(title12);
             // 
             // panel2
             // 
@@ -153,7 +205,8 @@
             this.tableLayoutPanel1.Controls.Add(this.lblLoppu, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblAlku, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePickerAloitus, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ToimialueSelect, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cbToimintaalue, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnupdate, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -172,6 +225,7 @@
             this.dateTimePickerLopetus.Name = "dateTimePickerLopetus";
             this.dateTimePickerLopetus.Size = new System.Drawing.Size(276, 26);
             this.dateTimePickerLopetus.TabIndex = 6;
+            this.dateTimePickerLopetus.Value = new System.DateTime(2022, 5, 31, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -214,26 +268,39 @@
             this.dateTimePickerAloitus.Name = "dateTimePickerAloitus";
             this.dateTimePickerAloitus.Size = new System.Drawing.Size(276, 26);
             this.dateTimePickerAloitus.TabIndex = 5;
+            this.dateTimePickerAloitus.Value = new System.DateTime(2015, 5, 11, 17, 13, 0, 0);
             // 
-            // ToimialueSelect
+            // cbToimintaalue
             // 
-            this.ToimialueSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.ToimialueSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ToimialueSelect.FormattingEnabled = true;
-            this.ToimialueSelect.Items.AddRange(new object[] {
-            "Ruka",
-            "Ylläs",
-            "Tahko"});
-            this.ToimialueSelect.Location = new System.Drawing.Point(480, 46);
-            this.ToimialueSelect.Name = "ToimialueSelect";
-            this.ToimialueSelect.Size = new System.Drawing.Size(245, 28);
-            this.ToimialueSelect.TabIndex = 9;
-            this.ToimialueSelect.Text = "Toimialue";
+            this.cbToimintaalue.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.toimintaalueBindingSource, "toimintaalue_id", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.cbToimintaalue.DataSource = this.toimintaalueBindingSource;
+            this.cbToimintaalue.DisplayMember = "nimi";
+            this.cbToimintaalue.FormattingEnabled = true;
+            this.cbToimintaalue.Location = new System.Drawing.Point(448, 46);
+            this.cbToimintaalue.Name = "cbToimintaalue";
+            this.cbToimintaalue.Size = new System.Drawing.Size(308, 21);
+            this.cbToimintaalue.TabIndex = 9;
+            this.cbToimintaalue.ValueMember = "toimintaalue_id";
+            // 
+            // toimintaalueBindingSource
+            // 
+            this.toimintaalueBindingSource.DataMember = "toimintaalue";
+            this.toimintaalueBindingSource.DataSource = this.vNDataset;
             // 
             // vNDataset
             // 
             this.vNDataset.DataSetName = "VNDataset";
             this.vNDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnupdate
+            // 
+            this.btnupdate.Location = new System.Drawing.Point(448, 101);
+            this.btnupdate.Name = "btnupdate";
+            this.btnupdate.Size = new System.Drawing.Size(75, 23);
+            this.btnupdate.TabIndex = 10;
+            this.btnupdate.Text = "Päivitä";
+            this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // varausBindingSource
             // 
@@ -243,6 +310,93 @@
             // varausTableAdapter
             // 
             this.varausTableAdapter.ClearBeforeFill = true;
+            // 
+            // toimintaalueTableAdapter
+            // 
+            this.toimintaalueTableAdapter.ClearBeforeFill = true;
+            // 
+            // varausBindingSource1
+            // 
+            this.varausBindingSource1.DataMember = "varaus";
+            this.varausBindingSource1.DataSource = this.vNDataset;
+            // 
+            // btnPiirakka
+            // 
+            this.btnPiirakka.Location = new System.Drawing.Point(432, 6);
+            this.btnPiirakka.Name = "btnPiirakka";
+            this.btnPiirakka.Size = new System.Drawing.Size(99, 39);
+            this.btnPiirakka.TabIndex = 2;
+            this.btnPiirakka.Text = "Piirakka";
+            this.btnPiirakka.UseVisualStyleBackColor = true;
+            this.btnPiirakka.Click += new System.EventHandler(this.btnPiirakka_Click);
+            // 
+            // btn3D
+            // 
+            this.btn3D.Location = new System.Drawing.Point(537, 6);
+            this.btn3D.Name = "btn3D";
+            this.btn3D.Size = new System.Drawing.Size(99, 39);
+            this.btn3D.TabIndex = 3;
+            this.btn3D.Text = "Pyrämidi";
+            this.btn3D.UseVisualStyleBackColor = true;
+            this.btn3D.Click += new System.EventHandler(this.btn3D_Click);
+            // 
+            // btnPylväs
+            // 
+            this.btnPylväs.Location = new System.Drawing.Point(642, 6);
+            this.btnPylväs.Name = "btnPylväs";
+            this.btnPylväs.Size = new System.Drawing.Size(99, 39);
+            this.btnPylväs.TabIndex = 4;
+            this.btnPylväs.Text = "Pylväs";
+            this.btnPylväs.UseVisualStyleBackColor = true;
+            this.btnPylväs.Click += new System.EventHandler(this.btnPylväs_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(642, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 39);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Pylväs";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnPylväs_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(537, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 39);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Pyrämidi";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btn3D_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(432, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(99, 39);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Piirakka";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnPiirakka_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(524, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Vaihda Diagrammia";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(518, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(148, 20);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Vaihda Diagrammia";
             // 
             // Raportointi
             // 
@@ -259,12 +413,18 @@
             this.panel3.ResumeLayout(false);
             this.tcontrolRaportit.ResumeLayout(false);
             this.PageMajoitukset.ResumeLayout(false);
+            this.PageMajoitukset.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMajoitukset)).EndInit();
+            this.PagePalvelut.ResumeLayout(false);
+            this.PagePalvelut.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPalvelut)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,10 +443,23 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerAloitus;
         private System.Windows.Forms.DateTimePicker dateTimePickerLopetus;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox ToimialueSelect;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartMajoitukset;
         private VNDataset vNDataset;
         private System.Windows.Forms.BindingSource varausBindingSource;
         private VNDatasetTableAdapters.varausTableAdapter varausTableAdapter;
+        private System.Windows.Forms.BindingSource toimintaalueBindingSource;
+        private VNDatasetTableAdapters.toimintaalueTableAdapter toimintaalueTableAdapter;
+        private System.Windows.Forms.ComboBox cbToimintaalue;
+        private System.Windows.Forms.Button btnupdate;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartMajoitukset;
+        private System.Windows.Forms.BindingSource varausBindingSource1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPalvelut;
+        private System.Windows.Forms.Button btnPylväs;
+        private System.Windows.Forms.Button btn3D;
+        private System.Windows.Forms.Button btnPiirakka;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label3;
     }
 }

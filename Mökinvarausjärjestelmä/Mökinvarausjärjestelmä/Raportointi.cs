@@ -17,42 +17,101 @@ namespace Mökinvarausjärjestelmä
         {
             InitializeComponent();
         }
+        SQLdataset gds = new SQLdataset();
+
+
 
         private void Raportointi_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vNDataset.toimintaalue' table. You can move, or remove it, as needed.
+            this.toimintaalueTableAdapter.Fill(this.vNDataset.toimintaalue);
             // TODO: This line of code loads data into the 'vNDataset.varaus' table. You can move, or remove it, as needed.
             this.varausTableAdapter.Fill(this.vNDataset.varaus);
 
-            // Query jolla saadaan varaukset joissa mökki toimialue tietty. määrä eroteltuna päivämäärillä. -> kesken
+            cbToimintaalue.SelectedValue = 1; // default 1
+
+            chartMajoitukset.Series["Majoitukset"].XValueMember = "pvm";
+            chartMajoitukset.Series[0].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            chartMajoitukset.Series["Majoitukset"].YValueMembers = "maara";
+            chartMajoitukset.Series[0].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+
+            chartPalvelut.Series["Palvelut"].XValueMember = "palvelut";
+            chartPalvelut.Series[0].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            chartPalvelut.Series["Palvelut"].YValueMembers = "lkm";
+            chartPalvelut.Series[0].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+
+            //default data
+            string sqlcommand = string.Format("SELECT COUNT(varaus.varaus_id) AS `maara`, varaus.varattu_pvm AS `pvm` FROM varaus WHERE varaus.mokki_mokki_id IN(SELECT mokki.mokki_id FROM mokki WHERE mokki.toimintaalue_id = 1) AND varaus.varattu_pvm BETWEEN '2000-1-1' AND '2100-01-1' GROUP BY varaus.varattu_pvm;");
+
+            chartMajoitukset.DataSource = gds.Getdataset(sqlcommand).Tables[0];
+            chartMajoitukset.DataBind();
+
+            string sqlcommand1 = string.Format("SELECT varauksen_palvelut.lkm AS `lkm`, palvelu.nimi AS `palvelut` FROM varauksen_palvelut, palvelu WHERE varauksen_palvelut.varaus_id IN(SELECT varaus.varaus_id FROM varaus WHERE varaus.varattu_pvm BETWEEN '2000-1-1' AND '2100-01-1' GROUP BY varaus_id) AND palvelu.nimi IN(SELECT palvelu.nimi FROM palvelu, varauksen_palvelut WHERE palvelu.palvelu_id = varauksen_palvelut.varaus_id AND palvelu.toimintaalue_id = 1)");
+
+            chartPalvelut.DataSource = gds.Getdataset(sqlcommand1).Tables[0];
+            chartPalvelut.DataBind();
+        }
+
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
             
-            string sqlcommand = "SELECT `varaus_id` AS 'VarausID', asiakas.etunimi AS 'Etunimi', asiakas.sukunimi AS 'Sukunimi', `varattu_alkupvm` AS 'Alkaa', `varattu_loppupvm` AS 'Päättyy' FROM varaus, asiakas WHERE varaus.asiakas_id = asiakas.asiakas_id";
-            OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies");
-            OdbcDataAdapter adapter = new OdbcDataAdapter(sqlcommand, connection);
-            DataSet ds = new DataSet();
-            try
+            if (tcontrolRaportit.SelectedTab == PageMajoitukset)
             {
-                connection.Open();
-                adapter.Fill(ds);
-                this.chartMajoitukset.DataSource = ds.Tables[0];
 
-                this.chartMajoitukset.Series[0].XValueMember = "paiva";
+                // Query jolla saadaan varaukset joissa mökki toimialue tietty. määrä eroteltuna päivämäärillä.
+                string sqlcommand = string.Format("SELECT COUNT(varaus.varaus_id) AS `maara`, varaus.varattu_pvm AS `pvm` FROM varaus WHERE varaus.mokki_mokki_id IN(SELECT mokki.mokki_id FROM mokki WHERE mokki.toimintaalue_id = {0}) AND varaus.varattu_pvm BETWEEN '{1:yyyy/MM/dd}' AND '{2:yyyy/MM/dd}' GROUP BY varaus.varattu_pvm;", cbToimintaalue.SelectedValue, dateTimePickerAloitus.Value, dateTimePickerLopetus.Value);
 
-                this.chartMajoitukset.Series[0].YValueMembers = "maara";
-
-                this.chartMajoitukset.DataBind();
-
-                connection.Close();
+                chartMajoitukset.DataSource = gds.Getdataset(sqlcommand).Tables[0];
+                chartMajoitukset.DataBind();
 
             }
-            catch (Exception exx)
+            else
             {
-                Console.Write(exx.Message);
+
+                // Toinen Query palveluille. Query jossa varauksen_palvelut kaikki menneet palvelut ja lkm eroteltuna varaus ID:llä
+
+                string sqlcommand1 = string.Format("SELECT varauksen_palvelut.lkm AS `lkm`, palvelu.nimi AS `palvelut` FROM varauksen_palvelut, palvelu WHERE varauksen_palvelut.varaus_id IN(SELECT varaus.varaus_id FROM varaus WHERE varaus.varattu_pvm BETWEEN '{0:yyyy/MM/dd}' AND '{1:yyyy/MM/dd}' GROUP BY varaus_id) AND palvelu.nimi IN(SELECT palvelu.nimi FROM palvelu, varauksen_palvelut WHERE palvelu.palvelu_id = varauksen_palvelut.varaus_id AND palvelu.toimintaalue_id = {2})", dateTimePickerAloitus.Value, dateTimePickerLopetus.Value, cbToimintaalue.SelectedValue);
+
+                chartPalvelut.DataSource = gds.Getdataset(sqlcommand1).Tables[0];
+                chartPalvelut.DataBind();
+
             }
+        }
 
-            // Toinen Query palveluille. Query jossa varauksen_palvelut kaikki menneet palvelut ja lkm eroteltuna varaus ID:llä
+        private void btnPiirakka_Click(object sender, EventArgs e)
+        {
+            if (tcontrolRaportit.SelectedTab == PageMajoitukset)
+            {
+                chartMajoitukset.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            }
+            else
+            {
+                chartPalvelut.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            }
+        }
 
+        private void btn3D_Click(object sender, EventArgs e)
+        {
+            if (tcontrolRaportit.SelectedTab == PageMajoitukset)
+            {
+                chartMajoitukset.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
+            }
+            else
+            {
+                chartPalvelut.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
+            }
+        }
 
-
+        private void btnPylväs_Click(object sender, EventArgs e)
+        {
+            if (tcontrolRaportit.SelectedTab == PageMajoitukset)
+            {
+                chartMajoitukset.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            }
+            else
+            {
+                chartPalvelut.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            }
         }
     }
 }

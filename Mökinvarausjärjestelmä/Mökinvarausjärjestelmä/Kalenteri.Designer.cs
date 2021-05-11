@@ -149,6 +149,7 @@
             this.dateTimePickerLopetus.Name = "dateTimePickerLopetus";
             this.dateTimePickerLopetus.Size = new System.Drawing.Size(277, 26);
             this.dateTimePickerLopetus.TabIndex = 5;
+            this.dateTimePickerLopetus.Value = new System.DateTime(2021, 5, 31, 0, 0, 0, 0);
             // 
             // lblMokkiVaraukset
             // 

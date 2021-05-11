@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Toimialueboksi = new System.Windows.Forms.ComboBox();
+            this.toimintaalueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vNDataset = new Mökinvarausjärjestelmä.VNDataset();
             this.btnUusiVaraus = new System.Windows.Forms.Button();
             this.btnKalenteri = new System.Windows.Forms.Button();
             this.btnMuokkaa = new System.Windows.Forms.Button();
             this.btnRaportti = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.vNDataset = new Mökinvarausjärjestelmä.VNDataset();
-            this.toimintaalueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toimintaalueTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.toimintaalueTableAdapter();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Toimialueboksi
@@ -56,6 +56,16 @@
             this.Toimialueboksi.TabIndex = 0;
             this.Toimialueboksi.ValueMember = "toimintaalue_id";
             this.Toimialueboksi.SelectedIndexChanged += new System.EventHandler(this.Toimialueboksi_SelectedIndexChanged);
+            // 
+            // toimintaalueBindingSource
+            // 
+            this.toimintaalueBindingSource.DataMember = "toimintaalue";
+            this.toimintaalueBindingSource.DataSource = this.vNDataset;
+            // 
+            // vNDataset
+            // 
+            this.vNDataset.DataSetName = "VNDataset";
+            this.vNDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnUusiVaraus
             // 
@@ -131,16 +141,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 761);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // vNDataset
-            // 
-            this.vNDataset.DataSetName = "VNDataset";
-            this.vNDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // toimintaalueBindingSource
-            // 
-            this.toimintaalueBindingSource.DataMember = "toimintaalue";
-            this.toimintaalueBindingSource.DataSource = this.vNDataset;
-            // 
             // toimintaalueTableAdapter
             // 
             this.toimintaalueTableAdapter.ClearBeforeFill = true;
@@ -154,9 +154,9 @@
             this.Name = "Paavalikko";
             this.Text = "Paavalikko";
             this.Load += new System.EventHandler(this.Paavalikko_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
