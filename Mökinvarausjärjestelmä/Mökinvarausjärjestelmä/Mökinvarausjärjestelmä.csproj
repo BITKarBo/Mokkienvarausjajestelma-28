@@ -79,6 +79,7 @@
     <Compile Include="Raportointi.Designer.cs">
       <DependentUpon>Raportointi.cs</DependentUpon>
     </Compile>
+    <Compile Include="SQLdataset.cs" />
     <Compile Include="Varaus.cs">
       <SubType>Form</SubType>
     </Compile>
