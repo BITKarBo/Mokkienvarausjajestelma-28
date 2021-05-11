@@ -12,7 +12,7 @@ using System.Data.Odbc;
 
 // TODO1: varauksien palvelut haku.
 // TODO3: Tekstikenttien validoinnit.
-
+// TODO: Korjaa että mökkejä ei voi varata päällekkäin
 
 namespace Mökinvarausjärjestelmä
 {
@@ -27,45 +27,22 @@ namespace Mökinvarausjärjestelmä
         {
             InitializeComponent();
             tbVarausNro.Text = varausnum;
-            btnHaeMokit_Click(varausnum, EventArgs.Empty);
+            btnHae.Click += new EventHandler(btnHae_Click);
+            
         }
 
         private void Varaus_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vNDataset.palvelu' table. You can move, or remove it, as needed.
+            this.palveluTableAdapter.Fill(this.vNDataset.palvelu);
             // TODO: This line of code loads data into the 'vNDataset.varaus' table. You can move, or remove it, as needed.
             this.varausTableAdapter.Fill(this.vNDataset.varaus);
             // TODO: This line of code loads data into the 'vNDataset.asiakas' table. You can move, or remove it, as needed.
             this.asiakasTableAdapter.Fill(this.vNDataset.asiakas);
-
             // TODO: This line of code loads data into the 'vNDataset.mokki' table. You can move, or remove it, as needed.
             this.mokkiTableAdapter.Fill(this.vNDataset.mokki);
-
             // TODO: This line of code loads data into the 'vNDataset.toimintaalue' table. You can move, or remove it, as needed.
             this.toimintaalueTableAdapter.Fill(this.vNDataset.toimintaalue);
-
-
-            //Lisätään palvelut clbPalvelu listaan. (Ei toimi halutulla tavalla vielä) 
-            OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies");
-            string sqlcommand = "SELECT * FROM palvelu";
-            OdbcDataAdapter adapter = new OdbcDataAdapter(sqlcommand, connection);
-            DataTable dtPalvelu = new DataTable();
-            try
-            {
-                connection.Open();
-                adapter.Fill(dtPalvelu);
-                palveluBindingSource = new BindingSource();
-                palveluBindingSource.DataSource = dtPalvelu;
-                clbPalvelut.DataSource = palveluBindingSource;
-                clbPalvelut.DisplayMember = "nimi";
-                clbPalvelut.ValueMember = "palvelu_id";
-
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
         }
 
         private void btnHaeMokit_Click(object sender, EventArgs e)
@@ -89,7 +66,7 @@ namespace Mökinvarausjärjestelmä
             {
                 Console.Write(exx.Message);
             }
-            
+            palveluBindingSource.Filter = string.Format("toimintaalue_id = {0}", cbToimintaalue.SelectedValue.ToString());
         }
 
         private void btnLisaaAsiakas_Click(object sender, EventArgs e)
@@ -118,7 +95,6 @@ namespace Mökinvarausjärjestelmä
             {
                 Console.Write(exx.Message);
             }
-            cbToimintaalue.SelectedValue = dgvMokki.FirstDisplayedCell.Value.ToString();
 
             // Haetaan varauksen päivämäärät ja asiakas tiedot.
             sqlcommand = string.Format("SELECT varattu_pvm, vahvistus_pvm, varattu_alkupvm, varattu_loppupvm, asiakas_id FROM varaus WHERE varaus_id = {0}", tbVarausNro.Text);
@@ -139,6 +115,29 @@ namespace Mökinvarausjärjestelmä
 
                 }
                 reader.Close();
+                connection.Close();
+
+                cbToimintaalue.SelectedValue = dgvMokki.Rows[0].Cells[0].Value.ToString();  // cbtoimintaalue ei muutu kun tullaan kalenterista... tää on kyl kirottu ei vaan lähe toimii...
+                palveluBindingSource.Filter = string.Format("toimintaalue_id = {0}", cbToimintaalue.ValueMember.ToString());
+
+                //hakee varauksen palvelut
+                lbVarauksenPalvelut.Items.Clear(); 
+                sqlcommand = string.Format("SELECT nimi FROM palvelu WHERE palvelu_id IN(SELECT palvelu_id FROM varauksen_palvelut WHERE varaus_id = {0})", tbVarausNro.Text);
+                using (connection)
+                {
+                    command = new OdbcCommand(sqlcommand, connection);
+
+                    connection.Open();
+
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        lbVarauksenPalvelut.Items.Add(reader.GetString(0));
+
+                    }
+                    reader.Close();
+                    connection.Close();
+                }
             }
         }
 
@@ -150,10 +149,22 @@ namespace Mökinvarausjärjestelmä
                 varausBindingSource.EndEdit();
                 varausTableAdapter.Update(this.vNDataset);
                 varausTableAdapter.Insert(int.Parse(cbAsiakas_id.Text), int.Parse(dgvMokki.SelectedRows[0].Cells[1].Value.ToString()), DateTime.Parse(dtpVarauspvm.Text), DateTime.Parse(dtpVahvistus.Text), DateTime.Parse(dtpAlkupvm.Text), DateTime.Parse(dtpLoppupvm.Text));
+                
+                //lisää varauksen palvelut tauluun
+                for (int i = 0; i < lbVarauksenPalvelut.Items.Count; i++)
+                {
+                    string sqlcommand = string.Format("INSERT INTO varauksen_palvelut VALUES((SELECT varaus_id FROM varaus WHERE varaus_id =(SELECT MAX(varaus_id) FROM varaus)), (SELECT palvelu_id FROM palvelu WHERE nimi = '{0}'), 1)", lbVarauksenPalvelut.Items[i]);
+                    OdbcCommand command = new OdbcCommand(sqlcommand);
+                    using (OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies"))
+                    {
+                        command.Connection = connection;
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
             }
             else
-            { //päivittää olemassa olevan varauksen.
-                
+            { //päivittää olemassa olevan varauksen.            
                 string sqlcommand = string.Format("UPDATE varaus SET asiakas_id = {0}, mokki_mokki_id = {1}, varattu_pvm = '{2:yyyy-MM-dd}', vahvistus_pvm = '{3:yyyy-MM-dd}', varattu_alkupvm = '{4:yyyy-MM-dd}', varattu_loppupvm = '{5:yyyy-MM-dd}' WHERE varaus_id = {6};",
                     int.Parse(cbAsiakas_id.Text), int.Parse(dgvMokki.SelectedRows[0].Cells[1].Value.ToString()), DateTime.Parse(dtpVarauspvm.Text), DateTime.Parse(dtpVahvistus.Text), DateTime.Parse(dtpAlkupvm.Text), DateTime.Parse(dtpLoppupvm.Text), int.Parse(tbVarausNro.Text));
                 OdbcCommand command = new OdbcCommand(sqlcommand);
@@ -163,8 +174,40 @@ namespace Mökinvarausjärjestelmä
                     connection.Open();
                     command.ExecuteNonQuery();
                 }
+                sqlcommand = string.Format("DELETE FROM varauksen_palvelut WHERE varaus_id = {0}", tbVarausNro.Text);
+                command = new OdbcCommand(sqlcommand);
+                using (OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies"))
+                {
+                    command.Connection = connection;
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                for (int i = 0; i < lbVarauksenPalvelut.Items.Count; i++)
+                {
+                    sqlcommand = string.Format("INSERT INTO varauksen_palvelut VALUES((SELECT varaus_id FROM varaus WHERE varaus_id =(SELECT MAX(varaus_id) FROM varaus)), (SELECT palvelu_id FROM palvelu WHERE nimi = '{0}'), 1)", lbVarauksenPalvelut.Items[i]);
+                    command = new OdbcCommand(sqlcommand);
+                    using (OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies"))
+                    {
+                        command.Connection = connection;
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+
             }
+
+            
+
         }
 
+        private void btnSiirra_Click(object sender, EventArgs e)
+        {      
+            lbVarauksenPalvelut.Items.Add(lbPalvelut.SelectedValue.ToString()); 
+        }
+
+        private void btnPoistaPalvelu_Click(object sender, EventArgs e)
+        {
+            lbVarauksenPalvelut.Items.Remove(lbVarauksenPalvelut.SelectedItem);
+        }
     }
 }
