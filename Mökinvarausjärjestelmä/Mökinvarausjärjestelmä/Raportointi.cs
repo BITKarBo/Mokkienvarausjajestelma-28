@@ -46,7 +46,7 @@ namespace Mökinvarausjärjestelmä
             chartMajoitukset.DataSource = gds.Getdataset(sqlcommand).Tables[0];
             chartMajoitukset.DataBind();
 
-            string sqlcommand1 = string.Format("SELECT varauksen_palvelut.lkm AS `lkm`, palvelu.nimi AS `palvelut` FROM varauksen_palvelut, palvelu WHERE varauksen_palvelut.varaus_id IN(SELECT varaus.varaus_id FROM varaus WHERE varaus.varattu_pvm BETWEEN '2000-1-1' AND '2100-01-1' GROUP BY varaus_id) AND palvelu.nimi IN(SELECT palvelu.nimi FROM palvelu, varauksen_palvelut WHERE palvelu.palvelu_id = varauksen_palvelut.varaus_id AND palvelu.toimintaalue_id = 1)");
+            string sqlcommand1 = string.Format("SELECT varauksen_palvelut.lkm AS `lkm`, palvelu.nimi AS `palvelut` FROM varauksen_palvelut, palvelu WHERE varauksen_palvelut.varaus_id IN(SELECT varaus.varaus_id FROM varaus WHERE varaus.varattu_pvm BETWEEN '2000-1-1' AND '2100-01-1' GROUP BY varaus_id) AND palvelu.nimi IN(SELECT palvelu.nimi FROM palvelu, varauksen_palvelut WHERE palvelu.palvelu_id = varauksen_palvelut.varaus_id AND palvelu.toimintaalue_id = 1) GROUP BY palvelu.nimi");
 
             chartPalvelut.DataSource = gds.Getdataset(sqlcommand1).Tables[0];
             chartPalvelut.DataBind();
@@ -91,7 +91,7 @@ namespace Mökinvarausjärjestelmä
 
                 // Toinen Query palveluille. Query jossa varauksen_palvelut kaikki menneet palvelut ja lkm eroteltuna varaus ID:llä
 
-                string sqlcommand1 = string.Format("SELECT varauksen_palvelut.lkm AS `lkm`, palvelu.nimi AS `palvelut` FROM varauksen_palvelut, palvelu WHERE varauksen_palvelut.varaus_id IN(SELECT varaus.varaus_id FROM varaus WHERE varaus.varattu_pvm BETWEEN '{0:yyyy/MM/dd}' AND '{1:yyyy/MM/dd}' GROUP BY varaus_id) AND palvelu.nimi IN(SELECT palvelu.nimi FROM palvelu, varauksen_palvelut WHERE palvelu.palvelu_id = varauksen_palvelut.varaus_id AND palvelu.toimintaalue_id = {2})", dateTimePickerAloitus.Value, dateTimePickerLopetus.Value, cbToimintaalue.SelectedValue);
+                string sqlcommand1 = string.Format("SELECT varauksen_palvelut.lkm AS `lkm`, palvelu.nimi AS `palvelut` FROM varauksen_palvelut, palvelu WHERE varauksen_palvelut.varaus_id IN(SELECT varaus.varaus_id FROM varaus WHERE varaus.varattu_pvm BETWEEN '{0:yyyy/MM/dd}' AND '{1:yyyy/MM/dd}' GROUP BY varaus_id) AND palvelu.nimi IN(SELECT palvelu.nimi FROM palvelu, varauksen_palvelut WHERE palvelu.palvelu_id = varauksen_palvelut.varaus_id AND palvelu.toimintaalue_id = {2}) GROUP BY palvelu.nimi", dateTimePickerAloitus.Value, dateTimePickerLopetus.Value, cbToimintaalue.SelectedValue);
 
                 chartPalvelut.DataSource = gds.Getdataset(sqlcommand1).Tables[0];
                 chartPalvelut.DataBind();
