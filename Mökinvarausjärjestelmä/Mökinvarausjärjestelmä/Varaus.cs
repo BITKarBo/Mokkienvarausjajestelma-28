@@ -184,7 +184,7 @@ namespace Mökinvarausjärjestelmä
                 }
                 for (int i = 0; i < lbVarauksenPalvelut.Items.Count; i++)
                 {
-                    sqlcommand = string.Format("INSERT INTO varauksen_palvelut VALUES((SELECT varaus_id FROM varaus WHERE varaus_id =(SELECT MAX(varaus_id) FROM varaus)), (SELECT palvelu_id FROM palvelu WHERE nimi = '{0}'), 1)", lbVarauksenPalvelut.Items[i]);
+                    sqlcommand = string.Format("INSERT INTO varauksen_palvelut VALUES({0}, (SELECT palvelu_id FROM palvelu WHERE nimi = '{1}'), 1)", tbVarausNro.Text, lbVarauksenPalvelut.Items[i]);
                     command = new OdbcCommand(sqlcommand);
                     using (OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies"))
                     {
