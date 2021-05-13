@@ -17,6 +17,11 @@ namespace Mökinvarausjärjestelmä
             InitializeComponent();
         }
 
+        public Muokkaa(int tab)
+        {
+            InitializeComponent();
+            Mökit.SelectedIndex = tab;
+        }
         private void Muokkaa_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'vNDataset.asiakas' table. You can move, or remove it, as needed.
