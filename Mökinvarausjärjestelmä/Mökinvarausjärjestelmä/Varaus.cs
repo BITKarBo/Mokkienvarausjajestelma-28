@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.Odbc;
-
-
-
+using iText.Layout;
+using iText.Kernel.Pdf;
+using iText.Layout.Element;
+using iText.Kernel.Pdf.Canvas.Draw;
 
 namespace Mökinvarausjärjestelmä
 {
@@ -217,6 +218,22 @@ namespace Mökinvarausjärjestelmä
         private void btnPoistaPalvelu_Click(object sender, EventArgs e)
         {
             lbVarauksenPalvelut.Items.Remove(lbVarauksenPalvelut.SelectedItem);
+        }
+
+        private void btnLasku_Click(object sender, EventArgs e)
+        {
+            var writer = new PdfWriter("C:/temp/lasku.pdf");
+            var pdf = new PdfDocument(writer);
+            var document = new Document(pdf);
+
+            Paragraph header = new Paragraph("Village Newbies")
+                .SetFontSize(20)
+                .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+            LineSeparator ls = new LineSeparator(new SolidLine());
+            
+            document.Add(header);
+            document.Add(ls);
+            document.Close();
         }
     }
 }
