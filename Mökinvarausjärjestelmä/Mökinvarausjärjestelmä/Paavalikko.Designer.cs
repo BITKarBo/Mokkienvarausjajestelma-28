@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Toimialueboksi = new System.Windows.Forms.ComboBox();
             this.toimintaalueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vNDataset = new Mökinvarausjärjestelmä.VNDataset();
             this.btnUusiVaraus = new System.Windows.Forms.Button();
@@ -42,20 +41,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Toimialueboksi
-            // 
-            this.Toimialueboksi.DataSource = this.toimintaalueBindingSource;
-            this.Toimialueboksi.DisplayMember = "nimi";
-            this.Toimialueboksi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Toimialueboksi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Toimialueboksi.FormattingEnabled = true;
-            this.Toimialueboksi.Location = new System.Drawing.Point(232, 135);
-            this.Toimialueboksi.Name = "Toimialueboksi";
-            this.Toimialueboksi.Size = new System.Drawing.Size(301, 28);
-            this.Toimialueboksi.TabIndex = 0;
-            this.Toimialueboksi.ValueMember = "toimintaalue_id";
-            this.Toimialueboksi.SelectedIndexChanged += new System.EventHandler(this.Toimialueboksi_SelectedIndexChanged);
             // 
             // toimintaalueBindingSource
             // 
@@ -122,7 +107,6 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 248F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.Toimialueboksi, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnUusiVaraus, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnMuokkaa, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnRaportti, 1, 4);
@@ -162,8 +146,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox Toimialueboksi;
         private System.Windows.Forms.Button btnUusiVaraus;
         private System.Windows.Forms.Button btnKalenteri;
         private System.Windows.Forms.Button btnMuokkaa;

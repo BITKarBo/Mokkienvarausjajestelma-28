@@ -357,5 +357,10 @@ namespace Mökinvarausjärjestelmä
 
             }
         }
+
+        private void btnPeruuta_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

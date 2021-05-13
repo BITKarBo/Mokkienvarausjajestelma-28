@@ -77,6 +77,7 @@
             this.tbEtunimi = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnLasku = new System.Windows.Forms.Button();
             this.btnPoistaPalvelu = new System.Windows.Forms.Button();
             this.btnSiirra = new System.Windows.Forms.Button();
             this.lbVarauksenPalvelut = new System.Windows.Forms.ListBox();
@@ -90,7 +91,6 @@
             this.varausBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.palveluTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.palveluTableAdapter();
             this.varauksen_palvelutTableAdapter1 = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.varauksen_palvelutTableAdapter();
-            this.btnLasku = new System.Windows.Forms.Button();
             this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.laskuTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.laskuTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
@@ -550,6 +550,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mökkitiedot";
             // 
+            // btnLasku
+            // 
+            this.btnLasku.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnLasku.Location = new System.Drawing.Point(631, 369);
+            this.btnLasku.Name = "btnLasku";
+            this.btnLasku.Size = new System.Drawing.Size(100, 31);
+            this.btnLasku.TabIndex = 21;
+            this.btnLasku.Text = "Luo Lasku";
+            this.btnLasku.UseVisualStyleBackColor = true;
+            this.btnLasku.Click += new System.EventHandler(this.btnLasku_Click);
+            // 
             // btnPoistaPalvelu
             // 
             this.btnPoistaPalvelu.Location = new System.Drawing.Point(142, 282);
@@ -626,6 +637,7 @@
             this.btnPeruuta.TabIndex = 24;
             this.btnPeruuta.Text = "Peruuta";
             this.btnPeruuta.UseVisualStyleBackColor = true;
+            this.btnPeruuta.Click += new System.EventHandler(this.btnPeruuta_Click);
             // 
             // varausBindingSource
             // 
@@ -639,17 +651,6 @@
             // varauksen_palvelutTableAdapter1
             // 
             this.varauksen_palvelutTableAdapter1.ClearBeforeFill = true;
-            // 
-            // btnLasku
-            // 
-            this.btnLasku.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnLasku.Location = new System.Drawing.Point(631, 369);
-            this.btnLasku.Name = "btnLasku";
-            this.btnLasku.Size = new System.Drawing.Size(100, 31);
-            this.btnLasku.TabIndex = 21;
-            this.btnLasku.Text = "Luo Lasku";
-            this.btnLasku.UseVisualStyleBackColor = true;
-            this.btnLasku.Click += new System.EventHandler(this.btnLasku_Click);
             // 
             // laskuBindingSource
             // 

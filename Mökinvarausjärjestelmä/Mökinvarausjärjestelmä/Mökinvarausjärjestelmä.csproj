@@ -83,12 +83,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lasku.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Lasku.Designer.cs">
-      <DependentUpon>Lasku.cs</DependentUpon>
-    </Compile>
     <Compile Include="Muokkaa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,20 +116,11 @@
     <Compile Include="Varaus.Designer.cs">
       <DependentUpon>Varaus.cs</DependentUpon>
     </Compile>
-    <Compile Include="VarausTiedot.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VarausTiedot.Designer.cs">
-      <DependentUpon>VarausTiedot.cs</DependentUpon>
-    </Compile>
     <Compile Include="VNDataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VNDataset.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Lasku.resx">
-      <DependentUpon>Lasku.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Muokkaa.resx">
       <DependentUpon>Muokkaa.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,9 +144,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Varaus.resx">
       <DependentUpon>Varaus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VarausTiedot.resx">
-      <DependentUpon>VarausTiedot.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
