@@ -77,6 +77,10 @@
             this.tbEtunimi = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnPoistaPalvelu = new System.Windows.Forms.Button();
+            this.btnSiirra = new System.Windows.Forms.Button();
+            this.lbVarauksenPalvelut = new System.Windows.Forms.ListBox();
+            this.lbPalvelut = new System.Windows.Forms.ListBox();
             this.palveluBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnHaeMokit = new System.Windows.Forms.Button();
             this.asiakasTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.asiakasTableAdapter();
@@ -85,11 +89,8 @@
             this.btnPeruuta = new System.Windows.Forms.Button();
             this.varausBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.palveluTableAdapter = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.palveluTableAdapter();
-            this.lbPalvelut = new System.Windows.Forms.ListBox();
-            this.lbVarauksenPalvelut = new System.Windows.Forms.ListBox();
-            this.btnSiirra = new System.Windows.Forms.Button();
             this.varauksen_palvelutTableAdapter1 = new Mökinvarausjärjestelmä.VNDatasetTableAdapters.varauksen_palvelutTableAdapter();
-            this.btnPoistaPalvelu = new System.Windows.Forms.Button();
+            this.btnLasku = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vNDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).BeginInit();
@@ -525,6 +526,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnLasku);
             this.groupBox3.Controls.Add(this.btnPoistaPalvelu);
             this.groupBox3.Controls.Add(this.btnSiirra);
             this.groupBox3.Controls.Add(this.lbVarauksenPalvelut);
@@ -544,6 +546,45 @@
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mökkitiedot";
+            // 
+            // btnPoistaPalvelu
+            // 
+            this.btnPoistaPalvelu.Location = new System.Drawing.Point(142, 282);
+            this.btnPoistaPalvelu.Name = "btnPoistaPalvelu";
+            this.btnPoistaPalvelu.Size = new System.Drawing.Size(24, 23);
+            this.btnPoistaPalvelu.TabIndex = 20;
+            this.btnPoistaPalvelu.Text = "<";
+            this.btnPoistaPalvelu.UseVisualStyleBackColor = true;
+            this.btnPoistaPalvelu.Click += new System.EventHandler(this.btnPoistaPalvelu_Click);
+            // 
+            // btnSiirra
+            // 
+            this.btnSiirra.Location = new System.Drawing.Point(142, 253);
+            this.btnSiirra.Name = "btnSiirra";
+            this.btnSiirra.Size = new System.Drawing.Size(24, 23);
+            this.btnSiirra.TabIndex = 19;
+            this.btnSiirra.Text = ">";
+            this.btnSiirra.UseVisualStyleBackColor = true;
+            this.btnSiirra.Click += new System.EventHandler(this.btnSiirra_Click);
+            // 
+            // lbVarauksenPalvelut
+            // 
+            this.lbVarauksenPalvelut.FormattingEnabled = true;
+            this.lbVarauksenPalvelut.Location = new System.Drawing.Point(175, 253);
+            this.lbVarauksenPalvelut.Name = "lbVarauksenPalvelut";
+            this.lbVarauksenPalvelut.Size = new System.Drawing.Size(120, 147);
+            this.lbVarauksenPalvelut.TabIndex = 18;
+            // 
+            // lbPalvelut
+            // 
+            this.lbPalvelut.DataSource = this.palveluBindingSource;
+            this.lbPalvelut.DisplayMember = "nimi";
+            this.lbPalvelut.FormattingEnabled = true;
+            this.lbPalvelut.Location = new System.Drawing.Point(16, 253);
+            this.lbPalvelut.Name = "lbPalvelut";
+            this.lbPalvelut.Size = new System.Drawing.Size(120, 147);
+            this.lbPalvelut.TabIndex = 17;
+            this.lbPalvelut.ValueMember = "nimi";
             // 
             // palveluBindingSource
             // 
@@ -592,48 +633,19 @@
             // 
             this.palveluTableAdapter.ClearBeforeFill = true;
             // 
-            // lbPalvelut
-            // 
-            this.lbPalvelut.DataSource = this.palveluBindingSource;
-            this.lbPalvelut.DisplayMember = "nimi";
-            this.lbPalvelut.FormattingEnabled = true;
-            this.lbPalvelut.Location = new System.Drawing.Point(16, 253);
-            this.lbPalvelut.Name = "lbPalvelut";
-            this.lbPalvelut.Size = new System.Drawing.Size(120, 147);
-            this.lbPalvelut.TabIndex = 17;
-            this.lbPalvelut.ValueMember = "nimi";
-            // 
-            // lbVarauksenPalvelut
-            // 
-            this.lbVarauksenPalvelut.FormattingEnabled = true;
-            this.lbVarauksenPalvelut.Location = new System.Drawing.Point(175, 253);
-            this.lbVarauksenPalvelut.Name = "lbVarauksenPalvelut";
-            this.lbVarauksenPalvelut.Size = new System.Drawing.Size(120, 147);
-            this.lbVarauksenPalvelut.TabIndex = 18;
-            // 
-            // btnSiirra
-            // 
-            this.btnSiirra.Location = new System.Drawing.Point(142, 253);
-            this.btnSiirra.Name = "btnSiirra";
-            this.btnSiirra.Size = new System.Drawing.Size(24, 23);
-            this.btnSiirra.TabIndex = 19;
-            this.btnSiirra.Text = ">";
-            this.btnSiirra.UseVisualStyleBackColor = true;
-            this.btnSiirra.Click += new System.EventHandler(this.btnSiirra_Click);
-            // 
             // varauksen_palvelutTableAdapter1
             // 
             this.varauksen_palvelutTableAdapter1.ClearBeforeFill = true;
             // 
-            // btnPoistaPalvelu
+            // btnLasku
             // 
-            this.btnPoistaPalvelu.Location = new System.Drawing.Point(142, 282);
-            this.btnPoistaPalvelu.Name = "btnPoistaPalvelu";
-            this.btnPoistaPalvelu.Size = new System.Drawing.Size(24, 23);
-            this.btnPoistaPalvelu.TabIndex = 20;
-            this.btnPoistaPalvelu.Text = "<";
-            this.btnPoistaPalvelu.UseVisualStyleBackColor = true;
-            this.btnPoistaPalvelu.Click += new System.EventHandler(this.btnPoistaPalvelu_Click);
+            this.btnLasku.Location = new System.Drawing.Point(656, 377);
+            this.btnLasku.Name = "btnLasku";
+            this.btnLasku.Size = new System.Drawing.Size(75, 23);
+            this.btnLasku.TabIndex = 21;
+            this.btnLasku.Text = "Lasku";
+            this.btnLasku.UseVisualStyleBackColor = true;
+            this.btnLasku.Click += new System.EventHandler(this.btnLasku_Click);
             // 
             // Varaus
             // 
@@ -731,5 +743,6 @@
         private System.Windows.Forms.ListBox lbVarauksenPalvelut;
         private VNDatasetTableAdapters.varauksen_palvelutTableAdapter varauksen_palvelutTableAdapter1;
         private System.Windows.Forms.Button btnPoistaPalvelu;
+        private System.Windows.Forms.Button btnLasku;
     }
 }
