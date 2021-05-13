@@ -141,5 +141,27 @@ namespace Mökinvarausjärjestelmä
             int rowIndex = dgwLaskut.CurrentCell.RowIndex;
             dgwLaskut.Rows.RemoveAt(rowIndex);
         }
+
+        private void button2_Click(object sender, EventArgs e) //poista mökki nappi
+        {
+            int rowIndex = dgwMokit.CurrentCell.RowIndex;
+            dgwMokit.Rows.RemoveAt(rowIndex);
+        }
+
+        private void btnPoistaAsiakas_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dataGridView2.CurrentCell.RowIndex;
+            dataGridView2.Rows.RemoveAt(rowIndex);
+        }
+
+        private void btnHaeLasku_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e) //hae mökki nappula
+        {
+
+        }
     }
 }
