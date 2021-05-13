@@ -209,8 +209,23 @@ namespace Mökinvarausjärjestelmä
                 }
 
             }
-
             
+            string query = string.Format("SELECT MAX(varaus_id) FROM varaus");
+            using (OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies"))
+            {
+                OdbcCommand command = new OdbcCommand(query, connection);
+
+                connection.Open();
+
+                OdbcDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    tbVarausNro.Text = reader.GetString(0);
+                }
+                reader.Close();
+                connection.Close();
+            }
+
 
         }
 
@@ -227,135 +242,141 @@ namespace Mökinvarausjärjestelmä
         
         private void btnLasku_Click(object sender, EventArgs e)
         { //Generoidaan pdf pohjalle lasku varauksesta.
-            int laskuID = 0;
-            int varausID = int.Parse(tbVarausNro.Text);
-            double[] hinta = new double[lbVarauksenPalvelut.Items.Count + 1];
-            double[] alv = new double[lbVarauksenPalvelut.Items.Count + 1];
-            string mokki = dgvMokki.SelectedRows[0].Cells[2].Value.ToString();
-            string[] palvelut = new string[lbVarauksenPalvelut.Items.Count];
-            double kokHinta = 0;
-            int[] lkm = new int[lbVarauksenPalvelut.Items.Count + 1];
-
-            OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies");
-            string sqlcommand = string.Format("SELECT hinta, alv FROM mokki WHERE mokki_id = {0}", dgvMokki.SelectedRows[0].Cells[0].Value.ToString());
-            using (connection)
+            if (tbVarausNro.Text != "")
             {
-                OdbcCommand command = new OdbcCommand(sqlcommand, connection);
 
-                connection.Open();
+                int laskuID = 0;
+                int varausID = int.Parse(tbVarausNro.Text);
+                double[] hinta = new double[lbVarauksenPalvelut.Items.Count + 1];
+                double[] alv = new double[lbVarauksenPalvelut.Items.Count + 1];
+                string mokki = dgvMokki.SelectedRows[0].Cells[2].Value.ToString();
+                string[] palvelut = new string[lbVarauksenPalvelut.Items.Count];
+                double kokHinta = 0;
+                int[] lkm = new int[lbVarauksenPalvelut.Items.Count + 1];
 
-                OdbcDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    hinta[0] = reader.GetDouble(0);
-                    alv[0] = reader.GetDouble(1);
-                }
-                reader.Close();
-                connection.Close();
-            }
-            DateTime dt1 = dtpLoppupvm.Value;
-            DateTime dt2 = dtpAlkupvm.Value;
-            lkm[0] = (dt1 - dt2).Days;
-
-            connection = new OdbcConnection("Dsn=Village Newbies");
-            sqlcommand = string.Format("SELECT nimi, hinta, alv FROM palvelu WHERE palvelu_id IN(SELECT palvelu_id FROM varauksen_palvelut WHERE varaus_id = {0})", tbVarausNro.Text);
-            if (lbVarauksenPalvelut.Items.Count != 0)
-            {
+                OdbcConnection connection = new OdbcConnection("Dsn=Village Newbies");
+                string sqlcommand = string.Format("SELECT hinta, alv FROM mokki WHERE mokki_id = {0}", dgvMokki.SelectedRows[0].Cells[0].Value.ToString());
                 using (connection)
                 {
-
                     OdbcCommand command = new OdbcCommand(sqlcommand, connection);
 
                     connection.Open();
 
                     OdbcDataReader reader = command.ExecuteReader();
-                    int x = 0;
                     while (reader.Read())
                     {
-
-                        palvelut[x] = reader.GetString(0);
-                        hinta[x + 1] = reader.GetDouble(1);
-                        alv[x + 1] = reader.GetDouble(2);
-                        lkm[x + 1] = 1;
-                        x++;
+                        hinta[0] = reader.GetDouble(0);
+                        alv[0] = reader.GetDouble(1);
                     }
                     reader.Close();
                     connection.Close();
                 }
-            }
-            kokHinta = hinta[0] * (1 + alv[0]) * lkm[0];
-            for (int i = 1; i < hinta.Length; i++) 
-            {
-                kokHinta += (hinta[i] * (1 + alv[i]) * lkm[i]);
-            }
+                DateTime dt1 = dtpLoppupvm.Value;
+                DateTime dt2 = dtpAlkupvm.Value;
+                lkm[0] = (dt1 - dt2).Days;
+
+                connection = new OdbcConnection("Dsn=Village Newbies");
+                sqlcommand = string.Format("SELECT nimi, hinta, alv FROM palvelu WHERE palvelu_id IN(SELECT palvelu_id FROM varauksen_palvelut WHERE varaus_id = {0})", tbVarausNro.Text);
+                if (lbVarauksenPalvelut.Items.Count != 0)
+                {
+                    using (connection)
+                    {
+
+                        OdbcCommand command = new OdbcCommand(sqlcommand, connection);
+
+                        connection.Open();
+
+                        OdbcDataReader reader = command.ExecuteReader();
+                        int x = 0;
+                        while (reader.Read())
+                        {
+
+                            palvelut[x] = reader.GetString(0);
+                            hinta[x + 1] = reader.GetDouble(1);
+                            alv[x + 1] = reader.GetDouble(2);
+                            lkm[x + 1] = 1;
+                            x++;
+                        }
+                        reader.Close();
+                        connection.Close();
+                    }
+                }
+                kokHinta = hinta[0] * (1 + alv[0]) * lkm[0];
+                for (int i = 1; i < hinta.Length; i++)
+                {
+                    kokHinta += (hinta[i] * (1 + alv[i]) * lkm[i]);
+                }
 
 
-            var writer = new PdfWriter("C:/temp/lasku.pdf");
-            var pdf = new PdfDocument(writer);
-            var document = new Document(pdf);
+                var writer = new PdfWriter("C:/temp/lasku.pdf");
+                var pdf = new PdfDocument(writer);
+                var document = new Document(pdf);
 
-            Paragraph header = new Paragraph("Village Newbies")
-                .SetFontSize(20)
-                .SetTextAlignment(TextAlignment.CENTER);
-            LineSeparator ls = new LineSeparator(new SolidLine());
+                Paragraph header = new Paragraph("Village Newbies")
+                    .SetFontSize(20)
+                    .SetTextAlignment(TextAlignment.CENTER);
+                LineSeparator ls = new LineSeparator(new SolidLine());
 
-            Paragraph newline = new Paragraph(new Text("\n"));
+                Paragraph newline = new Paragraph(new Text("\n"));
 
-            
-            document.Add(header);
-            document.Add(ls);
-            document.Add(newline);
 
-            document.Add(new Paragraph(string.Format("Asiakas:\n{0} {1}\n{2} {3}", tbEtunimi.Text, tbSukunimi.Text, tbLahiosoite.Text, tbPostinumero.Text)));
+                document.Add(header);
+                document.Add(ls);
+                document.Add(newline);
 
-            document.Add(new Paragraph(string.Format("Varaus id: {0}", varausID)));
-            
-            Table table = new Table(5, true);
-            table.AddCell(new Paragraph("Tuote"));
-            table.AddCell(new Paragraph("Hinta"));
-            table.AddCell(new Paragraph("Alv"));
-            table.AddCell(new Paragraph("Määrä"));
-            table.AddCell(new Paragraph("Kokonais hinta"));
+                document.Add(new Paragraph(string.Format("Asiakas:\n{0} {1}\n{2} {3}", tbEtunimi.Text, tbSukunimi.Text, tbLahiosoite.Text, tbPostinumero.Text)));
 
-            table.AddCell(new Paragraph(mokki));
-            table.AddCell(new Paragraph(hinta[0].ToString()));
-            table.AddCell(new Paragraph(alv[0].ToString()));
-            table.AddCell(new Paragraph(lkm[0].ToString()));
-            table.AddCell(new Paragraph(string.Format("{0}", hinta[0] * (1 + alv[0]) * lkm[0]))
-                .SetTextAlignment(TextAlignment.RIGHT));
+                document.Add(new Paragraph(string.Format("Varaus id: {0}", varausID)));
 
-            for (int i = 0; i < lbVarauksenPalvelut.Items.Count; i++) 
-            {
-                table.AddCell(new Paragraph(palvelut[i]));
-                table.AddCell(new Paragraph(hinta[i + 1].ToString()));
-                table.AddCell(new Paragraph(alv[i + 1].ToString()));
-                table.AddCell(new Paragraph(lkm[i + 1].ToString()));
-                table.AddCell(new Paragraph(string.Format("{0}", hinta[i + 1] * (1 + alv[i + 1]) * 1))
+                Table table = new Table(5, true);
+                table.AddCell(new Paragraph("Tuote"));
+                table.AddCell(new Paragraph("Hinta"));
+                table.AddCell(new Paragraph("Alv"));
+                table.AddCell(new Paragraph("Määrä"));
+                table.AddCell(new Paragraph("Kokonais hinta"));
+
+                table.AddCell(new Paragraph(mokki));
+                table.AddCell(new Paragraph(hinta[0].ToString()));
+                table.AddCell(new Paragraph(alv[0].ToString()));
+                table.AddCell(new Paragraph(lkm[0].ToString()));
+                table.AddCell(new Paragraph(string.Format("{0}", hinta[0] * (1 + alv[0]) * lkm[0]))
                     .SetTextAlignment(TextAlignment.RIGHT));
+
+                for (int i = 0; i < lbVarauksenPalvelut.Items.Count; i++)
+                {
+                    table.AddCell(new Paragraph(palvelut[i]));
+                    table.AddCell(new Paragraph(hinta[i + 1].ToString()));
+                    table.AddCell(new Paragraph(alv[i + 1].ToString()));
+                    table.AddCell(new Paragraph(lkm[i + 1].ToString()));
+                    table.AddCell(new Paragraph(string.Format("{0}", hinta[i + 1] * (1 + alv[i + 1]) * 1))
+                        .SetTextAlignment(TextAlignment.RIGHT));
+                }
+
+                document.Add(table);
+
+                document.Add(new LineSeparator(new SolidLine()));
+                document.Add(new Paragraph(string.Format("Maksettava: {0}€", kokHinta)).SetTextAlignment(TextAlignment.RIGHT));
+                document.Add(new LineSeparator(new SolidLine()));
+                document.Add(new Paragraph(string.Format("Käytä laskua maksaessa viitenumerona varaustunnusta: {0}", varausID)));
+                document.Close();
+
+                System.Diagnostics.Process.Start("C:/temp/lasku.pdf");
+
+                try
+                {
+                    Validate();
+                    laskuBindingSource.EndEdit();
+                    laskuTableAdapter.Update(this.vNDataset);
+                    laskuTableAdapter.Insert(varausID, varausID, kokHinta, alv[0]);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+
+                }
             }
-
-            document.Add(table);
-
-            document.Add(new LineSeparator(new SolidLine()));
-            document.Add(new Paragraph(string.Format("Maksettava: {0}€", kokHinta)).SetTextAlignment(TextAlignment.RIGHT));
-            document.Add(new LineSeparator(new SolidLine()));
-            document.Add(new Paragraph(string.Format("Käytä laskua maksaessa viitenumerona varaustunnusta: {0}", varausID)));
-            document.Close();
-
-            System.Diagnostics.Process.Start("C:/temp/lasku.pdf");
-
-            try
-            {
-                Validate();
-                laskuBindingSource.EndEdit();
-                laskuTableAdapter.Update(this.vNDataset);
-                laskuTableAdapter.Insert(varausID, varausID, kokHinta, alv[0]);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-
-            }
+            else
+                MessageBox.Show("VarausNro puuttuu!");
         }
 
         private void btnPeruuta_Click(object sender, EventArgs e)
