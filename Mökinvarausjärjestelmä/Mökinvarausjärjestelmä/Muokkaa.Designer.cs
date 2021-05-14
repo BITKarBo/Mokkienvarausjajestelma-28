@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Mökit = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnToimintaAluePoista = new System.Windows.Forms.Button();
@@ -76,7 +76,6 @@
             this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbMokinVarustelu = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.tbMokinNimi = new System.Windows.Forms.TextBox();
             this.tbMokinOsoite = new System.Windows.Forms.TextBox();
             this.cbToimintaAlue = new System.Windows.Forms.ComboBox();
@@ -148,7 +147,6 @@
             this.alvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPoistaLasku = new System.Windows.Forms.Button();
-            this.btnHaeLasku = new System.Windows.Forms.Button();
             this.btnLuoLasku = new System.Windows.Forms.Button();
             this.tbLaskuSumma = new System.Windows.Forms.TextBox();
             this.tbVarausTunnus = new System.Windows.Forms.TextBox();
@@ -223,7 +221,7 @@
             this.btnToimintaAluePoista.Location = new System.Drawing.Point(251, 426);
             this.btnToimintaAluePoista.Name = "btnToimintaAluePoista";
             this.btnToimintaAluePoista.Size = new System.Drawing.Size(192, 76);
-            this.btnToimintaAluePoista.TabIndex = 6;
+            this.btnToimintaAluePoista.TabIndex = 4;
             this.btnToimintaAluePoista.Text = "Poista";
             this.btnToimintaAluePoista.UseVisualStyleBackColor = true;
             this.btnToimintaAluePoista.Click += new System.EventHandler(this.btnToimintaAluePoista_Click);
@@ -234,7 +232,7 @@
             this.btnToimintaAlueLisaa.Location = new System.Drawing.Point(41, 426);
             this.btnToimintaAlueLisaa.Name = "btnToimintaAlueLisaa";
             this.btnToimintaAlueLisaa.Size = new System.Drawing.Size(192, 76);
-            this.btnToimintaAlueLisaa.TabIndex = 5;
+            this.btnToimintaAlueLisaa.TabIndex = 3;
             this.btnToimintaAlueLisaa.Text = "Lisää";
             this.btnToimintaAlueLisaa.UseVisualStyleBackColor = true;
             this.btnToimintaAlueLisaa.Click += new System.EventHandler(this.btnToimintaAlueLisaa_Click);
@@ -242,39 +240,39 @@
             // dgwToimintaAlue
             // 
             this.dgwToimintaAlue.AutoGenerateColumns = false;
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwToimintaAlue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwToimintaAlue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgwToimintaAlue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwToimintaAlue.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.toimintaalueidDataGridViewTextBoxColumn2,
             this.nimiDataGridViewTextBoxColumn1});
             this.dgwToimintaAlue.DataSource = this.toimintaalueBindingSource;
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwToimintaAlue.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwToimintaAlue.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgwToimintaAlue.Location = new System.Drawing.Point(41, 131);
             this.dgwToimintaAlue.Name = "dgwToimintaAlue";
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwToimintaAlue.RowHeadersDefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwToimintaAlue.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgwToimintaAlue.Size = new System.Drawing.Size(243, 243);
-            this.dgwToimintaAlue.TabIndex = 4;
+            this.dgwToimintaAlue.TabIndex = 2;
             // 
             // toimintaalueidDataGridViewTextBoxColumn2
             // 
@@ -306,10 +304,10 @@
             // tbToimintaAlueNimi
             // 
             this.tbToimintaAlueNimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tbToimintaAlueNimi.Location = new System.Drawing.Point(217, 84);
+            this.tbToimintaAlueNimi.Location = new System.Drawing.Point(184, 89);
             this.tbToimintaAlueNimi.Name = "tbToimintaAlueNimi";
             this.tbToimintaAlueNimi.Size = new System.Drawing.Size(100, 24);
-            this.tbToimintaAlueNimi.TabIndex = 3;
+            this.tbToimintaAlueNimi.TabIndex = 1;
             // 
             // label13
             // 
@@ -333,7 +331,6 @@
             this.Mokit.Controls.Add(this.dgwMokit);
             this.Mokit.Controls.Add(this.tbMokinVarustelu);
             this.Mokit.Controls.Add(this.button2);
-            this.Mokit.Controls.Add(this.button1);
             this.Mokit.Controls.Add(this.tbMokinNimi);
             this.Mokit.Controls.Add(this.tbMokinOsoite);
             this.Mokit.Controls.Add(this.cbToimintaAlue);
@@ -357,7 +354,7 @@
             this.tbMokinKuvaus.Location = new System.Drawing.Point(357, 253);
             this.tbMokinKuvaus.Name = "tbMokinKuvaus";
             this.tbMokinKuvaus.Size = new System.Drawing.Size(310, 24);
-            this.tbMokinKuvaus.TabIndex = 29;
+            this.tbMokinKuvaus.TabIndex = 28;
             // 
             // label12
             // 
@@ -375,7 +372,7 @@
             this.tbMokinPostiNumero.Location = new System.Drawing.Point(357, 129);
             this.tbMokinPostiNumero.Name = "tbMokinPostiNumero";
             this.tbMokinPostiNumero.Size = new System.Drawing.Size(310, 24);
-            this.tbMokinPostiNumero.TabIndex = 27;
+            this.tbMokinPostiNumero.TabIndex = 24;
             // 
             // tbMokinSangyt
             // 
@@ -401,7 +398,7 @@
             this.tbMokinID.Location = new System.Drawing.Point(360, 8);
             this.tbMokinID.Name = "tbMokinID";
             this.tbMokinID.Size = new System.Drawing.Size(311, 24);
-            this.tbMokinID.TabIndex = 22;
+            this.tbMokinID.TabIndex = 21;
             // 
             // label11
             // 
@@ -416,14 +413,14 @@
             // dgwMokit
             // 
             this.dgwMokit.AutoGenerateColumns = false;
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwMokit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwMokit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgwMokit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwMokit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mokkiidDataGridViewTextBoxColumn,
@@ -435,26 +432,26 @@
             this.henkilomaaraDataGridViewTextBoxColumn,
             this.varusteluDataGridViewTextBoxColumn});
             this.dgwMokit.DataSource = this.mokkiBindingSource;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwMokit.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwMokit.DefaultCellStyle = dataGridViewCellStyle17;
             this.dgwMokit.Location = new System.Drawing.Point(46, 314);
             this.dgwMokit.Name = "dgwMokit";
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwMokit.RowHeadersDefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwMokit.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgwMokit.Size = new System.Drawing.Size(705, 213);
-            this.dgwMokit.TabIndex = 20;
+            this.dgwMokit.TabIndex = 29;
             // 
             // mokkiidDataGridViewTextBoxColumn
             // 
@@ -515,7 +512,7 @@
             this.tbMokinVarustelu.Location = new System.Drawing.Point(357, 221);
             this.tbMokinVarustelu.Name = "tbMokinVarustelu";
             this.tbMokinVarustelu.Size = new System.Drawing.Size(310, 24);
-            this.tbMokinVarustelu.TabIndex = 17;
+            this.tbMokinVarustelu.TabIndex = 27;
             // 
             // button2
             // 
@@ -524,22 +521,10 @@
             this.button2.Location = new System.Drawing.Point(520, 617);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(231, 77);
-            this.button2.TabIndex = 13;
+            this.button2.TabIndex = 34;
             this.button2.Text = "Poista mökki";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button1.Location = new System.Drawing.Point(46, 617);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 77);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Hae mökki";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tbMokinNimi
             // 
@@ -547,7 +532,7 @@
             this.tbMokinNimi.Location = new System.Drawing.Point(357, 69);
             this.tbMokinNimi.Name = "tbMokinNimi";
             this.tbMokinNimi.Size = new System.Drawing.Size(311, 24);
-            this.tbMokinNimi.TabIndex = 11;
+            this.tbMokinNimi.TabIndex = 22;
             // 
             // tbMokinOsoite
             // 
@@ -555,7 +540,7 @@
             this.tbMokinOsoite.Location = new System.Drawing.Point(357, 99);
             this.tbMokinOsoite.Name = "tbMokinOsoite";
             this.tbMokinOsoite.Size = new System.Drawing.Size(310, 24);
-            this.tbMokinOsoite.TabIndex = 10;
+            this.tbMokinOsoite.TabIndex = 23;
             // 
             // cbToimintaAlue
             // 
@@ -567,7 +552,7 @@
             this.cbToimintaAlue.Location = new System.Drawing.Point(357, 159);
             this.cbToimintaAlue.Name = "cbToimintaAlue";
             this.cbToimintaAlue.Size = new System.Drawing.Size(311, 26);
-            this.cbToimintaAlue.TabIndex = 9;
+            this.cbToimintaAlue.TabIndex = 25;
             this.cbToimintaAlue.ValueMember = "toimintaalue_id";
             // 
             // label1
@@ -587,7 +572,7 @@
             this.btnLisaaMokki.Location = new System.Drawing.Point(283, 617);
             this.btnLisaaMokki.Name = "btnLisaaMokki";
             this.btnLisaaMokki.Size = new System.Drawing.Size(231, 77);
-            this.btnLisaaMokki.TabIndex = 4;
+            this.btnLisaaMokki.TabIndex = 31;
             this.btnLisaaMokki.Text = "Lisää mökki";
             this.btnLisaaMokki.UseVisualStyleBackColor = false;
             this.btnLisaaMokki.Click += new System.EventHandler(this.btnLisaaMokki_Click);
@@ -665,7 +650,7 @@
             this.tbAlv.Location = new System.Drawing.Point(316, 205);
             this.tbAlv.Name = "tbAlv";
             this.tbAlv.Size = new System.Drawing.Size(100, 24);
-            this.tbAlv.TabIndex = 31;
+            this.tbAlv.TabIndex = 47;
             // 
             // tbHinta
             // 
@@ -673,7 +658,7 @@
             this.tbHinta.Location = new System.Drawing.Point(316, 175);
             this.tbHinta.Name = "tbHinta";
             this.tbHinta.Size = new System.Drawing.Size(100, 24);
-            this.tbHinta.TabIndex = 30;
+            this.tbHinta.TabIndex = 46;
             // 
             // tbKuvaus
             // 
@@ -681,7 +666,7 @@
             this.tbKuvaus.Location = new System.Drawing.Point(316, 145);
             this.tbKuvaus.Name = "tbKuvaus";
             this.tbKuvaus.Size = new System.Drawing.Size(452, 24);
-            this.tbKuvaus.TabIndex = 29;
+            this.tbKuvaus.TabIndex = 45;
             // 
             // tbTyyppi
             // 
@@ -689,7 +674,7 @@
             this.tbTyyppi.Location = new System.Drawing.Point(316, 115);
             this.tbTyyppi.Name = "tbTyyppi";
             this.tbTyyppi.Size = new System.Drawing.Size(249, 24);
-            this.tbTyyppi.TabIndex = 28;
+            this.tbTyyppi.TabIndex = 44;
             // 
             // label10
             // 
@@ -734,14 +719,14 @@
             // dgwPalvelut
             // 
             this.dgwPalvelut.AutoGenerateColumns = false;
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwPalvelut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwPalvelut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgwPalvelut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwPalvelut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.palveluidDataGridViewTextBoxColumn,
@@ -752,26 +737,26 @@
             this.hintaDataGridViewTextBoxColumn,
             this.alvDataGridViewTextBoxColumn1});
             this.dgwPalvelut.DataSource = this.palveluBindingSource;
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle53.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwPalvelut.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwPalvelut.DefaultCellStyle = dataGridViewCellStyle23;
             this.dgwPalvelut.Location = new System.Drawing.Point(22, 251);
             this.dgwPalvelut.Name = "dgwPalvelut";
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle54.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle54.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwPalvelut.RowHeadersDefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwPalvelut.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgwPalvelut.Size = new System.Drawing.Size(746, 381);
-            this.dgwPalvelut.TabIndex = 23;
+            this.dgwPalvelut.TabIndex = 48;
             // 
             // palveluidDataGridViewTextBoxColumn
             // 
@@ -826,7 +811,7 @@
             this.tbNimi.Location = new System.Drawing.Point(316, 85);
             this.tbNimi.Name = "tbNimi";
             this.tbNimi.Size = new System.Drawing.Size(249, 24);
-            this.tbNimi.TabIndex = 22;
+            this.tbNimi.TabIndex = 43;
             // 
             // tbToimintaAlue_id
             // 
@@ -834,7 +819,7 @@
             this.tbToimintaAlue_id.Location = new System.Drawing.Point(316, 55);
             this.tbToimintaAlue_id.Name = "tbToimintaAlue_id";
             this.tbToimintaAlue_id.Size = new System.Drawing.Size(100, 24);
-            this.tbToimintaAlue_id.TabIndex = 21;
+            this.tbToimintaAlue_id.TabIndex = 42;
             this.tbToimintaAlue_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbPalvelu_id
@@ -843,7 +828,7 @@
             this.tbPalvelu_id.Location = new System.Drawing.Point(316, 25);
             this.tbPalvelu_id.Name = "tbPalvelu_id";
             this.tbPalvelu_id.Size = new System.Drawing.Size(249, 24);
-            this.tbPalvelu_id.TabIndex = 20;
+            this.tbPalvelu_id.TabIndex = 41;
             // 
             // lblPalvelunKuvaus
             // 
@@ -882,7 +867,7 @@
             this.btnPoistaPalvelu.Location = new System.Drawing.Point(386, 638);
             this.btnPoistaPalvelu.Name = "btnPoistaPalvelu";
             this.btnPoistaPalvelu.Size = new System.Drawing.Size(231, 77);
-            this.btnPoistaPalvelu.TabIndex = 16;
+            this.btnPoistaPalvelu.TabIndex = 50;
             this.btnPoistaPalvelu.Text = "Poista palvelu";
             this.btnPoistaPalvelu.UseVisualStyleBackColor = false;
             this.btnPoistaPalvelu.Click += new System.EventHandler(this.btnPoistaPalvelu_Click);
@@ -894,7 +879,7 @@
             this.btnLisaaPalvelu.Location = new System.Drawing.Point(149, 638);
             this.btnLisaaPalvelu.Name = "btnLisaaPalvelu";
             this.btnLisaaPalvelu.Size = new System.Drawing.Size(231, 77);
-            this.btnLisaaPalvelu.TabIndex = 14;
+            this.btnLisaaPalvelu.TabIndex = 49;
             this.btnLisaaPalvelu.Text = "Lisää palvelu";
             this.btnLisaaPalvelu.UseVisualStyleBackColor = false;
             this.btnLisaaPalvelu.Click += new System.EventHandler(this.btnLisaaPalvelu_Click);
@@ -930,7 +915,7 @@
             this.tbAsiakkaanSukunimi.Location = new System.Drawing.Point(293, 66);
             this.tbAsiakkaanSukunimi.Name = "tbAsiakkaanSukunimi";
             this.tbAsiakkaanSukunimi.Size = new System.Drawing.Size(452, 24);
-            this.tbAsiakkaanSukunimi.TabIndex = 40;
+            this.tbAsiakkaanSukunimi.TabIndex = 61;
             // 
             // label15
             // 
@@ -948,7 +933,7 @@
             this.tbAsiakkaanPostinumero.Location = new System.Drawing.Point(293, 150);
             this.tbAsiakkaanPostinumero.Name = "tbAsiakkaanPostinumero";
             this.tbAsiakkaanPostinumero.Size = new System.Drawing.Size(452, 24);
-            this.tbAsiakkaanPostinumero.TabIndex = 38;
+            this.tbAsiakkaanPostinumero.TabIndex = 63;
             // 
             // label14
             // 
@@ -963,14 +948,14 @@
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.asiakasidDataGridViewTextBoxColumn,
@@ -981,26 +966,26 @@
             this.emailDataGridViewTextBoxColumn,
             this.puhelinnroDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.asiakasBindingSource;
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridView2.Location = new System.Drawing.Point(35, 349);
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridView2.Size = new System.Drawing.Size(710, 165);
-            this.dataGridView2.TabIndex = 36;
+            this.dataGridView2.TabIndex = 66;
             // 
             // asiakasidDataGridViewTextBoxColumn
             // 
@@ -1056,7 +1041,7 @@
             this.btnPoistaAsiakas.Location = new System.Drawing.Point(357, 541);
             this.btnPoistaAsiakas.Name = "btnPoistaAsiakas";
             this.btnPoistaAsiakas.Size = new System.Drawing.Size(231, 77);
-            this.btnPoistaAsiakas.TabIndex = 33;
+            this.btnPoistaAsiakas.TabIndex = 68;
             this.btnPoistaAsiakas.Text = "Poista asiakas";
             this.btnPoistaAsiakas.UseVisualStyleBackColor = false;
             this.btnPoistaAsiakas.Click += new System.EventHandler(this.btnPoistaAsiakas_Click);
@@ -1068,7 +1053,7 @@
             this.btnLisaaAsiakas.Location = new System.Drawing.Point(120, 541);
             this.btnLisaaAsiakas.Name = "btnLisaaAsiakas";
             this.btnLisaaAsiakas.Size = new System.Drawing.Size(231, 77);
-            this.btnLisaaAsiakas.TabIndex = 32;
+            this.btnLisaaAsiakas.TabIndex = 67;
             this.btnLisaaAsiakas.Text = "Lisää asiakas";
             this.btnLisaaAsiakas.UseVisualStyleBackColor = false;
             this.btnLisaaAsiakas.Click += new System.EventHandler(this.btnLisaaAsiakas_Click);
@@ -1079,7 +1064,7 @@
             this.tbAsiakkaanSposti.Location = new System.Drawing.Point(293, 236);
             this.tbAsiakkaanSposti.Name = "tbAsiakkaanSposti";
             this.tbAsiakkaanSposti.Size = new System.Drawing.Size(452, 24);
-            this.tbAsiakkaanSposti.TabIndex = 31;
+            this.tbAsiakkaanSposti.TabIndex = 65;
             // 
             // lblSposti
             // 
@@ -1097,7 +1082,7 @@
             this.tbAsiakkaanPuhNum.Location = new System.Drawing.Point(293, 195);
             this.tbAsiakkaanPuhNum.Name = "tbAsiakkaanPuhNum";
             this.tbAsiakkaanPuhNum.Size = new System.Drawing.Size(452, 24);
-            this.tbAsiakkaanPuhNum.TabIndex = 28;
+            this.tbAsiakkaanPuhNum.TabIndex = 64;
             // 
             // tbAsiakkaanOsoite
             // 
@@ -1105,7 +1090,7 @@
             this.tbAsiakkaanOsoite.Location = new System.Drawing.Point(293, 105);
             this.tbAsiakkaanOsoite.Name = "tbAsiakkaanOsoite";
             this.tbAsiakkaanOsoite.Size = new System.Drawing.Size(452, 24);
-            this.tbAsiakkaanOsoite.TabIndex = 27;
+            this.tbAsiakkaanOsoite.TabIndex = 62;
             // 
             // tbAsiakkaanEtunimi
             // 
@@ -1113,7 +1098,7 @@
             this.tbAsiakkaanEtunimi.Location = new System.Drawing.Point(293, 27);
             this.tbAsiakkaanEtunimi.Name = "tbAsiakkaanEtunimi";
             this.tbAsiakkaanEtunimi.Size = new System.Drawing.Size(452, 24);
-            this.tbAsiakkaanEtunimi.TabIndex = 26;
+            this.tbAsiakkaanEtunimi.TabIndex = 60;
             // 
             // lblPuhNum
             // 
@@ -1153,7 +1138,6 @@
             this.Laskut.Controls.Add(this.label16);
             this.Laskut.Controls.Add(this.dgwLaskut);
             this.Laskut.Controls.Add(this.btnPoistaLasku);
-            this.Laskut.Controls.Add(this.btnHaeLasku);
             this.Laskut.Controls.Add(this.btnLuoLasku);
             this.Laskut.Controls.Add(this.tbLaskuSumma);
             this.Laskut.Controls.Add(this.tbVarausTunnus);
@@ -1173,7 +1157,7 @@
             this.tbLaskuAlv.Location = new System.Drawing.Point(317, 211);
             this.tbLaskuAlv.Name = "tbLaskuAlv";
             this.tbLaskuAlv.Size = new System.Drawing.Size(100, 24);
-            this.tbLaskuAlv.TabIndex = 21;
+            this.tbLaskuAlv.TabIndex = 73;
             // 
             // label3
             // 
@@ -1191,7 +1175,7 @@
             this.tbLaskunNumero.Location = new System.Drawing.Point(317, 91);
             this.tbLaskunNumero.Name = "tbLaskunNumero";
             this.tbLaskunNumero.Size = new System.Drawing.Size(100, 24);
-            this.tbLaskunNumero.TabIndex = 19;
+            this.tbLaskunNumero.TabIndex = 70;
             // 
             // label16
             // 
@@ -1206,14 +1190,14 @@
             // dgwLaskut
             // 
             this.dgwLaskut.AutoGenerateColumns = false;
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwLaskut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwLaskut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.dgwLaskut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwLaskut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.laskuidDataGridViewTextBoxColumn,
@@ -1221,26 +1205,26 @@
             this.summaDataGridViewTextBoxColumn,
             this.alvDataGridViewTextBoxColumn});
             this.dgwLaskut.DataSource = this.laskuBindingSource;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwLaskut.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwLaskut.DefaultCellStyle = dataGridViewCellStyle29;
             this.dgwLaskut.Location = new System.Drawing.Point(35, 315);
             this.dgwLaskut.Name = "dgwLaskut";
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle60.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwLaskut.RowHeadersDefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwLaskut.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.dgwLaskut.Size = new System.Drawing.Size(705, 245);
-            this.dgwLaskut.TabIndex = 17;
+            this.dgwLaskut.TabIndex = 74;
             // 
             // laskuidDataGridViewTextBoxColumn
             // 
@@ -1278,22 +1262,10 @@
             this.btnPoistaLasku.Location = new System.Drawing.Point(509, 566);
             this.btnPoistaLasku.Name = "btnPoistaLasku";
             this.btnPoistaLasku.Size = new System.Drawing.Size(231, 77);
-            this.btnPoistaLasku.TabIndex = 16;
+            this.btnPoistaLasku.TabIndex = 76;
             this.btnPoistaLasku.Text = "Poista lasku";
             this.btnPoistaLasku.UseVisualStyleBackColor = false;
             this.btnPoistaLasku.Click += new System.EventHandler(this.btnPoistaLasku_Click);
-            // 
-            // btnHaeLasku
-            // 
-            this.btnHaeLasku.BackColor = System.Drawing.Color.Transparent;
-            this.btnHaeLasku.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnHaeLasku.Location = new System.Drawing.Point(35, 566);
-            this.btnHaeLasku.Name = "btnHaeLasku";
-            this.btnHaeLasku.Size = new System.Drawing.Size(231, 77);
-            this.btnHaeLasku.TabIndex = 15;
-            this.btnHaeLasku.Text = "Hae lasku";
-            this.btnHaeLasku.UseVisualStyleBackColor = false;
-            this.btnHaeLasku.Click += new System.EventHandler(this.btnHaeLasku_Click);
             // 
             // btnLuoLasku
             // 
@@ -1302,7 +1274,7 @@
             this.btnLuoLasku.Location = new System.Drawing.Point(272, 566);
             this.btnLuoLasku.Name = "btnLuoLasku";
             this.btnLuoLasku.Size = new System.Drawing.Size(231, 77);
-            this.btnLuoLasku.TabIndex = 14;
+            this.btnLuoLasku.TabIndex = 75;
             this.btnLuoLasku.Text = "Luo lasku";
             this.btnLuoLasku.UseVisualStyleBackColor = false;
             this.btnLuoLasku.Click += new System.EventHandler(this.btnLuoLasku_Click);
@@ -1313,7 +1285,7 @@
             this.tbLaskuSumma.Location = new System.Drawing.Point(317, 172);
             this.tbLaskuSumma.Name = "tbLaskuSumma";
             this.tbLaskuSumma.Size = new System.Drawing.Size(100, 24);
-            this.tbLaskuSumma.TabIndex = 6;
+            this.tbLaskuSumma.TabIndex = 72;
             // 
             // tbVarausTunnus
             // 
@@ -1321,7 +1293,7 @@
             this.tbVarausTunnus.Location = new System.Drawing.Point(317, 132);
             this.tbVarausTunnus.Name = "tbVarausTunnus";
             this.tbVarausTunnus.Size = new System.Drawing.Size(100, 24);
-            this.tbVarausTunnus.TabIndex = 5;
+            this.tbVarausTunnus.TabIndex = 71;
             // 
             // label6
             // 
@@ -1443,7 +1415,6 @@
         private System.Windows.Forms.TextBox tbMokinOsoite;
         private System.Windows.Forms.ComboBox cbToimintaAlue;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox tbNimi;
         private System.Windows.Forms.TextBox tbToimintaAlue_id;
         private System.Windows.Forms.TextBox tbPalvelu_id;
@@ -1468,7 +1439,6 @@
         private System.Windows.Forms.TextBox tbLaskuSumma;
         private System.Windows.Forms.TextBox tbVarausTunnus;
         private System.Windows.Forms.Button btnPoistaLasku;
-        private System.Windows.Forms.Button btnHaeLasku;
         private System.Windows.Forms.Button btnLuoLasku;
         private System.Windows.Forms.DataGridView dgwLaskut;
         private VNDataset vNDataset;

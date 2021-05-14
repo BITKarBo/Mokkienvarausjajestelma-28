@@ -59,7 +59,7 @@
             this.btnUusiVaraus.Location = new System.Drawing.Point(232, 174);
             this.btnUusiVaraus.Name = "btnUusiVaraus";
             this.btnUusiVaraus.Size = new System.Drawing.Size(301, 99);
-            this.btnUusiVaraus.TabIndex = 2;
+            this.btnUusiVaraus.TabIndex = 1;
             this.btnUusiVaraus.Text = "Uusi varaus";
             this.btnUusiVaraus.UseVisualStyleBackColor = true;
             this.btnUusiVaraus.Click += new System.EventHandler(this.btnUusiVaraus_Click);
@@ -71,7 +71,7 @@
             this.btnKalenteri.Location = new System.Drawing.Point(232, 279);
             this.btnKalenteri.Name = "btnKalenteri";
             this.btnKalenteri.Size = new System.Drawing.Size(301, 75);
-            this.btnKalenteri.TabIndex = 3;
+            this.btnKalenteri.TabIndex = 2;
             this.btnKalenteri.Text = "Varaus kalenteri";
             this.btnKalenteri.UseVisualStyleBackColor = true;
             this.btnKalenteri.Click += new System.EventHandler(this.btnKalenteri_Click);
@@ -95,7 +95,7 @@
             this.btnRaportti.Location = new System.Drawing.Point(232, 360);
             this.btnRaportti.Name = "btnRaportti";
             this.btnRaportti.Size = new System.Drawing.Size(301, 67);
-            this.btnRaportti.TabIndex = 5;
+            this.btnRaportti.TabIndex = 3;
             this.btnRaportti.Text = "Raportointi";
             this.btnRaportti.UseVisualStyleBackColor = true;
             this.btnRaportti.Click += new System.EventHandler(this.btnRaportti_Click);

@@ -127,7 +127,7 @@
             this.dateTimePickerAloitus.Location = new System.Drawing.Point(7, 49);
             this.dateTimePickerAloitus.Name = "dateTimePickerAloitus";
             this.dateTimePickerAloitus.Size = new System.Drawing.Size(276, 26);
-            this.dateTimePickerAloitus.TabIndex = 4;
+            this.dateTimePickerAloitus.TabIndex = 1;
             // 
             // btnHae
             // 
@@ -148,7 +148,7 @@
             this.dateTimePickerLopetus.Location = new System.Drawing.Point(298, 49);
             this.dateTimePickerLopetus.Name = "dateTimePickerLopetus";
             this.dateTimePickerLopetus.Size = new System.Drawing.Size(277, 26);
-            this.dateTimePickerLopetus.TabIndex = 5;
+            this.dateTimePickerLopetus.TabIndex = 2;
             this.dateTimePickerLopetus.Value = new System.DateTime(2021, 5, 31, 0, 0, 0, 0);
             // 
             // lblMokkiVaraukset
@@ -184,7 +184,7 @@
             this.dataGridViewVaraukset.ReadOnly = true;
             this.dataGridViewVaraukset.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewVaraukset.Size = new System.Drawing.Size(754, 528);
-            this.dataGridViewVaraukset.TabIndex = 2;
+            this.dataGridViewVaraukset.TabIndex = 7;
             this.dataGridViewVaraukset.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVaraukset_CellDoubleClick);
             // 
             // varausBindingSource

@@ -116,7 +116,7 @@
             this.cbToimintaalue.Location = new System.Drawing.Point(10, 41);
             this.cbToimintaalue.Name = "cbToimintaalue";
             this.cbToimintaalue.Size = new System.Drawing.Size(121, 21);
-            this.cbToimintaalue.TabIndex = 0;
+            this.cbToimintaalue.TabIndex = 12;
             this.cbToimintaalue.ValueMember = "toimintaalue_id";
             // 
             // toimintaalueBindingSource
@@ -160,7 +160,7 @@
             this.dgvMokki.Name = "dgvMokki";
             this.dgvMokki.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMokki.Size = new System.Drawing.Size(644, 150);
-            this.dgvMokki.TabIndex = 2;
+            this.dgvMokki.TabIndex = 16;
             // 
             // toimintaalueidDataGridViewTextBoxColumn
             // 
@@ -219,7 +219,7 @@
             this.btnTallenna.Location = new System.Drawing.Point(667, 706);
             this.btnTallenna.Name = "btnTallenna";
             this.btnTallenna.Size = new System.Drawing.Size(105, 30);
-            this.btnTallenna.TabIndex = 3;
+            this.btnTallenna.TabIndex = 23;
             this.btnTallenna.Text = "Tallenna";
             this.btnTallenna.UseVisualStyleBackColor = true;
             this.btnTallenna.Click += new System.EventHandler(this.btnTallenna_Click);
@@ -229,7 +229,7 @@
             this.tbVarausNro.Location = new System.Drawing.Point(10, 39);
             this.tbVarausNro.Name = "tbVarausNro";
             this.tbVarausNro.Size = new System.Drawing.Size(100, 20);
-            this.tbVarausNro.TabIndex = 4;
+            this.tbVarausNro.TabIndex = 1;
             // 
             // label1
             // 
@@ -259,7 +259,7 @@
             this.cbAsiakas_id.Location = new System.Drawing.Point(10, 40);
             this.cbAsiakas_id.Name = "cbAsiakas_id";
             this.cbAsiakas_id.Size = new System.Drawing.Size(121, 21);
-            this.cbAsiakas_id.TabIndex = 7;
+            this.cbAsiakas_id.TabIndex = 5;
             this.cbAsiakas_id.ValueMember = "asiakas_id";
             // 
             // asiakasBindingSource
@@ -274,7 +274,7 @@
             this.dtpAlkupvm.Location = new System.Drawing.Point(236, 41);
             this.dtpAlkupvm.Name = "dtpAlkupvm";
             this.dtpAlkupvm.Size = new System.Drawing.Size(120, 20);
-            this.dtpAlkupvm.TabIndex = 8;
+            this.dtpAlkupvm.TabIndex = 13;
             // 
             // dtpLoppupvm
             // 
@@ -282,7 +282,7 @@
             this.dtpLoppupvm.Location = new System.Drawing.Point(371, 41);
             this.dtpLoppupvm.Name = "dtpLoppupvm";
             this.dtpLoppupvm.Size = new System.Drawing.Size(120, 20);
-            this.dtpLoppupvm.TabIndex = 9;
+            this.dtpLoppupvm.TabIndex = 14;
             // 
             // label3
             // 
@@ -348,7 +348,7 @@
             this.dtpVahvistus.Location = new System.Drawing.Point(352, 39);
             this.dtpVahvistus.Name = "dtpVahvistus";
             this.dtpVahvistus.Size = new System.Drawing.Size(120, 20);
-            this.dtpVahvistus.TabIndex = 17;
+            this.dtpVahvistus.TabIndex = 4;
             // 
             // dtpVarauspvm
             // 
@@ -356,7 +356,7 @@
             this.dtpVarauspvm.Location = new System.Drawing.Point(212, 39);
             this.dtpVarauspvm.Name = "dtpVarauspvm";
             this.dtpVarauspvm.Size = new System.Drawing.Size(120, 20);
-            this.dtpVarauspvm.TabIndex = 16;
+            this.dtpVarauspvm.TabIndex = 3;
             // 
             // btnHae
             // 
@@ -364,7 +364,7 @@
             this.btnHae.Location = new System.Drawing.Point(116, 39);
             this.btnHae.Name = "btnHae";
             this.btnHae.Size = new System.Drawing.Size(75, 20);
-            this.btnHae.TabIndex = 20;
+            this.btnHae.TabIndex = 2;
             this.btnHae.Text = "Hae";
             this.btnHae.UseVisualStyleBackColor = true;
             this.btnHae.Click += new System.EventHandler(this.btnHae_Click);
@@ -425,7 +425,7 @@
             this.tbSahkoposti.Location = new System.Drawing.Point(281, 131);
             this.tbSahkoposti.Name = "tbSahkoposti";
             this.tbSahkoposti.Size = new System.Drawing.Size(177, 20);
-            this.tbSahkoposti.TabIndex = 19;
+            this.tbSahkoposti.TabIndex = 11;
             // 
             // label13
             // 
@@ -443,7 +443,7 @@
             this.tbPuhelin.Location = new System.Drawing.Point(156, 131);
             this.tbPuhelin.Name = "tbPuhelin";
             this.tbPuhelin.Size = new System.Drawing.Size(115, 20);
-            this.tbPuhelin.TabIndex = 17;
+            this.tbPuhelin.TabIndex = 10;
             // 
             // label12
             // 
@@ -461,7 +461,7 @@
             this.tbLahiosoite.Location = new System.Drawing.Point(281, 85);
             this.tbLahiosoite.Name = "tbLahiosoite";
             this.tbLahiosoite.Size = new System.Drawing.Size(177, 20);
-            this.tbLahiosoite.TabIndex = 15;
+            this.tbLahiosoite.TabIndex = 9;
             // 
             // label11
             // 
@@ -479,7 +479,7 @@
             this.tbSukunimi.Location = new System.Drawing.Point(281, 39);
             this.tbSukunimi.Name = "tbSukunimi";
             this.tbSukunimi.Size = new System.Drawing.Size(115, 20);
-            this.tbSukunimi.TabIndex = 13;
+            this.tbSukunimi.TabIndex = 7;
             // 
             // label10
             // 
@@ -497,7 +497,7 @@
             this.tbPostinumero.Location = new System.Drawing.Point(156, 85);
             this.tbPostinumero.Name = "tbPostinumero";
             this.tbPostinumero.Size = new System.Drawing.Size(115, 20);
-            this.tbPostinumero.TabIndex = 11;
+            this.tbPostinumero.TabIndex = 8;
             // 
             // label9
             // 
@@ -515,7 +515,7 @@
             this.tbEtunimi.Location = new System.Drawing.Point(156, 39);
             this.tbEtunimi.Name = "tbEtunimi";
             this.tbEtunimi.Size = new System.Drawing.Size(115, 20);
-            this.tbEtunimi.TabIndex = 9;
+            this.tbEtunimi.TabIndex = 6;
             // 
             // label8
             // 
@@ -566,7 +566,7 @@
             this.btnPoistaPalvelu.Location = new System.Drawing.Point(142, 282);
             this.btnPoistaPalvelu.Name = "btnPoistaPalvelu";
             this.btnPoistaPalvelu.Size = new System.Drawing.Size(24, 23);
-            this.btnPoistaPalvelu.TabIndex = 20;
+            this.btnPoistaPalvelu.TabIndex = 19;
             this.btnPoistaPalvelu.Text = "<";
             this.btnPoistaPalvelu.UseVisualStyleBackColor = true;
             this.btnPoistaPalvelu.Click += new System.EventHandler(this.btnPoistaPalvelu_Click);
@@ -576,7 +576,7 @@
             this.btnSiirra.Location = new System.Drawing.Point(142, 253);
             this.btnSiirra.Name = "btnSiirra";
             this.btnSiirra.Size = new System.Drawing.Size(24, 23);
-            this.btnSiirra.TabIndex = 19;
+            this.btnSiirra.TabIndex = 18;
             this.btnSiirra.Text = ">";
             this.btnSiirra.UseVisualStyleBackColor = true;
             this.btnSiirra.Click += new System.EventHandler(this.btnSiirra_Click);
@@ -587,7 +587,7 @@
             this.lbVarauksenPalvelut.Location = new System.Drawing.Point(175, 253);
             this.lbVarauksenPalvelut.Name = "lbVarauksenPalvelut";
             this.lbVarauksenPalvelut.Size = new System.Drawing.Size(120, 147);
-            this.lbVarauksenPalvelut.TabIndex = 18;
+            this.lbVarauksenPalvelut.TabIndex = 20;
             // 
             // lbPalvelut
             // 
@@ -634,7 +634,7 @@
             this.btnPeruuta.Location = new System.Drawing.Point(556, 706);
             this.btnPeruuta.Name = "btnPeruuta";
             this.btnPeruuta.Size = new System.Drawing.Size(105, 30);
-            this.btnPeruuta.TabIndex = 24;
+            this.btnPeruuta.TabIndex = 22;
             this.btnPeruuta.Text = "Peruuta";
             this.btnPeruuta.UseVisualStyleBackColor = true;
             this.btnPeruuta.Click += new System.EventHandler(this.btnPeruuta_Click);
