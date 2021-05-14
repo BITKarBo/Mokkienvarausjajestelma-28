@@ -51,7 +51,7 @@ namespace Mökinvarausjärjestelmä
             }
             catch (Exception)
             {
-                Console.WriteLine("Mökki puuttuu tietokannasta, johon koitit palvelun lisätä");              
+                Console.WriteLine("Mökki puuttuu tietokannasta, johon koitit palvelun lisätä");
             }
 
 
@@ -99,9 +99,9 @@ namespace Mökinvarausjärjestelmä
             catch (Exception)
             {
                 Console.WriteLine("Mökkiä ei voitu lisätä, koska mökin toiminta-alue puuttuu tietokannasta");
-              
+
             }
-           
+
         }
 
         private void btnLisaaAsiakas_Click(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace Mökinvarausjärjestelmä
             catch (Exception)
             {
                 Console.WriteLine("Jottai ei toivottua tapahtui");
-               
+
             }
         }
 
@@ -132,7 +132,7 @@ namespace Mökinvarausjärjestelmä
             catch (Exception)
             {
                 Console.WriteLine("Jottai ei toivottua tapahtui");
-                
+
             }
         }
 
@@ -154,14 +154,5 @@ namespace Mökinvarausjärjestelmä
             dataGridView2.Rows.RemoveAt(rowIndex);
         }
 
-        private void btnHaeLasku_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e) //hae mökki nappula
-        {
-
-        }
     }
 }
