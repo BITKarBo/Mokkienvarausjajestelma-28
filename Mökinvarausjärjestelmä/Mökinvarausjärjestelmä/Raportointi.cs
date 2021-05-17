@@ -46,7 +46,7 @@ namespace Mökinvarausjärjestelmä
             chartMajoitukset.DataSource = gds.Getdataset(sqlcommand).Tables[0];
             chartMajoitukset.DataBind();
 
-            string sqlcommand1 = string.Format("SELECT varauksen_palvelut.lkm AS `lkm`, palvelu.nimi AS `palvelut` FROM varauksen_palvelut, palvelu WHERE varauksen_palvelut.varaus_id IN(SELECT varaus.varaus_id FROM varaus WHERE varaus.varattu_pvm BETWEEN '2000-1-1' AND '2100-01-1' GROUP BY varaus_id) AND palvelu.nimi IN(SELECT palvelu.nimi FROM palvelu, varauksen_palvelut WHERE palvelu.palvelu_id = varauksen_palvelut.varaus_id AND palvelu.toimintaalue_id = 1) GROUP BY palvelu.nimi");
+            string sqlcommand1 = string.Format("SELECT COUNT(varauksen_palvelut.lkm) AS `lkm`, palvelu.nimi AS `palvelut` FROM varauksen_palvelut, palvelu WHERE varauksen_palvelut.varaus_id IN(SELECT varaus.varaus_id FROM varaus WHERE varaus.varattu_pvm BETWEEN '2000-1-1' AND '2100-01-1' GROUP BY varaus_id) AND palvelu.nimi IN(SELECT palvelu.nimi FROM palvelu, varauksen_palvelut WHERE palvelu.palvelu_id = varauksen_palvelut.varaus_id AND palvelu.toimintaalue_id = 1) GROUP BY palvelu.nimi");
 
             chartPalvelut.DataSource = gds.Getdataset(sqlcommand1).Tables[0];
             chartPalvelut.DataBind();
@@ -56,7 +56,7 @@ namespace Mökinvarausjärjestelmä
             string varauksetlbl = "Varausten Määrä: " + gds.Getdataset(sqlcommandvaraukset).Tables[0].Rows[1]["maarat"].ToString();
             lblvaraukset.Text = varauksetlbl;
 
-            string sqlcommandpalvelut = string.Format("SELECT SUM(varauksen_palvelut.lkm) AS `lkm` FROM varaus, varauksen_palvelut WHERE varaus.mokki_mokki_id IN(SELECT mokki.mokki_id FROM mokki WHERE mokki.toimintaalue_id = {0}) AND varaus.varattu_pvm BETWEEN '{1:yyyy/MM/dd}' AND '{2:yyyy/MM/dd}' GROUP BY varaus.varattu_pvm;", cbToimintaalue.SelectedValue, dateTimePickerAloitus.Value, dateTimePickerLopetus.Value);
+            string sqlcommandpalvelut = string.Format("SELECT COUNT(varauksen_palvelut.lkm) AS `lkm` FROM varaus, varauksen_palvelut WHERE varaus.mokki_mokki_id IN(SELECT mokki.mokki_id FROM mokki WHERE mokki.toimintaalue_id = {0}) AND varaus.varattu_pvm BETWEEN '{1:yyyy/MM/dd}' AND '{2:yyyy/MM/dd}' GROUP BY varaus.varattu_pvm;", cbToimintaalue.SelectedValue, dateTimePickerAloitus.Value, dateTimePickerLopetus.Value);
             string palvelutlbl = "Palveluiden Määrä: " + gds.Getdataset(sqlcommandpalvelut).Tables[0].Rows[0]["lkm"].ToString();
             lblPalveluidenmaara.Text = palvelutlbl;
         }
@@ -91,14 +91,14 @@ namespace Mökinvarausjärjestelmä
 
                 // Toinen Query palveluille. Query jossa varauksen_palvelut kaikki menneet palvelut ja lkm eroteltuna varaus ID:llä
 
-                string sqlcommand1 = string.Format("SELECT varauksen_palvelut.lkm AS `lkm`, palvelu.nimi AS `palvelut` FROM varauksen_palvelut, palvelu WHERE varauksen_palvelut.varaus_id IN(SELECT varaus.varaus_id FROM varaus WHERE varaus.varattu_pvm BETWEEN '{0:yyyy/MM/dd}' AND '{1:yyyy/MM/dd}' GROUP BY varaus_id) AND palvelu.nimi IN(SELECT palvelu.nimi FROM palvelu, varauksen_palvelut WHERE palvelu.palvelu_id = varauksen_palvelut.varaus_id AND palvelu.toimintaalue_id = {2}) GROUP BY palvelu.nimi", dateTimePickerAloitus.Value, dateTimePickerLopetus.Value, cbToimintaalue.SelectedValue);
+                string sqlcommand1 = string.Format("SELECT COUNT(varauksen_palvelut.lkm) AS `lkm`, palvelu.nimi AS `palvelut` FROM varauksen_palvelut, palvelu WHERE varauksen_palvelut.varaus_id IN(SELECT varaus.varaus_id FROM varaus WHERE varaus.varattu_pvm BETWEEN '{0:yyyy/MM/dd}' AND '{1:yyyy/MM/dd}' GROUP BY varaus_id) AND palvelu.nimi IN(SELECT palvelu.nimi FROM palvelu, varauksen_palvelut WHERE palvelu.palvelu_id = varauksen_palvelut.varaus_id AND palvelu.toimintaalue_id = {2}) GROUP BY palvelu.nimi", dateTimePickerAloitus.Value, dateTimePickerLopetus.Value, cbToimintaalue.SelectedValue);
 
                 chartPalvelut.DataSource = gds.Getdataset(sqlcommand1).Tables[0];
                 chartPalvelut.DataBind();
                 try
                 {
 
-                    string sqlcommandpalvelut = string.Format("SELECT SUM(varauksen_palvelut.lkm) AS `lkm` FROM varaus, varauksen_palvelut WHERE varaus.mokki_mokki_id IN(SELECT mokki.mokki_id FROM mokki WHERE mokki.toimintaalue_id = {0}) AND varaus.varattu_pvm BETWEEN '{1:yyyy/MM/dd}' AND '{2:yyyy/MM/dd}' GROUP BY varaus.varattu_pvm;", cbToimintaalue.SelectedValue, dateTimePickerAloitus.Value, dateTimePickerLopetus.Value);
+                    string sqlcommandpalvelut = string.Format("SELECT COUNT(varauksen_palvelut.lkm) AS `lkm` FROM varaus, varauksen_palvelut WHERE varaus.mokki_mokki_id IN(SELECT mokki.mokki_id FROM mokki WHERE mokki.toimintaalue_id = {0}) AND varaus.varattu_pvm BETWEEN '{1:yyyy/MM/dd}' AND '{2:yyyy/MM/dd}' GROUP BY varaus.varattu_pvm;", cbToimintaalue.SelectedValue, dateTimePickerAloitus.Value, dateTimePickerLopetus.Value);
                     string palvelutlbl = "Palveluiden Määrä: " + gds.Getdataset(sqlcommandpalvelut).Tables[0].Rows[0]["lkm"].ToString();
                     lblPalveluidenmaara.Text = palvelutlbl;
                 }
